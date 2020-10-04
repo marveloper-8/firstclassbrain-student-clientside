@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito&family=Teko:wght@500&family=Varela&family=Varela+Round&display=swap');
+
+.App{
+    font-size:4vw;
+    font-family: 'Varela Round', sans-serif;
+}
+.title{
+    font-family: 'Teko', sans-serif;
+}
+.sub-title{
+    font-family: 'Varela', sans-serif;
+}
+
+
+
+/* width */
+.App::-webkit-scrollbar{
+    width: 7.6px;
+    height:7.5px;
+}
+
+/* Track */
+.App::-webkit-scrollbar-track{
+    background:none;
+}
+
+/* Handle */
+.App::-webkit-scrollbar-thumb{
+    background: teal; 
+    border-radius: 10px;
+}
+
+/* Handle on hover */
+.App::-webkit-scrollbar-thumb:hover{
+    background: #b30000; 
+}

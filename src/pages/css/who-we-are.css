@@ -1,0 +1,110 @@
+.who-we-are .team{
+    text-align:center;
+    padding:10vh 10vw;
+}
+.who-we-are h3,
+.who-we-are h5{
+    color:teal;
+}
+.who-we-are .team-one{
+    background:#f5f5f5;
+}
+.who-we-are .team-two{
+    background:#fff;
+}
+.who-we-are .team .item-list{
+    display:grid;
+    grid-template-columns:1fr 1fr 1fr 1fr 1fr;
+}
+.who-we-are .team .item-list .item{
+    padding:10vh 1.25vw 0 1.25vw;
+    font-size:.9vw;
+}
+.who-we-are .team .item-list .item .picture{
+    width:100%;
+    height:45vh;
+    border-radius:10px;
+    margin-bottom:3vh;
+    /* box-shadow: 0 4px 8px 0 rgba(132, 132, 132, 0.2), 0 6px 20px 0 rgba(177, 177, 177, 0.19); */
+}
+
+
+.who-we-are-one{
+    padding:0 15vw;
+    display:grid;
+    grid-template-columns:1.5fr 2fr;
+}
+.who-we-are-one .text{
+    padding:10vh 5vw;
+}
+.who-we-are-one .text .subhead{
+    color:grey;
+    font-size:1.2vw;
+}
+.who-we-are-one .text .head{
+    font-size:4vw;
+    font-weight:bold;
+    position:relative;
+    line-height:-2vh;
+}
+.who-we-are-one .text p{
+    color:grey;
+    font-size:.9vw;
+}
+
+
+.who-we-are-two{
+    padding:10vh 15vw;
+    display:grid;
+    grid-template-columns:2fr 1.5fr;
+}
+.who-we-are-two .image{
+    height:60vh;
+}
+.who-we-are-two .text{
+    padding:0 5vw;
+    text-align:right;
+}
+.who-we-are-two .text .subhead{
+    color:grey;
+    font-size:1.2vw;
+}
+.who-we-are-two .text .head{
+    font-size:4vw;
+    font-weight:bold;
+    position:relative;
+    line-height:-2vh;
+}
+.who-we-are-two .text p{
+    color:grey;
+    font-size:.9vw;
+}
+
+.who-we-are-two .tabs-titles{
+    list-style: none;
+    padding: 0px;
+    margin: 0;
+}
+
+.who-we-are-two .tab-title{
+    background-color: #fff;
+    display: inline-block;
+    padding: 3vh 1vw;
+    color: #c7c6c2;
+    cursor: pointer;
+    margin-left:1px;
+    font-size:1vw;
+}
+
+.who-we-are-two .tab-title--active {
+    background-color: rgb(209, 238, 238);
+    color: #00070a;
+}
+  
+.who-we-are-two .tab-content{
+    background-color: rgb(209, 238, 238);
+    padding: 3vh 1vw;
+    margin: 0;
+    font-size:.9vw;
+    text-align:left;
+}

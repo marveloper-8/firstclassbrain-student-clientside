@@ -1,0 +1,382 @@
+.navigation{
+    padding:0;
+    margin:0;
+}
+.navigation .nav-bar{
+    position:fixed;
+    top:0;
+    left:0;
+    display:grid;
+    grid-template-columns:1fr 2fr;
+    padding:0 10vw;
+    z-index:100;
+    width:100vw;
+    z-index:10000;
+    color:#fff;
+    overflow-x:hidden;
+    overflow-y:hidden;
+    box-shadow: 0 4px 8px 0 grey, 0 3px 10px 0 #000;
+    background:#fff;
+}
+.navigation .logo-container{
+    display:inline-block;
+    text-align:left!important;
+}
+
+.navigation .logo-container img{
+    height:5vh;
+}
+.navigation .buttons{
+    font-size:.9vw;
+    text-align:right;
+    color:#000;
+    text-decoration:none;
+    display:inline-block;
+    padding-top:3vh;
+}
+.navigation .buttons button{
+    margin:0 0 0 1vw!important;
+    border:none;
+    outline:none;
+    border:2px solid teal;
+    border-radius:10px;
+    padding:1vh 1vw;
+    cursor:pointer;
+    font-weight:bold;
+    color:teal;
+    font-size:1vw;
+}
+.navigation .buttons .login{
+    color:teal;
+    background:#fff;
+}
+.navigation .buttons .signup{
+    background:teal;
+    color:#fff;
+}
+.navigation .buttons .logout{
+    background:#f6f5f5;
+    color:#f00;
+    font-weight:bold;
+    border:none;
+    border:#f6f5f5 1.5px solid;
+}
+.navigation .profile-picture{
+    width:3vw!important;
+    height:3vw!important;
+    border-radius:3vw!important;
+    display:inline-block;
+    position:relative;
+    cursor:pointer;
+    border:1px teal solid;
+    margin-left:1vw;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.navigation .popup{
+    width:100%;
+    height:100vh;
+    position:fixed;
+    top:0;
+    left:100vw;
+    z-index:400000;
+    text-align:center;
+    overflow-x:hidden;
+    transition:.5s ease-in-out all;
+    z-index:100000;
+}
+.navigation .popup-toggle{
+    width:100%;
+    height:100%;
+    position:fixed;
+    top:0;
+    left:0;
+    z-index:400000;
+    text-align:center;
+    overflow-x:hidden;
+    overflow-y:hidden;
+    transition:.5s ease-in-out all;
+}
+.navigation .popup-toggle .background{
+    background:rgba(0,0,0,.8);
+    width:100vw;
+    height:100vh;
+    position:fixed;
+    top:0;
+    transition:.5s ease-in-out all;
+    left:0;
+}
+.navigation .popup-toggle .inner,
+.navigation .popup .inner{
+    background:#fff;
+    padding-bottom:5vh;
+    top:0;
+    position:absolute;
+    width:30vw;
+    box-shadow: 0 4px 8px 0 rgba(132, 132, 132, 0.2), 0 6px 20px 0 rgba(177, 177, 177, 0.19);
+    right:0;
+    text-align:left;
+    height:100vh;
+    overflow-y:scroll;
+}
+
+/* width */
+.navigation .popup-toggle .inner::-webkit-scrollbar,
+.navigation .popup .inner::-webkit-scrollbar {
+    width: 7.6px;
+    height:7.5px;
+    transition:.5s ease-in-out all;
+}
+
+/* Track */
+.navigation .popup-toggle .inner::-webkit-scrollbar-track,
+.navigation .popup .inner::-webkit-scrollbar-track {
+    background:none;
+    transition:.5s ease-in-out all;
+}
+
+/* Handle */
+.navigation .popup-toggle .inner::-webkit-scrollbar-thumb,
+.navigation .popup .inner::-webkit-scrollbar-thumb {
+    background: teal; 
+    border-radius: 10px;
+    transition:.5s ease-in-out all;
+}
+
+/* Handle on hover */
+.navigation .popup-toggle .inner::-webkit-scrollbar-thumb:hover,
+.navigation .popup .inner::-webkit-scrollbar-thumb:hover {
+    background: #b30000; 
+    transition:.5s ease-in-out all;
+}
+
+.navigation .popup-toggle .inner .close-donate,
+.navigation .popup .inner .close-donate{
+    padding:0 2vw 4vh 2vw;
+    color:#f00;
+}
+.navigation .popup-toggle .inner .close-donate span,
+.navigation .popup .inner .close-donate span{
+    cursor:pointer;
+    font-size:.9vw;
+}
+.navigation .popup-toggle .inner .content,
+.navigation .popup .inner .content{
+    padding:0 2vw;
+    text-align:left;
+}
+.navigation .popup-toggle .inner .content .image img,
+.navigation .popup .inner .content .image img{
+    width:30vw;
+}
+.navigation .popup-toggle .inner .content .text,
+.navigation .popup .inner .content .text{
+    font-size:1.2vw;
+    text-align:left;
+    padding:0 1.5vw;
+    color:#000;
+    margin-bottom:3vh;
+}
+
+.navigation .popup-toggle .inner .content .text .title,
+.navigation .popup .inner .content .text .title{
+    margin-bottom:3vh;
+}
+
+.navigation .popup-toggle .inner .content .text .input,
+.navigation .popup .inner .content .text .input{
+    display:grid;
+    grid-template-columns:1fr 15fr;
+    background:#bbb;
+    border-radius:5px;
+    padding:1.5vh 1vw;
+    margin-bottom:3vh;
+    position:relative;
+}
+.navigation .popup-toggle .inner .content .text .input-file,
+.navigation .popup .inner .content .text .input-file{
+    outline:none;
+    border:none;
+    font-size:1vw;
+    text-align:left;
+    padding-left:1vw;
+    position:relative;
+}
+.navigation .popup-toggle .inner .content .text input[type=file],
+.navigation .popup .inner .content .text input[type=file]{
+    position:absolute;
+    left:0;
+    top:0;
+    opacity:0;
+    width:100%;
+    height:100%;
+    cursor:pointer;
+    border:1px solid #000;
+}
+.navigation .popup-toggle .inner .content .text .input img,
+.navigation .popup .inner .content .text .input img{
+    width:80%;
+}
+.navigation .popup-toggle .inner .content .text .input input,
+.navigation .popup-toggle .inner .content .text .input select,
+.navigation .popup .inner .content .text .input input,
+.navigation .popup .inner .content .text .input select{
+    padding:0 1vw;
+    border:none;
+    outline:none;
+    font-size:.85vw;
+    background:none;
+}
+.navigation .popup-toggle .inner .content .text .preview-picture,
+.navigation .popup .inner .content .text .preview-picture{
+    display:block;
+    width:100%;
+    border-radius:5px;
+    margin-bottom:3vh;
+}
+.navigation .popup-toggle .inner .content .text button,
+.navigation .popup .inner .content .text button{
+    padding:1.5vh 0;
+    text-align:center;
+    width:100%;
+    background:teal;
+    border-radius:5px;
+    border:none;
+    color:#fff;
+    font-size:.85vw;
+    cursor:pointer;
+}
+.navigation .popup-toggle .inner .content .extras,
+.navigation .popup .inner .content .extras{
+    padding-left:1.5vw;
+}
+.navigation .popup-toggle .inner .content .extras p,
+.navigation .popup .inner .content .extras p{
+    color:grey;
+    font-size:.85vw;
+}
+.navigation .popup-toggle .inner .content .extras p .important,
+.navigation .popup .inner .content .extras p .important{
+    color:teal;
+    font-size:.85vw;
+    cursor:pointer;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.navigation .popup-toggle .view-profile-inner{
+    background:#fff;
+    height:90vh;
+    position:absolute;
+    top:5vh;
+    width:25vw;
+    box-shadow: 0 4px 8px 0 rgba(132, 132, 132, 0.2), 0 6px 20px 0 rgba(177, 177, 177, 0.19);
+    left:37.5vw;
+    margin:auto;
+    text-align:left;
+    padding:0 1vw;
+}
+.navigation .popup-toggle .view-profile-inner .navigation,
+.navigation .popup .view-profile-inner .navigation{
+    font-size:1.25vw;
+    border-bottom:1px #707070 solid;
+    color:#707070;
+    font-weight:bold;
+    display:grid;
+    grid-template-columns:2fr 1fr;
+}
+.navigation .popup-toggle .view-profile-inner .navigation .title,
+.navigation .popup .view-profile-inner .navigation .title{
+    padding:3vh 3vw;
+}
+.navigation .popup-toggle .view-profile-inner .navigation .close,
+.navigation .popup .view-profile-inner .navigation .close{
+    font-size:2.5vw;
+    text-align:right;
+    padding:.75vh 3vw;
+}
+.navigation .popup-toggle .view-profile-inner .navigation .close span,
+.navigation .popup .view-profile-inner .navigation .close span{
+    cursor:pointer;
+}
+.navigation .popup-toggle .view-profile-inner .data,
+.navigation .popup .view-profile-inner .data{
+    padding:3vh 1.5vw;
+}
+.navigation .popup-toggle .view-profile-inner .data .image,
+.navigation .popup .view-profile-inner .data .image{
+    width:10vw;
+    height:10vw;
+    border-radius:10vw;
+    margin:auto;
+}
+.navigation .popup-toggle .view-profile-inner .data .name,
+.navigation .popup .view-profile-inner .data .name{
+    font-weight:bold;
+    font-size:1.25vw;
+    text-align:center;
+    margin:3vh 0;
+}
+.navigation .popup-toggle .view-profile-inner .data .tab,
+.navigation .popup .view-profile-inner .data .tab{
+    width:100%;
+    margin-bottom:2vh;
+    position:relative;
+    background: #F6F5F5 0% 0% no-repeat padding-box;
+    font-size:1vw;
+    border-radius:5px;
+    display:grid;
+    grid-template-columns:1fr 7fr;
+    border-radius:5px;
+}
+.navigation .popup-toggle .view-profile-inner .data .tab .icon,
+.navigation .popup .view-profile-inner .data .tab .icon{
+    background:teal;
+    padding:1vh 0;
+    text-align:center;
+    border-radius:5px 0 0 5px;
+}
+.navigation .popup-toggle .view-profile-inner .data .tab .icon img,
+.navigation .popup .view-profile-inner .data .tab .icon img{
+    width:40%;
+}
+.navigation .popup-toggle .view-profile-inner .data .tab .value,
+.navigation .popup .view-profile-inner .data .tab .value{
+    margin-left:1vw;
+    padding:1vh 0vw;
+    font-size:.8vw;
+    color:#000;
+}
+.navigation .popup-toggle .view-profile-inner .data .logout-tab,
+.navigation .popup .view-profile-inner .data .logout-tab{
+    cursor:pointer;
+}
+.navigation .popup-toggle .view-profile-inner .data .logout-tab .icon,
+.navigation .popup .view-profile-inner .data .logout-tab .icon{
+    background:#f00;
+}
