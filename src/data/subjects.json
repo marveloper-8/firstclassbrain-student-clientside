@@ -21,12 +21,12 @@
     },
     {
         "class": 1,
-        "subject": "social-studies",
+        "subject": "social_studies",
         "name": "Social Studies"
     },
     {
         "class": 1,
-        "subject": "health-education",
+        "subject": "health_education",
         "name": "Health Education"
     },
     {
@@ -71,12 +71,12 @@
     },
     {
         "class": 2,
-        "subject": "social-studies",
+        "subject": "social_studies",
         "name": "Social Studies"
     },
     {
         "class": 2,
-        "subject": "health-education",
+        "subject": "health_education",
         "name": "Health Education"
     },
     {
@@ -121,12 +121,12 @@
     },
     {
         "class": 3,
-        "subject": "social-studies",
+        "subject": "social_studies",
         "name": "Social Studies"
     },
     {
         "class": 3,
-        "subject": "health-education",
+        "subject": "health_education",
         "name": "Health Education"
     },
     {
@@ -171,12 +171,12 @@
     },
     {
         "class": 4,
-        "subject": "social-studies",
+        "subject": "social_studies",
         "name": "Social Studies"
     },
     {
         "class": 4,
-        "subject": "health-education",
+        "subject": "health_education",
         "name": "Health Education"
     },
     {
@@ -221,12 +221,12 @@
     },
     {
         "class": 5,
-        "subject": "social-studies",
+        "subject": "social_studies",
         "name": "Social Studies"
     },
     {
         "class": 5,
-        "subject": "health-education",
+        "subject": "health_education",
         "name": "Health Education"
     },
     {
@@ -271,12 +271,12 @@
     },
     {
         "class": 6,
-        "subject": "basic-science",
+        "subject": "basic_science",
         "name": "Basic Science"
     },
     {
         "class": 6,
-        "subject": "business-studies",
+        "subject": "business_studies",
         "name": "Business Studies"
     },
     {
@@ -286,7 +286,7 @@
     },
     {
         "class": 6,
-        "subject": "basic-technology",
+        "subject": "basic_technology",
         "name": "Basic Technology"
     },
     {
@@ -311,12 +311,12 @@
     },
     {
         "class": 7,
-        "subject": "basic-science",
+        "subject": "basic_science",
         "name": "Basic Science"
     },
     {
         "class": 7,
-        "subject": "business-studies",
+        "subject": "business_studies",
         "name": "Business Studies"
     },
     {
@@ -326,7 +326,7 @@
     },
     {
         "class": 7,
-        "subject": "basic-technology",
+        "subject": "basic_technology",
         "name": "Basic Technology"
     },
     {
@@ -351,12 +351,12 @@
     },
     {
         "class": 8,
-        "subject": "basic-science",
+        "subject": "basic_science",
         "name": "Basic Science"
     },
     {
         "class": 8,
-        "subject": "business-studies",
+        "subject": "business_studies",
         "name": "Business Studies"
     },
     {
@@ -366,7 +366,7 @@
     },
     {
         "class": 8,
-        "subject": "basic-technology",
+        "subject": "basic_technology",
         "name": "Basic Technology"
     },
     {
@@ -391,7 +391,7 @@
     },
     {
         "class": 9,
-        "subject": "further-maths",
+        "subject": "further_maths",
         "name": "Further Mathematics"
     },
     {
@@ -441,7 +441,7 @@
     },
     {
         "class": 10,
-        "subject": "social-studies",
+        "subject": "social_studies",
         "name": "Social Studies"
     },
     {
@@ -486,7 +486,7 @@
     },
     {
         "class": 11,
-        "subject": "agric-science",
+        "subject": "agric_science",
         "name": "Agricultural Science"
     },
     {
@@ -516,7 +516,7 @@
     },
     {
         "class": 12,
-        "subject": "further-maths",
+        "subject": "further_maths",
         "name": "Further Mathematics"
     },
     {
@@ -566,7 +566,7 @@
     },
     {
         "class": 13,
-        "subject": "social-studies",
+        "subject": "social_studies",
         "name": "Social Studies"
     },
     {
@@ -611,7 +611,7 @@
     },
     {
         "class": 14,
-        "subject": "agric-science",
+        "subject": "agric_science",
         "name": "Agricultural Science"
     },
     {
@@ -641,7 +641,7 @@
     },
     {
         "class": 15,
-        "subject": "further-maths",
+        "subject": "further_maths",
         "name": "Further Mathematics"
     },
     {
@@ -691,7 +691,7 @@
     },
     {
         "class": 16,
-        "subject": "social-studies",
+        "subject": "social_studies",
         "name": "Social Studies"
     },
     {
@@ -736,7 +736,7 @@
     },
     {
         "class": 17,
-        "subject": "agric-science",
+        "subject": "agric_science",
         "name": "Agricultural Science"
     },
     {

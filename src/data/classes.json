@@ -33,47 +33,38 @@
     },
     {
         "class": 9,
-        "name": "SSS 1",
-        "department": "Science"
+        "name": "SSS 1 (Sci)"
     },
     {
         "class": 10,
-        "name": "SSS 1",
-        "department": "Commercial"
+        "name": "SSS 1 (Comm)"
     },
     {
         "class": 11,
-        "name": "SSS 1",
-        "department": "Art"
+        "name": "SSS 1 (Art)"
     },
     {
         "class": 12,
-        "name": "SSS 2",
-        "department": "Science"
+        "name": "SSS 2 (Sci)"
     },
     {
         "class": 13,
-        "name": "SSS 2",
-        "department": "Commercial"
+        "name": "SSS 2 (Comm)"
     },
     {
         "class": 14,
-        "name": "SSS 2",
-        "department": "Art"
+        "name": "SSS 2 (Art)"
     },
     {
         "class": 15,
-        "name": "SSS 3",
-        "department": "Science"
+        "name": "SSS 3 (Sci)"
     },
     {
         "class": 16,
-        "name": "SSS 3",
-        "department": "Commercial"
+        "name": "SSS 3 (Comm)"
     },
     {
         "class": 17,
-        "name": "SSS 3",
-        "department": "Art"
+        "name": "SSS 3 (Art)"
     }
 ]

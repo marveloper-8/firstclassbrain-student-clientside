@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import './css/Slides.scss'
 
+import aboutUs from '../images/about-us.png'
+
 let classNames = require('classnames')
 
 export class Slides extends Component {
@@ -18,16 +20,16 @@ export class Slides extends Component {
       sliderReady: false,
       slides: [
         {
-          city: 'We are home to some of the best properties in Nigeria. Start your property ownership journey with us now.',
-          img: 'https://collections.aoestatechariots.com/slides/real-estate.jpg',
+          city: 'FIRST CLASS BRAIN APP ensures that our students don’t just go to school but understand in clear terms what is being taught in school.',
+          img: 'https://extras.firstclassbrain.com/one.png',
         },
         {
-          city: 'Join our fast growing community of real estate consultants making money by the minute',
-          img: 'https://collections.aoestatechariots.com/slides/consultants.jpg',
+          city: 'FIRST CLASS BRAIN give students access to teaching materials dictated by the school curriculum to support teachers and ensure student proactiveness.',
+          img: 'https://extras.firstclassbrain.com/two.png',
         },
         {
-          city: 'Are you a developer? You are in safe hands. Register with us and have fast sales of your properties',
-          img: 'https://collections.aoestatechariots.com/slides/architect.jpg',
+          city: 'Conventional Classroom Teaching, Illustrative Teaching, Text Notes, Tests, Opportunity to chat with Teachers/Career Guide',
+          img: 'https://extras.firstclassbrain.com/three.png',
         },
       ]
     };

@@ -41,7 +41,7 @@ function Terms() {
             <div className="side-nav">
                 <div className="week">
                     <img src={calender} alt="week" />
-                    <div className="label">Week {postDetails.post ? postDetails.post.week : "loading"}</div>
+                    <div className="label title">Week {postDetails.post ? postDetails.post.week : "loading"}</div>
                 </div>
 
                 <div className="details-assignment">
@@ -57,7 +57,7 @@ function Terms() {
                     </div>
                     </Link>
                     
-                    <Link className="link" to='/assignment'>
+                    <Link className="link" to={`/assignment/${postDetails.post ? postDetails.post._id : "loading"}/${postDetails.post ? postDetails.post.week : "loading"}`}>
                     <div className="navigation">
                         <img src={courses} alt="Assignment" />
                         Assignment

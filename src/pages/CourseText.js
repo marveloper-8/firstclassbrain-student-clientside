@@ -58,7 +58,7 @@ function Terms() {
                         Text Section
                     </div>
                     
-                    <Link className="link" to='/assignment'>
+                    <Link className="link" to={`/assignment/${postDetails.post ? postDetails.post._id : "loading"}/${postDetails.post ? postDetails.post.week : "loading"}`}>
                     <div className="navigation">
                         <img src={courses} alt="Assignment" />
                         Assignment

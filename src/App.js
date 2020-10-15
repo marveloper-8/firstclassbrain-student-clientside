@@ -53,7 +53,7 @@ const Routing = () => {
       <Route exact path='/topics/:classSelected/:subject/:term/:week' component={Topics} />
       <Route exact path='/course-video/:postId' component={CourseVideo} />
       <Route exact path='/course-text/:postId' component={CourseText} />
-      <Route exact path='/assignment' component={Assignment} />
+      <Route exact path='/assignment/:postId/:week' component={Assignment} />
       <Route exact path='/examination' component={Examination} />
       <Route exact path='/assignment-score' component={AssignmentScore} />
       <Route exact path='/examination-score' component={ExaminationScore} />

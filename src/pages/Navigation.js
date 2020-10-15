@@ -19,6 +19,9 @@ import user from '../icons/user.svg'
 import group from '../icons/group.svg'
 import logout from '../icons/logout-two.svg'
 
+// data
+import classes from '../data/classes.json'
+
 import './css/navigation.css'
 
 const Navigation = () => {
@@ -37,8 +40,7 @@ const Navigation = () => {
     const [phone, setPhone] = useState("")
     const [dateOfBirth, setDateOfBirth] = useState("")
     const [address, setAddress] = useState("")
-    const [schoolClass, setSchoolClass] = useState("")
-    const [department, setDepartment] = useState("")
+    const [classSelected, setClassSelected] = useState("")
     const [password, setPassword] = useState("")
 
     // const [image, setImage] = useState("")
@@ -82,13 +84,11 @@ const Navigation = () => {
             body: JSON.stringify({
                 firstName,
                 lastName,
-                otherName,
                 email,
                 phone,
                 dateOfBirth,
                 address,
-                schoolClass,
-                department,
+                classSelected,
                 pic: url,
                 password
             })
@@ -125,15 +125,12 @@ const Navigation = () => {
         }
     }
     // end of signup
-    
-    // signin
+
+
+
     const PostSignin = (e) => {
         e.preventDefault()
-        if(!/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(email)){
-            alert("invalid email")
-            return
-        }
-        fetch("https://firstclassbrain-server.herokuapp.com/signin-student", {
+        fetch("https://firstclassbrain-server.herokuapp.com/web/signin-student", {
             method: "post",
             headers: {
                 "Content-Type": "application/json"
@@ -159,6 +156,8 @@ const Navigation = () => {
                 console.log(err)
             })
     }
+
+
     // end of signin
 
     // end of authentication system
@@ -197,17 +196,9 @@ const Navigation = () => {
         if(state){
             return [
                 <Link className="link" to='/classroom'>
-                    <button className="brokers">CLASSROOM</button>
+                    <button className="login">CLASSROOM</button>
                 </Link>,
-                <span 
-                    className="profile-picture"
-                    style={{
-                        backgroundImage: `url(${state ? state.pic: "loading"})`,
-                        backgroundSize:`cover`,
-                        backgroundPosition:`center`
-                    }}
-                    onClick={() => setProfile(!profile)}
-                ></span>
+                <button className="signup" onClick={() => setProfile(!profile)}>PROFILE</button>
             ]
         } else{
             return [
@@ -377,26 +368,18 @@ const Navigation = () => {
                             <div className="input">
                                 <img src={group} alt="class" />
                                 <select 
-                                    type="text" 
-                                    placeholder="Class" 
-                                    value={schoolClass}
-                                    onChange={(e) => setSchoolClass(e.target.value)}
-                                    required 
+                                    className="sub-title"
+                                    value={classSelected}
+                                    onChange={(e) => setClassSelected(e.target.value)}
+                                    required
                                 >
-                                    <option value="Nurser One">Nursery 1</option>
-                                    <option value="Nurser Two">Nursery 2</option>
-                                    <option value="Primary One">Primary 1</option>
-                                    <option value="Primary Two">Primary 2</option>
-                                    <option value="Primary Three">Primary 3</option>
-                                    <option value="Primary Four">Primary 4</option>
-                                    <option value="Primary Five">Primary 5</option>
-                                    <option value="Primary Six">Primary 6</option>
-                                    <option value="Junior Secondary One">Junior Secondary 1</option>
-                                    <option value="Junior Secondary Two">Junior Secondary 2</option>
-                                    <option value="Junior Secondary Three">Junior Secondary 3</option>
-                                    <option value="Senior Secondary One">Senior Secondary 1</option>
-                                    <option value="Senior Secondary Two">Senior Secondary 2</option>
-                                    <option value="Senior Secondary Three">Senior Secondary 3</option>
+                                    {
+                                        classes.map(item => {
+                                            return(
+                                                <option value={item.class} selected>{item.name}</option>
+                                            )
+                                        })
+                                    }
                                 </select>
                             </div>
 
@@ -440,17 +423,16 @@ const Navigation = () => {
 
             <div className={profile ? "popup-toggle popup" : "popup"}>
                 <div className="background" onClick={() => setProfile(!profile)}></div>
-                <div className="view-profile-inner">
-                    <div className="navigation">
-                        <div className="title">View Profile</div>
-                        <div className="close">
-                            <span onClick={() => setProfile(!profile)}>&times;</span>
-                        </div>
+                <div className="inner">
+                    <div className="close-donate">
+                        <span onClick={() => setProfile(!profile)}>
+                            &times; close
+                        </span>
                     </div>
                     
-                    <div className="data">
+                    <div className="content">
                         <div 
-                            className="image"
+                            className="profile-image"
                             style={{
                                 backgroundImage: `url(${state ? state.pic: "loading"})`,
                                 backgroundSize:`cover`,
@@ -458,9 +440,12 @@ const Navigation = () => {
                             }}
                         ></div>
 
-                        <div className="name">Shane Richard Long</div>
+                        <div className="name title">
+                            {state ? state.firstName: "loading"}
+                            <span className="surname">{state ? state.lastName: "loading"}</span>
+                        </div>
 
-                        <div className="tab">
+                        <div className="profile-tab">
                             <div className="icon">
                                 <img src={phoneIcon} alt="phone icon" />
                             </div>
@@ -469,7 +454,7 @@ const Navigation = () => {
                             </div>
                         </div>
 
-                        <div className="tab">
+                        <div className="profile-tab">
                             <div className="icon">
                                 <img src={emailIcon} alt="email icon" />
                             </div>
@@ -478,7 +463,7 @@ const Navigation = () => {
                             </div>
                         </div>
 
-                        <div className="tab">
+                        <div className="profile-tab">
                             <div className="icon">
                                 <img src={emailIcon} alt="address icon" />
                             </div>
@@ -487,7 +472,7 @@ const Navigation = () => {
                             </div>
                         </div>
 
-                        <div className="tab">
+                        <div className="profile-tab">
                             <div className="icon">
                                 <img src={user} alt="class icon" />
                             </div>
@@ -496,7 +481,7 @@ const Navigation = () => {
                             </div>
                         </div>
 
-                        {/* <div className="tab">
+                        {/* <div className="profile-tab">
                             <div className="icon">
                                 <img src={user} alt="class icon" />
                             </div>
@@ -506,7 +491,7 @@ const Navigation = () => {
                         </div> */}
 
                         <div 
-                            className="tab logout-tab"
+                            className="profile-tab logout-tab"
                             onClick={() => {
                                 localStorage.clear()
                                 dispatch({type: "CLEAR"})

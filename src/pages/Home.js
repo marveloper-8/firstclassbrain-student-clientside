@@ -15,7 +15,6 @@ import coursesImage from '../images/courses.png'
 import logoClient from '../images/about-us.jpg'
 import logoClientTwo from '../images/about-us.jpg'
 
-import goal from '../icons/goal.svg'
 import students from '../icons/students.svg'
 import courses from '../icons/courses.svg'
 import instructors from '../icons/instructors.svg'
@@ -23,10 +22,11 @@ import art from '../icons/art.svg'
 import accounting from '../icons/accounting.svg'
 import law from '../icons/law.svg'
 import science from '../icons/science.svg'
-import call from '../icons/call.svg'
-import email from '../icons/email.svg'
-import emailTwo from '../icons/email-two.svg'
-import location from '../icons/location.svg'
+
+import facebook from '../icons/facebook-square.svg'
+import instagram from '../icons/instagram-square.svg'
+import twitter from '../icons/twitter-square.svg'
+import linkedin from '../icons/linkedin-square.svg'
 
 import clientOne from '../icons/clients/client-one.png'
 import clientTwo from '../icons/clients/client-two.png'
@@ -123,7 +123,7 @@ const Home = () => {
                         </div>
                     </div>
                     
-                    <div className="tab">
+                    <div className="tab" style={{border:`none`}}>
                         <img src={instructors} alt="instructors" />
                         <div className="content">
                             <div className="title">100+</div>
@@ -142,7 +142,7 @@ const Home = () => {
                     <div 
                         className="image"
                         style={{
-                            backgroundImage: `url(${aboutUs})`,
+                            backgroundImage: `url(${`https://extras.firstclassbrain.com/four.png`})`,
                             backgroundSize:`cover`,
                             backgroundPosition:`center`
                         }}
@@ -150,8 +150,13 @@ const Home = () => {
 
                     <div className="text">
                         <div className="title">ABOUT US</div>
-                        
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                        FCB App is an E-learning school platform that proffers solutions to bridge the gap in the drop of Educational standard in Nigeria and Africa. With FCB App students or pupils can improve on all subjects from the comfort of their home thereby eliminating the need for home teacher. 
+
+                        FIRST CLASS BRAIN is developed in such a way that the pupils and students have access to classroom teaching materials that is dictated by the school curriculum. 
+
+                        It is to support the work of the teacher in school and to ensure that your child ends up as the genius he is created to be.
+
+                        whats more is that the use of the app exposes the pupil/student to pratical use of computer.
                     </div>
                 </div>
                 
@@ -162,7 +167,7 @@ const Home = () => {
                 <div 
                     className="content"
                     style={{
-                        backgroundImage: `url(${coursesImage})`,
+                        backgroundImage: `url(${`https://extras.firstclassbrain.com/five.png`})`,
                         backgroundSize:`cover`,
                         backgroundPosition:`center`
                     }}
@@ -170,7 +175,7 @@ const Home = () => {
                     <div className="background-overlay"></div>
 
                     <div className="title">
-                        COURSES ON ALL SECONDARY SCHOOL LEVELS
+                        COURSES ON ALL PRIMARY & SECONDARY SCHOOL LEVELS
                     </div>
                     <div className="subhead">
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
@@ -222,217 +227,402 @@ const Home = () => {
             </section>
        
             <section className="testimonials">
-                <Carousel>
-                    <Carousel.Item>
-                    <div className="content">
-                        <div><div className="tabs">
-                            <div className="quote-mark title">"</div>
-                            <div className="text">
-                                <div className="main">
-                                    The course and trainer was awesome. He took time explaining in detail.
+                <div className='desktop'>
+                    <Carousel>
+                        <Carousel.Item>
+                        <div className="content">
+                            <div><div className="tabs">
+                                <div className="quote-mark title">"</div>
+                                <div className="text">
+                                    <div className="main">
+                                        The course and trainer was awesome. He took time explaining in detail.
+                                    </div>
+                                    
+                                    <div className="name title">Tega Ikechukwu</div>
                                 </div>
-                                
-                                <div className="name title">Tega Ikechukwu</div>
-                            </div>
-                            <div 
-                                className="image"
-                                style={{
-                                    backgroundImage: `url(${header})`,
-                                    backgroundSize:`cover`,
-                                    backgroundPosition:`center`
-                                }}
-                            ></div>
-                        </div></div>
+                                <div 
+                                    className="image"
+                                    style={{
+                                        backgroundImage: `url(${header})`,
+                                        backgroundSize:`cover`,
+                                        backgroundPosition:`center`
+                                    }}
+                                ></div>
+                            </div></div>
+                            
+                            <div><div className="tabs">
+                                <div className="quote-mark title">"</div>
+                                <div className="text">
+                                    <div className="main">
+                                        The course and trainer was awesome. He took time explaining in detail.
+                                    </div>
+                                    
+                                    <div className="name title">Tega Ikechukwu</div>
+                                </div>
+                                <div 
+                                    className="image"
+                                    style={{
+                                        backgroundImage: `url(${header})`,
+                                        backgroundSize:`cover`,
+                                        backgroundPosition:`center`
+                                    }}
+                                ></div>
+                            </div></div>
+                            
+                            <div><div className="tabs">
+                                <div className="quote-mark title">"</div>
+                                <div className="text">
+                                    <div className="main">
+                                        The course and trainer was awesome. He took time explaining in detail.
+                                    </div>
+                                    
+                                    <div className="name title">Tega Ikechukwu</div>
+                                </div>
+                                <div 
+                                    className="image"
+                                    style={{
+                                        backgroundImage: `url(${header})`,
+                                        backgroundSize:`cover`,
+                                        backgroundPosition:`center`
+                                    }}
+                                ></div>
+                            </div></div>
+                        </div>
+                        </Carousel.Item>
                         
-                        <div><div className="tabs">
-                            <div className="quote-mark title">"</div>
-                            <div className="text">
-                                <div className="main">
-                                    The course and trainer was awesome. He took time explaining in detail.
+                        <Carousel.Item>
+                        <div className="content">
+                            <div><div className="tabs">
+                                <div className="quote-mark title">"</div>
+                                <div className="text">
+                                    <div className="main">
+                                        The course and trainer was awesome. He took time explaining in detail.
+                                    </div>
+                                    
+                                    <div className="name title">Tega Ikechukwu</div>
                                 </div>
-                                
-                                <div className="name title">Tega Ikechukwu</div>
-                            </div>
-                            <div 
-                                className="image"
-                                style={{
-                                    backgroundImage: `url(${header})`,
-                                    backgroundSize:`cover`,
-                                    backgroundPosition:`center`
-                                }}
-                            ></div>
-                        </div></div>
+                                <div 
+                                    className="image"
+                                    style={{
+                                        backgroundImage: `url(${header})`,
+                                        backgroundSize:`cover`,
+                                        backgroundPosition:`center`
+                                    }}
+                                ></div>
+                            </div></div>
+                            
+                            <div><div className="tabs">
+                                <div className="quote-mark title">"</div>
+                                <div className="text">
+                                    <div className="main">
+                                        The course and trainer was awesome. He took time explaining in detail.
+                                    </div>
+                                    
+                                    <div className="name title">Tega Ikechukwu</div>
+                                </div>
+                                <div 
+                                    className="image"
+                                    style={{
+                                        backgroundImage: `url(${header})`,
+                                        backgroundSize:`cover`,
+                                        backgroundPosition:`center`
+                                    }}
+                                ></div>
+                            </div></div>
+                            
+                            <div><div className="tabs">
+                                <div className="quote-mark title">"</div>
+                                <div className="text">
+                                    <div className="main">
+                                        The course and trainer was awesome. He took time explaining in detail.
+                                    </div>
+                                    
+                                    <div className="name title">Tega Ikechukwu</div>
+                                </div>
+                                <div 
+                                    className="image"
+                                    style={{
+                                        backgroundImage: `url(${header})`,
+                                        backgroundSize:`cover`,
+                                        backgroundPosition:`center`
+                                    }}
+                                ></div>
+                            </div></div>
+                        </div>
+                        </Carousel.Item>
+                    </Carousel>
+                </div>
+                
+                
+                <div className='mobile'>
+                    <Carousel>
+                        <Carousel.Item>
+                        <div className="content">
+                            <div><div className="tabs">
+                                <div className="quote-mark title">"</div>
+                                <div className="text">
+                                    <div className="main">
+                                        The course and trainer was awesome. He took time explaining in detail.
+                                    </div>
+                                    
+                                    <div className="name title">Tega Ikechukwu</div>
+                                </div>
+                                <div 
+                                    className="image"
+                                    style={{
+                                        backgroundImage: `url(${header})`,
+                                        backgroundSize:`cover`,
+                                        backgroundPosition:`center`
+                                    }}
+                                ></div>
+                            </div></div>
+                            
+                            <div><div className="tabs">
+                                <div className="quote-mark title">"</div>
+                                <div className="text">
+                                    <div className="main">
+                                        The course and trainer was awesome. He took time explaining in detail.
+                                    </div>
+                                    
+                                    <div className="name title">Tega Ikechukwu</div>
+                                </div>
+                                <div 
+                                    className="image"
+                                    style={{
+                                        backgroundImage: `url(${header})`,
+                                        backgroundSize:`cover`,
+                                        backgroundPosition:`center`
+                                    }}
+                                ></div>
+                            </div></div>
+                        </div>
+                        </Carousel.Item>
                         
-                        <div><div className="tabs">
-                            <div className="quote-mark title">"</div>
-                            <div className="text">
-                                <div className="main">
-                                    The course and trainer was awesome. He took time explaining in detail.
+                        <Carousel.Item>
+                        <div className="content">
+                            <div><div className="tabs">
+                                <div className="quote-mark title">"</div>
+                                <div className="text">
+                                    <div className="main">
+                                        The course and trainer was awesome. He took time explaining in detail.
+                                    </div>
+                                    
+                                    <div className="name title">Tega Ikechukwu</div>
                                 </div>
-                                
-                                <div className="name title">Tega Ikechukwu</div>
-                            </div>
-                            <div 
-                                className="image"
-                                style={{
-                                    backgroundImage: `url(${header})`,
-                                    backgroundSize:`cover`,
-                                    backgroundPosition:`center`
-                                }}
-                            ></div>
-                        </div></div>
-                    </div>
-                    </Carousel.Item>
-                    
-                    <Carousel.Item>
-                    <div className="content">
-                        <div><div className="tabs">
-                            <div className="quote-mark title">"</div>
-                            <div className="text">
-                                <div className="main">
-                                    The course and trainer was awesome. He took time explaining in detail.
+                                <div 
+                                    className="image"
+                                    style={{
+                                        backgroundImage: `url(${header})`,
+                                        backgroundSize:`cover`,
+                                        backgroundPosition:`center`
+                                    }}
+                                ></div>
+                            </div></div>
+                            
+                            <div><div className="tabs">
+                                <div className="quote-mark title">"</div>
+                                <div className="text">
+                                    <div className="main">
+                                        The course and trainer was awesome. He took time explaining in detail.
+                                    </div>
+                                    
+                                    <div className="name title">Tega Ikechukwu</div>
                                 </div>
-                                
-                                <div className="name title">Tega Ikechukwu</div>
-                            </div>
-                            <div 
-                                className="image"
-                                style={{
-                                    backgroundImage: `url(${header})`,
-                                    backgroundSize:`cover`,
-                                    backgroundPosition:`center`
-                                }}
-                            ></div>
-                        </div></div>
-                        
-                        <div><div className="tabs">
-                            <div className="quote-mark title">"</div>
-                            <div className="text">
-                                <div className="main">
-                                    The course and trainer was awesome. He took time explaining in detail.
-                                </div>
-                                
-                                <div className="name title">Tega Ikechukwu</div>
-                            </div>
-                            <div 
-                                className="image"
-                                style={{
-                                    backgroundImage: `url(${header})`,
-                                    backgroundSize:`cover`,
-                                    backgroundPosition:`center`
-                                }}
-                            ></div>
-                        </div></div>
-                        
-                        <div><div className="tabs">
-                            <div className="quote-mark title">"</div>
-                            <div className="text">
-                                <div className="main">
-                                    The course and trainer was awesome. He took time explaining in detail.
-                                </div>
-                                
-                                <div className="name title">Tega Ikechukwu</div>
-                            </div>
-                            <div 
-                                className="image"
-                                style={{
-                                    backgroundImage: `url(${header})`,
-                                    backgroundSize:`cover`,
-                                    backgroundPosition:`center`
-                                }}
-                            ></div>
-                        </div></div>
-                    </div>
-                    </Carousel.Item>
-                </Carousel>
+                                <div 
+                                    className="image"
+                                    style={{
+                                        backgroundImage: `url(${header})`,
+                                        backgroundSize:`cover`,
+                                        backgroundPosition:`center`
+                                    }}
+                                ></div>
+                            </div></div>
+                        </div>
+                        </Carousel.Item>
+                    </Carousel>
+                </div>
+                
             </section>
 
             <section className="contact">
+                <div className="desktop">
 
-                <div className="content">
-                    <div><form className="form" onSubmit={handleBroker}>
-                        <div className="title">SEND US A MESSAGE</div>
-                        
-                        <div className="input-double">
-                            <input 
-                                type="text" 
-                                placeholder="First Name" 
-                                name="firstName"
-                                value={brokerState.firstName}
-                                onChange={handleBrokerChange}
-                            />
+                    <div className="content">
+                        <div><form className="form" onSubmit={handleBroker}>
+                            <div className="title">SEND US A MESSAGE</div>
+                            
+                            <div className="input-double">
+                                <input 
+                                    type="text" 
+                                    placeholder="First Name" 
+                                    name="firstName"
+                                    value={brokerState.firstName}
+                                    onChange={handleBrokerChange}
+                                />
 
-                            <div></div>
+                                <div></div>
 
-                            <input 
-                                type="text" 
-                                placeholder="Last Name" 
-                                name="lastName"
-                                value={brokerState.lastName}
-                                onChange={handleBrokerChange}
-                            />
-                        </div>
-                        
-                        <div className="input-double">
-                            <input 
-                                type="phone" 
-                                placeholder="Phone Number" 
-                                name="phone"
-                                value={brokerState.phone}
-                                onChange={handleBrokerChange}
-                            />
+                                <input 
+                                    type="text" 
+                                    placeholder="Last Name" 
+                                    name="lastName"
+                                    value={brokerState.lastName}
+                                    onChange={handleBrokerChange}
+                                />
+                            </div>
+                            
+                            <div className="input-double">
+                                <input 
+                                    type="phone" 
+                                    placeholder="Phone Number" 
+                                    name="phone"
+                                    value={brokerState.phone}
+                                    onChange={handleBrokerChange}
+                                />
 
-                            <div></div>
+                                <div></div>
 
-                            <input 
-                                type="email" 
-                                placeholder="Email Address" 
-                                name="email"
-                                value={brokerState.email}
-                                onChange={handleBrokerChange}
-                            />
-                        </div>
-                        
-                        <div className="input-single">
-                            <textarea 
-                                placeholder="Your Query"
-                                name="message"
-                                value={brokerState.message}
-                                onChange={handleBrokerChange}
-                            ></textarea>
-                        </div>
+                                <input 
+                                    type="email" 
+                                    placeholder="Email Address" 
+                                    name="email"
+                                    value={brokerState.email}
+                                    onChange={handleBrokerChange}
+                                />
+                            </div>
+                            
+                            <div className="input-single">
+                                <textarea 
+                                    placeholder="Your Query"
+                                    name="message"
+                                    value={brokerState.message}
+                                    onChange={handleBrokerChange}
+                                ></textarea>
+                            </div>
 
-                        <button>Send Message</button>
-                    </form></div>
+                            <button>Send Message</button>
+                        </form></div>
+                    
+                        <div><div className="info">
+
+                            <div className="title">CONTACT INFORMATION</div>
+
+                            <div className="paragraph">
+                                +234-(0)907-455-4735,<br />+234-(0)815-832-6626
+                            </div>
+
+                            <div className="paragraph">
+                                firstclassbrain11@gmail.com,<br />hello@firstclassbrain.com
+                            </div>
+
+                            <div className="paragraph">
+                                No. 27, Olayiwola Street, New Oko-oba, Lagos State
+                            </div>
+
+                            <div className="social">
+                                <div className="title">FOLLOW US</div>
+
+                                <img src={facebook} alt="facebook" />
+                                <img src={instagram} alt="instagram" />
+                                <img src={twitter} alt="twitter" />
+                                <img src={linkedin} alt="linkedin" />
+                            </div>
+
+                        </div></div>
+
+                    </div>
                 
-                    <div><div className="info">
-
-                        <div className="title">CONTACT INFORMATION</div>
-
-                        <div className="paragraph">
-                            <img src={call} alt="phone" /> +2349876543210
-                        </div>
-
-                        <div className="paragraph">
-                            <img src={emailTwo} alt="email" /> hello@e-learning.com
-                        </div>
-
-                        <div className="paragraph">
-                            <img src={location} alt="location" /> 25, Lorem Ipsum, Lagos
-                        </div>
-
-                        <div className="social">
-                            <div className="title">FOLLOW US</div>
-
-                            <img src={students} alt="facebook" />
-                            <img src={students} alt="instagram" />
-                            <img src={students} alt="twitter" />
-                            <img src={students} alt="linkedin" />
-                        </div>
-
-                    </div></div>
-
                 </div>
+            
+                <div className="mobile">
+
+                    <div className="content">
+                        <div><div className="info">
+
+                            <div className="title">CONTACT INFORMATION</div>
+
+                            <div className="paragraph">
+                                +234-(0)907-455-4735,<br />+234-(0)815-832-6626
+                            </div>
+
+                            <div className="paragraph">
+                                firstclassbrain11@gmail.com,<br />hello@firstclassbrain.com
+                            </div>
+
+                            <div className="paragraph">
+                                No. 27, Olayiwola Street, New Oko-oba, Lagos State
+                            </div>
+
+                            <div className="social">
+                                <div className="title">FOLLOW US</div>
+
+                                <img src={facebook} alt="facebook" />
+                                <img src={instagram} alt="instagram" />
+                                <img src={twitter} alt="twitter" />
+                                <img src={linkedin} alt="linkedin" />
+                            </div>
+
+                        </div></div>
+
+                        <div><form className="form" onSubmit={handleBroker}>
+                            <div className="title">SEND US A MESSAGE</div>
+                            
+                            <div className="input-double">
+                                <input 
+                                    type="text" 
+                                    placeholder="First Name" 
+                                    name="firstName"
+                                    value={brokerState.firstName}
+                                    onChange={handleBrokerChange}
+                                />
+
+                                <div></div>
+
+                                <input 
+                                    type="text" 
+                                    placeholder="Last Name" 
+                                    name="lastName"
+                                    value={brokerState.lastName}
+                                    onChange={handleBrokerChange}
+                                />
+                            </div>
+                            
+                            <div className="input-double">
+                                <input 
+                                    type="phone" 
+                                    placeholder="Phone Number" 
+                                    name="phone"
+                                    value={brokerState.phone}
+                                    onChange={handleBrokerChange}
+                                />
+
+                                <div></div>
+
+                                <input 
+                                    type="email" 
+                                    placeholder="Email Address" 
+                                    name="email"
+                                    value={brokerState.email}
+                                    onChange={handleBrokerChange}
+                                />
+                            </div>
+                            
+                            <div className="input-single">
+                                <textarea 
+                                    placeholder="Your Query"
+                                    name="message"
+                                    value={brokerState.message}
+                                    onChange={handleBrokerChange}
+                                ></textarea>
+                            </div>
+
+                            <button>Send Message</button>
+                        </form></div>
+                    
+                    </div>
+                
+                </div>
+            
             </section>
 
             <Footer />

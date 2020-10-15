@@ -4,6 +4,11 @@ import './css/footer.css'
 
 import students from '../icons/students.svg'
 
+import facebook from '../icons/facebook-square.svg'
+import instagram from '../icons/instagram-square.svg'
+import twitter from '../icons/twitter-square.svg'
+import linkedin from '../icons/linkedin-square.svg'
+
 import {Link} from 'react-router-dom'
 
 function Footer() {
@@ -14,7 +19,7 @@ function Footer() {
                 <div className="footer-content">
                     <h4 className="sub-title">About Firstclass Brain</h4>
 
-                    <p>FOCII is a platform that brings together some of the best real estate marketing professionals in Nigeria saddled with the key responsibility of delivering quality, document assigned,  government friendly land and housing schemes throughout the nation.</p>
+                    <p>FIRST CLASS BRAIN is an elearning school platform that proffer solutions to bridge the gap in the drop of rEducational system in NIgeria.</p>
                 </div>
 
                 <div className="footer-content social-media">
@@ -22,22 +27,22 @@ function Footer() {
 
                     <span>
                         <a className="link" href="https://www.facebook.com/aoestatechariots" rel="noopener noreferrer" target="_blank">
-                            <img src={students} alt="facebook" /> 
+                            <img src={facebook} alt="facebook" /> 
                         </a>
                     </span>
                     <span>
                         <a className="link" href="https://www.linkedin.com/company/aoestatechariots" rel="noopener noreferrer" target="_blank">
-                            <img src={students} alt="linkedin" /> 
+                            <img src={linkedin} alt="linkedin" /> 
                         </a>
                     </span>
                     <span>
                         <a className="link" href="https://twitter.com/AOEstateChariot" rel="noopener noreferrer" target="_blank">
-                            <img src={students} alt="facebook" /> 
+                            <img src={twitter} alt="facebook" /> 
                         </a>
                     </span>
                     <span>
                         <a className="link" href="https://www.instagram.com/aoestatechariots" rel="noopener noreferrer" target="_blank">
-                            <img src={students} alt="instagram" /> 
+                            <img src={instagram} alt="instagram" /> 
                         </a>
                     </span>
 
@@ -55,7 +60,9 @@ function Footer() {
                             Phone Number
                         </div>
                         <span>
-                            +234-(0)902-000-1111
+                            +234-(0)907-455-4735
+                            <br />
+                            +234-(0)815-832-6626
                         </span>
                     </div>
                     <div className="tab">
@@ -63,7 +70,8 @@ function Footer() {
                             Email Address
                         </div>
                         <span>
-                            info@focii.org
+                            firstclassbrain11@gmail.com
+                            hello@firstclassbrain.com
                         </span>
                     </div>
                     <div className="tab">
@@ -71,7 +79,7 @@ function Footer() {
                             Location
                         </div>
                         <span>
-                            Lekki Phase 1, Lagos, Nigeria
+                            No. 27, Olayiwola Street, New Oko-oba, Lagos State
                         </span>
                     </div>
                 </div>

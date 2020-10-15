@@ -37,3 +37,13 @@
 .sub-title{
     font-family: 'Varela', sans-serif;
 }
+
+
+.mobile{display:none}
+.desktop{display:block}
+
+
+@media screen and (max-width:414px){
+    .mobile{display:block}
+    .desktop{display:none}
+}

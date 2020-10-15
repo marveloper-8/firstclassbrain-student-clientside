@@ -12,12 +12,12 @@
 .footer .second{
     background:teal;
     color:#fff;
-    padding:15vh 10vw;
+    padding:2.5vh 7.5vw;
     display:grid;
-    grid-template-columns:1fr 1fr 1fr 1fr;
+    grid-template-columns:1fr;
 }
 .footer .head{
-    font-size:2vw;
+    font-size:5vw;
     font-weight:bold;
     padding-top:7.5vh;
 }
@@ -26,19 +26,20 @@
     margin-right:1vw;
 }
 .footer .about{
-    padding:7.5vh 5vw 0 0;
+    padding:7.5vh 0 0 0;
 }
 .footer .about p{
-    font-size:.9vw;
+    font-size:3vw;
 }
 
 .footer .footer-content{
-    font-size:.9vw;
+    font-size:2.5vw;
     padding-right:4vw;
 }
 .footer .footer-content h4{
     margin-bottom:1vh;
-    font-size:1.15vw
+    font-size:3vw;
+    font-weight:bold;
 }
 .footer .social-media span{
     margin-right:.5vw;
@@ -48,8 +49,8 @@
     margin-bottom:.5vh;
 }
 .footer .footer-content span img{
-    width:1.25vw;
-    margin-right:.35vw;
+    width:4vw;
+    margin-right:2vw;
 }
 
 .footer .footer-content .tab{
@@ -57,7 +58,7 @@
 }
 .footer .footer-content .tab .head{
     font-weight:bold;
-    font-size:1vw;
+    font-size:2.5vw;
     margin:0;
     padding:0;
 }
@@ -91,19 +92,19 @@
     background:teal;
     text-align:left;
     border-top:1px solid rgb(41, 181, 171);
-    padding:5vh 10vw;
+    padding:2vh 7.5vw;
     color:#fff;
     display:grid;
-    grid-template-columns:1fr 1fr;
+    grid-template-columns:1fr 2fr;
 }
 
 .footer .copyright-container .logo{
     font-weight:bold;
-    font-size:1.2vw;
+    font-size:3vw;
 }
 .footer .copyright-container .copyright{
     text-align:right;
-    font-size:1vw;
+    font-size:2.5vw;
 }
 
 

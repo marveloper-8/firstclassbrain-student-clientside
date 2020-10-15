@@ -96,6 +96,9 @@
     box-shadow: 0 4px 8px 0 rgba(132, 132, 132, 0.2), 0 6px 20px 0 rgba(177, 177, 177, 0.19);
     z-index:100;
 }
+.home .header .icons .tab img{
+    height:100%;
+}
 .home .header .icons .tab{
     display:grid;
     grid-template-columns:1fr 3fr;
@@ -398,4 +401,437 @@
     outline:none;
     border:none;
     width:100%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media screen and (max-width:414px){
+    .home .header .text{
+        position:absolute;
+        top:40vh;
+        text-align:left;
+        color:#fff;
+    }
+    
+    .home .header .text .head{
+        font-size:3.5vw;
+        font-weight:bold;
+        margin-bottom:3vh;
+    }
+    .home .header .text .input{
+        display:grid;
+        grid-template-columns:2fr 1fr;
+        width:42.5vw;
+        background:#fff;
+        border-radius:10px;
+    }
+    .home .header .text .input input{
+        padding:2.5vh 2vw;
+        font-size:1.25vw;
+        border-radius:10px;
+        border:none;
+        outline:none;
+    }
+    .home .header .text .input button{
+        background:teal;
+        border-radius:10px;
+        color:#fff;
+        border:none;
+        outline:none;
+        font-size:1.25vw;
+        box-shadow: 3px 0 10px 0 #000;
+    }
+    
+    
+    .home .header .icons{
+        position:relative;
+        width:80vw;
+        left:10vw;
+        top:-10vh;
+        padding:5vh 0vw;
+        background:teal;
+        border-radius:15px;
+        display:grid;
+        grid-template-columns:1fr;
+        box-shadow: 0 4px 8px 0 rgba(132, 132, 132, 0.2), 0 6px 20px 0 rgba(177, 177, 177, 0.19);
+        z-index:100;
+    }
+    .home .header .icons .tab img{
+        height:13vh;
+        float:right;
+    }
+    .home .header .icons .tab{
+        display:grid;
+        grid-template-columns:1fr 1fr;
+        padding:3vh 5vw;
+        border-bottom:2px #fff solid;
+        width:80%;
+        margin:auto;
+    }
+    .home .header .icons .tab .content{
+        border-left:0 #fff solid;
+        color:#fff;
+        text-align:left;
+        margin-left:1vw;
+        padding-left:1vw;
+    }
+    .home .header .icons .tab .content .title{
+        font-size:12.5vw;
+        font-weight:bold;
+        margin:0;
+        padding:0;
+    }
+    .home .header .icons .tab .content .subhead{
+        font-size:2.5vw;
+        margin:0;
+        padding:0;
+        position:relative;
+        top:-3vh;
+    }
+    
+    
+    
+    .home section .head{
+        font-size:2.5vw;
+        color:grey;
+        font-weight:bold;
+        padding:10vh 10vw 0 10vh;
+    }
+    .home section .underline{
+        display:grid;
+        grid-template-columns:1fr 1fr 1fr;
+        width:5vw;
+        margin-top:1vh;
+    }
+    .home section .underline div{
+        width:.75vw;
+        height:.75vw;
+        border-radius:.75vw;
+        background:teal;
+    }
+    
+    
+    
+    .home .about{
+        background:#f5f5f5;
+        padding:55vh 0 5vh 0;
+    }
+    .home .about .content{
+        margin-top:10vh;
+        display:grid;
+        padding:0;
+        grid-template-columns:1fr;
+        padding:0 10vw;
+    }
+    .home .about .image{
+        height:35vh;
+        border-radius:10px;
+    }
+    .home .about .text{
+        font-size:2.5vw;
+        padding:2vh 0;
+    }
+    .home .about .text .title{
+        font-size:7.5vw;
+        margin-bottom:.25vh;
+        color:teal;
+    }
+    
+    
+    
+    .home .courses{
+        background:#fff;
+    }
+    .home .courses .content{
+        /* margin-top:10vh; */
+        padding:5vh 0;
+        position:relative;
+        text-align:center;
+        /* z-index:-1; */
+    }
+    .home .courses .content .background-overlay{
+        position:absolute;
+        width:100%;
+        height:100%;
+        background:rgba(0,0,0,.4);
+        left:0;
+        top:0;
+        z-index:0;
+    }
+    .home .courses .content .title{
+        font-size:7.5vw;
+        font-weight:bold;
+        text-align:center;
+        color:#fff;
+        margin:0;
+        padding:0;
+        z-index:100;
+        padding:0 10vw;
+        position:relative;
+    }
+    .home .courses .content .subhead{
+        font-size:2.5vw;
+        padding:1vh 5vw 2vh 5vw;
+        color:#fff;
+        z-index:100;
+        position:relative;
+    }
+    .home .courses .content button{
+        font-size:2.5vw;
+        padding:.5vh 3vw;
+        border-radius:10px;
+        border:2px #fff solid;
+        background:rgba(255,255,255,.5);
+        color:#fff;
+        z-index:100;
+        position:relative;
+    }
+    
+    
+    
+    
+    .home .categories{
+        background:#fff;
+    }
+    .home .categories .content{
+        padding:5vh 5vw .5vh 5vw;
+        display:grid;
+        grid-template-columns:1fr 1fr;
+    }
+    .home .categories .content .tab{
+        box-shadow: 0 4px 8px 0 rgba(132, 132, 132, 0.2), 0 6px 20px 0 rgba(177, 177, 177, 0.19);
+        text-align:center;
+        width:90%;
+        margin:0 auto 4vh auto;
+        padding:3vh 0;
+    }
+    .home .categories .content .tab img{
+        height:7.5vh!important;
+    }
+    .home .categories .content .tab .label{
+        font-size:2.5vw;
+        color:teal;
+        font-weight:bold;
+        padding-top:1.5vh;
+    }
+    .home .categories .view-more{
+        font-size:2.5vw;
+        color:teal;
+        font-weight:bold;
+        padding-bottom:5vh;
+        text-align:center;
+    }
+    
+    
+    
+    
+    .home .testimonials{
+        background:#f5f5f5!important;
+    }
+    .home .testimonials .content{
+        padding:5vh 5vw 10vh 5vw;
+        display:grid;
+        background:#f5f5f5!important;
+        grid-template-columns:1fr 1fr;
+    }
+    .home .testimonials .content .tabs{
+        width:90%;
+        margin:0 auto;
+        box-shadow: 0 4px 8px 0 rgba(132, 132, 132, 0.2), 0 6px 20px 0 rgba(177, 177, 177, 0.19);
+        position:relative;
+        padding:2.5vh 3vw 0 3vw;
+        font-weight:bold;
+        min-height:10vh;
+    }
+    .home .testimonials .content .tabs .quote-mark{
+        font-weight:bolder;
+        color:#dadada;
+        font-size:30vw;
+        position:relative;
+        top:-5vh;
+        right:2.5vw;
+        text-align:right;
+        /* z-index:-1; */
+    }
+    .home .testimonials .content .tabs .text{
+        z-index:10;
+        position:absolute;
+        background:none;
+        padding:0 5vw;
+        margin:0;
+        top:4vh;
+        left:0;
+    }
+    .home .testimonials .content .tabs .text .main{
+        font-size:2.5vw;
+        margin:0;
+        padding:0;
+        position:relative;
+
+    }
+    .home .testimonials .content .tabs .text .name{
+        text-align:right;
+        color:grey;
+        padding-top:1vh;
+        font-size:3vw;
+    }
+    .home .testimonials .content .tabs .image{
+        position:absolute;
+        bottom:-5vh;
+        right:9vw;
+        width:30vw;
+        height:30vw;
+        border-radius:30vw;
+    }
+    
+    
+    
+    
+    .home .contact{
+        background:#fff;
+        padding:0;
+        text-align:center;
+    }
+    .home .contact .content{
+        display:grid;
+        background:#fff;
+        grid-template-columns:1fr;
+        position:relative;
+        width:100%;
+        box-shadow: 0 4px 8px 0 rgba(132, 132, 132, 0.2), 0 6px 20px 0 rgba(177, 177, 177, 0.19);
+        font-size:2.5vw;
+        margin:auto;
+    }
+    .home .contact .title{
+        color:grey;
+        font-weight:bold;
+        font-size:7.5vw;
+        text-align:left;
+        padding:0!important;
+        margin-bottom:1vh!important;
+    }
+    .home .contact .info .title{
+        color:#fff;
+    }
+    .home .contact .content .info{
+        text-align:left;
+        background-image: linear-gradient(to right, rgb(0, 128, 128), rgb(4, 88, 68));
+        padding:2.5vh 7.5vw;
+        margin:auto;
+        color:#fff;
+        font-size:2.5vw;
+        height:100%;
+    }
+    .home .contact  .content .info .paragraph{
+        margin-bottom:2vh;
+    }
+    .home .contact .content .info .paragraph img{
+        width:1vw;
+        margin-right:1vw;
+    }
+    .home .contact .content .info .social{
+        margin-top:5vh;
+    }
+    .home .contact .content .info .social img{
+        width:4vw;
+        margin-right:5vw;
+    }
+    
+    .home .contact .content .form{
+        text-align:left;
+        padding:3vh 7.5vw;
+    }
+    .home .contact .content .form .input-double{
+        display:grid;
+        grid-template-columns:1fr;
+        margin:0;
+    }
+    .home .contact .content .form input{
+        border:none;
+        border-bottom:1px solid #bbb;
+        padding:1vh 0;
+        color:#000;
+        font-size:2.5vw;
+        outline:none;
+        margin-bottom:4vh;
+    }
+    .home .contact .content .form textarea{
+        border:none;
+        border-bottom:1px solid #bbb;
+        color:#000;
+        font-size:3vw;
+        outline:none;
+        height:10vh;
+        width:100%;
+    }
+    .home .contact .content .form button{
+        background:teal;
+        padding:1vh 1vw;
+        color:#fff;
+        font-size:2.5vw;
+        border-radius:5px;
+        outline:none;
+        border:none;
+        width:100%;
+    }
 }
