@@ -2,7 +2,6 @@ import React, {useState, useContext, useEffect} from 'react'
 // import {ToastContainer} from "react-toastr"
 import {UserContext} from '../App'
 import {
-    useParams,
     Link,
     useHistory
 } from 'react-router-dom'
@@ -10,8 +9,6 @@ import {
 
 import logo from '../logo.jpeg'
 
-import signupImage from '../icons/signup.svg'
-import signinImage from '../icons/login.svg'
 import emailIcon from '../icons/email.svg'
 import phoneIcon from '../icons/call-two.svg'
 import passwordIcon from '../icons/password.svg'
@@ -26,7 +23,6 @@ import './css/navigation.css'
 
 const Navigation = () => {
     const {state, dispatch} = useContext(UserContext)
-    const {userId} = useParams()
     const history = useHistory()
 
     const [login, setLogin] = useState(false)
@@ -35,7 +31,6 @@ const Navigation = () => {
 
     const [firstName, setFirstName] = useState("")
     const [lastName, setLastName] = useState("")
-    const [otherName, setOtherName] = useState("")
     const [email, setEmail] = useState("")
     const [phone, setPhone] = useState("")
     const [dateOfBirth, setDateOfBirth] = useState("")
@@ -46,33 +41,9 @@ const Navigation = () => {
     // const [image, setImage] = useState("")
 
     const [url, setUrl] = useState(undefined)
-    
-    useEffect(()=>{
-        if(url){
-            uploadFields()
-        }
-    },[url])
-    
-    const uploadPic = ()=>{
-        const data = new FormData()
-        data.append("file",image)
-        data.append("upload_preset","ao-estate")
-        data.append("cloud_name","josh-equere")
-        fetch("https://api.cloudinary.com/v1_1/josh-equere/image/upload",{
-            method:"post",
-            body:data
-        })
-        .then(res=>res.json())
-        .then(data=>{
-           setUrl(data.url)
-        })
-        .catch(err=>{
-            console.log(err)
-        })
-    }
 
     const uploadFields = () => {
-        if(!/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(email)){
+        if(!/^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(email)){
             alert("invalid email")
             return
         }
@@ -86,7 +57,7 @@ const Navigation = () => {
                 lastName,
                 email,
                 phone,
-                dateOfBirth,
+                // dateOfBirth,
                 address,
                 classSelected,
                 pic: url,
@@ -106,6 +77,31 @@ const Navigation = () => {
                 console.log(err)
             })
     }
+    
+    useEffect(()=>{
+        if(url){
+            uploadFields()
+        }
+    },[url, uploadFields])
+    
+    const uploadPic = ()=>{
+        const data = new FormData()
+        data.append("file",image)
+        data.append("upload_preset","ao-estate")
+        data.append("cloud_name","josh-equere")
+        fetch("https://api.cloudinary.com/v1_1/josh-equere/image/upload",{
+            method:"post",
+            body:data
+        })
+        .then(res=>res.json())
+        .then(data=>{
+           setUrl(data.url)
+        })
+        .catch(err=>{
+            console.log(err)
+        })
+    }
+    
     const PostSignup = (e) =>{
         e.preventDefault()
         if(image){
@@ -213,11 +209,28 @@ const Navigation = () => {
             <div className="nav-bar">
                 <Link className="link" to='/classroom'>
                     <span className="logo-container">
-                        <img src={logo} />
+                        <img src={logo} alt="logo" />
                     </span>
                 </Link>
 
                 <div className="buttons">
+                    <Link className="link" to='/about'>
+                        <button className="navigation-link">
+                            ABOUT US
+                        </button>
+                    </Link>
+                    
+                    <Link className="link" to='/faq'>
+                        <button className="navigation-link">
+                            FAQ
+                        </button>
+                    </Link>
+                    
+                    <Link className="link" to='/contact'>
+                        <button className="navigation-link">
+                            CONTACT US
+                        </button>
+                    </Link>
                     {navItem()}
                 </div>
             </div>
@@ -345,7 +358,7 @@ const Navigation = () => {
 
                             {image && <img src={preview} alt="profile preview" className="preview-picture" />}
 
-                            <div className="input">
+                            {/* <div className="input">
                                 <img src={user} alt="Date of Birth" />
                                 <input 
                                     type="date" 
@@ -353,7 +366,7 @@ const Navigation = () => {
                                     value={dateOfBirth}
                                     onChange={(e) => setDateOfBirth(e.target.value)}
                                 />
-                            </div>
+                            </div> */}
 
                             <div className="input">
                                 <img src={user} alt="Address" />
@@ -414,7 +427,7 @@ const Navigation = () => {
                         </form>
 
                         <div className="extras">
-                            <p>By signing up, you agree to our <a className="important" href="#">TOC</a> & <a className="important" href="#">Privacy Policy</a></p>
+                            <p>By signing up, you agree to our <a className="important" href="https://google.com">TOC</a> & <a className="important" href="https://google.com">Privacy Policy</a></p>
                             <p>Already have an account? <span className="important" onClick={() => CloseSignUp()}>Login</span></p>
                         </div>
                     </div>

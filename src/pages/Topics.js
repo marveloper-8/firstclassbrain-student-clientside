@@ -1,16 +1,11 @@
-import React, {useState, useContext, useEffect} from 'react'
-import {Link, useHistory, useParams} from 'react-router-dom'
+import React, {useState, useEffect} from 'react'
+import {Link, useParams} from 'react-router-dom'
 
 import Footer from './Footer'
 import Navigation from './Navigation'
 
 import './css/general.css'
 import './css/classroom.css'
-
-import goal from '../icons/goal.svg'
-
-// data
-import weeks from '../data/weeks.json'
 
 function Classroom() {
     const [data, setData] = useState([])
@@ -126,7 +121,7 @@ function Classroom() {
                 {
                     data.map(item => {
                         return(
-                            <div className={classSelected == item.classSelected && subject == item.subject && term == item.term && week == item.week ? "" : "disappear"}>
+                            <div className={classSelected === item.classSelected && subject === item.subject && term === item.term && week === item.week ? "" : "disappear"}>
                                 <Link className="link" to={'/topics/' + classSelected + '/' + subject + '/' + term + '/' + item.week}>
                                 <div className="topics"
                                     style={{

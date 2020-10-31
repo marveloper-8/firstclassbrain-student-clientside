@@ -1,5 +1,5 @@
-import React, {useState, useContext, useEffect} from 'react'
-import {Link, useHistory, useParams} from 'react-router-dom'
+import React from 'react'
+import {Link, useParams} from 'react-router-dom'
 
 import Footer from './Footer'
 import Navigation from './Navigation'
@@ -72,7 +72,7 @@ function Classroom() {
                 {
                     subjects.map(item => {
                         return(
-                            <div className={classSelected == item.class ? "" : "disappear"}>
+                            <div className={classSelected === item.class ? "" : "disappear"}>
                                 <Link className="link" to={'/terms/' + item.class + '/' + item.subject}>
                                 <div className="subjects">
                                     <div className="image">

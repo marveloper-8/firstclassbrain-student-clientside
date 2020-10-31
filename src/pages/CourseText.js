@@ -1,8 +1,6 @@
-import React, {useState, useContext, useEffect} from 'react'
-import {Link, useHistory, useParams} from 'react-router-dom'
+import React, {useState, useEffect} from 'react'
+import {Link, useParams} from 'react-router-dom'
 import Carousel from 'react-bootstrap/Carousel'
-
-import {UserContext} from '../App'
 
 import Footer from './Footer'
 import Navigation from './Navigation'
@@ -14,11 +12,8 @@ import calender from '../icons/calender.svg'
 import courses from '../icons/course-details.svg'
 
 function Terms() {
-    const [addCourse, setAddCourse] = useState(false)
-    const {state, dispatch} = useContext(UserContext)
     const {postId} = useParams()
     console.log(postId)
-    const history = useHistory()
 
     const [postDetails, setPostDetails] = useState([])
 
@@ -33,7 +28,7 @@ function Terms() {
                 console.log(result)
                 setPostDetails(result)
             })
-    }, [])
+    }, [postId])
     
     return (
         <div className="course-details">
@@ -42,7 +37,7 @@ function Terms() {
             <div className="side-nav">
                 <div className="week">
                     <img src={calender} alt="week" />
-                    <div className="label">Week {postDetails.post ? postDetails.post.week : "loading"}</div>
+                    <div className="label title">Week {postDetails.post ? postDetails.post.week : "loading"}</div>
                 </div>
 
                 <div className="details-assignment">

@@ -1,5 +1,4 @@
 import React, {useState} from 'react'
-import {Link} from 'react-router-dom'
 
 import Footer from './Footer'
 import Navigation from './Navigation'
@@ -8,7 +7,6 @@ import './css/general.css'
 import './css/classroom.css'
 
 import calender from '../icons/calender.svg'
-import courses from '../icons/course-details.svg'
 
 function Terms() {
     const [submitAnswers, setSubmitAnswers] = useState(false)

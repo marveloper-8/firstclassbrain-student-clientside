@@ -1,15 +1,11 @@
-import React, {useContext} from 'react'
+import React from 'react'
 
 import './css/footer.css'
-
-import students from '../icons/students.svg'
 
 import facebook from '../icons/facebook-square.svg'
 import instagram from '../icons/instagram-square.svg'
 import twitter from '../icons/twitter-square.svg'
 import linkedin from '../icons/linkedin-square.svg'
-
-import {Link} from 'react-router-dom'
 
 function Footer() {
     return (
@@ -84,6 +80,13 @@ function Footer() {
                     </div>
                 </div>
             
+                <div className="footer-content">
+                    <h4 className="sub-title">Navigation</h4>
+
+                    <p>About Us</p>
+                    <p>Contact Us</p>
+                    <p>FAQ</p>
+                </div>
             </div>
 
             <div className="copyright-container">

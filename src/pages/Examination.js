@@ -7,9 +7,6 @@ import Navigation from './Navigation'
 import './css/general.css'
 import './css/classroom.css'
 
-import calender from '../icons/calender.svg'
-import courses from '../icons/course-details.svg'
-
 function Classroom() {
     const [submitAnswers, setSubmitAnswers] = useState(false)
     

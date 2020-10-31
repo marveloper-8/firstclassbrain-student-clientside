@@ -1,7 +1,5 @@
-import React, {useState, useContext, useEffect} from 'react'
-import {Link, useHistory, useParams} from 'react-router-dom'
-
-import {UserContext} from '../App'
+import React, {useState, useEffect} from 'react'
+import {Link, useParams} from 'react-router-dom'
 
 import Footer from './Footer'
 import Navigation from './Navigation'
@@ -13,11 +11,8 @@ import calender from '../icons/calender.svg'
 import courses from '../icons/course-details.svg'
 
 function Terms() {
-    const [addCourse, setAddCourse] = useState(false)
-    const {state, dispatch} = useContext(UserContext)
     const {postId} = useParams()
     console.log(postId)
-    const history = useHistory()
 
     const [postDetails, setPostDetails] = useState([])
 
@@ -32,7 +27,7 @@ function Terms() {
                 console.log(result)
                 setPostDetails(result)
             })
-    }, [])
+    }, [postId])
     
     return (
         <div className="course-details">
@@ -75,7 +70,7 @@ function Terms() {
                 </section>
                 
                 <div className="content">
-                    <iframe className="video" src={postDetails.post ? postDetails.post.video : "loading"}>
+                    <iframe className="video" src={postDetails.post ? postDetails.post.video : "loading"} title="video">
                     </iframe>
                 </div>
 

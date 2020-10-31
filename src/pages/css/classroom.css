@@ -360,6 +360,9 @@
 
 
 
+.course-details .main-content .margin-bottom{
+    margin-bottom:5vh;
+}
 .course-details .main-content .score-projection{
     display:grid;
     grid-template-columns:1fr 4fr 1fr;
@@ -1036,12 +1039,15 @@
     }
     .course-details .main-content section .time{
         color:grey;
-        font-size:1vw;
+        font-size:2.5vw;
         font-weight:bold;
+        margin:0!important;
+        padding:0!important;
     }
     .course-details .main-content section .time-remaining,
     .examination .main-content section .time-remaining{
         text-align:right;
+        color:teal;
     }
     
     
@@ -1081,6 +1087,9 @@
     .course-details .main-content .head{
         font-size:4vw;
     }
+    .course-details .main-content .margin-bottom{
+        margin-bottom:1vh;
+    }
     .course-details .main-content .content .video{
         width:100%;
         height:40vh;
@@ -1088,11 +1097,12 @@
         margin-bottom:0vh;
     }
     .course-details .main-content .content .sub-title{
-        font-size:2.5vw;
+        font-size:3.5vw;
+        margin-top:1.5vh;
         font-weight:bold;
     }
     .course-details .main-content .content .text{
-        font-size:1.25vw;
+        font-size:2.5vw;
         text-align:justify;
     }
     .course-details .main-content .attendance{
@@ -1127,30 +1137,30 @@
         padding:4vh 3vw;
     }
     .course-details .main-content .test-questions .item .number{
-        font-size:1.25vw;
+        font-size:2.5vw;
         font-weight:600;
         color:grey;
-        margin-bottom:2vh;
+        margin-bottom:1vh;
     }
     .course-details .main-content .test-questions .item .question{
         width:100%;
-        padding:3vh 1.5vw;
+        padding:1vh 3vw;
         background: #F6F5F5 0% 0% no-repeat padding-box;
         border:none;
         border-radius:7px;
-        margin-bottom:2vh;
-        font-size:1vw;
+        margin-bottom:1vh;
+        font-size:2.5vw;
     }
     .course-details .main-content .test-questions .item .answer-options .tab{
         display:grid;
-        grid-template-columns:6fr .2fr 6fr;
+        grid-template-columns:6fr .2fr 18fr;
         margin-bottom:2vh;
-        font-size: 1vw;
+        font-size: 2vw;
     }
     .course-details .main-content .test-questions .item .answer-options .tab .select,
     .course-details .main-content .test-questions .item .answer-options .tab .label{
         background: #F6F5F5 0% 0% no-repeat padding-box;
-        padding:2vh 1vw;
+        padding:1vh 3vw;
         border-radius:7px;
     }
     .course-details .main-content .test-questions .item .answer-options .tab .select{
@@ -1219,7 +1229,7 @@
     }
     .examination .main-content .test-questions .item{
         border-top:1px #707070 solid;
-        padding:4vh 3vw;
+        padding:1vh 3vw;
     }
     .examination .main-content .test-questions .item .number{
         font-size:1.25vw;

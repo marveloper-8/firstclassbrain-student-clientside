@@ -1,8 +1,6 @@
 import React, { Component } from 'react'
 import './css/Slides.scss'
 
-import aboutUs from '../images/about-us.png'
-
 let classNames = require('classnames')
 
 export class Slides extends Component {
@@ -64,7 +62,7 @@ export class Slides extends Component {
   }
   
   render() {
-    const { activeSlide, prevSlide, sliderReady, slides } = this.state;
+    const { activeSlide, prevSlide, sliderReady } = this.state;
     return (
       <div className={classNames('slider', { 's--ready': sliderReady })}>
       <div className="background-slide-overlay"></div>

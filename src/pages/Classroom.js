@@ -1,11 +1,8 @@
-import React, {useState, useContext, useEffect} from 'react'
+import React, {useState, useContext} from 'react'
 import {PaystackButton} from 'react-paystack'
-import axios from 'axios'
 import {UserContext} from '../App'
 import {
-    useParams,
-    Link,
-    useHistory
+    Link
 } from 'react-router-dom'
 
 import Footer from './Footer'
@@ -20,18 +17,13 @@ import goal from '../icons/goal.svg'
 import classes from '../data/classes.json'
 
 function Classroom() {
-    const {state, dispatch} = useContext(UserContext)
-    const {userId} = useParams()
-    const history = useHistory()
-
-    const isPaid = `${state ? state.paid: "loading"}`
+    const {state} = useContext(UserContext)
 
     const publicKey = "pk_test_895f07c74a6b76a9ad3cc3aabf62104119879257"
     const amount = 1000000
     const [email, setEmail] = useState("user@nine.com")
     const [name, setName] = useState("User Nine")
     const [phone, setPhone] = useState("898899898")
-    const [profile, setProfile] = useState(false)
 
 
     const payOne = () => {
@@ -816,7 +808,7 @@ function Classroom() {
     let basic_seventeen = `${state ? state.seventeen: "loading"}`
 
     const basicOne = () => {
-        if(basic_one == "true"){
+        if(basic_one === "true"){
             return [
                 <Link className="link" to={'/subjects/' + classes[0].class}>
                 <div className="subjects">
@@ -843,7 +835,7 @@ function Classroom() {
     }
     
     const basicTwo = () => {
-        if(basic_two == "true"){
+        if(basic_two === "true"){
             return [
                 <Link className="link" to={'/subjects/' + classes[1].class}>
                 <div className="subjects">
@@ -870,7 +862,7 @@ function Classroom() {
     }
     
     const basicThree = () => {
-        if(basic_three == "true"){
+        if(basic_three === "true"){
             return [
                 <Link className="link" to={'/subjects/' + classes[2].class}>
                 <div className="subjects">
@@ -897,7 +889,7 @@ function Classroom() {
     }
     
     const basicFour = () => {
-        if(basic_four == "true"){
+        if(basic_four === "true"){
             return [
                 <Link className="link" to={'/subjects/' + classes[3].class}>
                 <div className="subjects">
@@ -924,7 +916,7 @@ function Classroom() {
     }
     
     const basicFive = () => {
-        if(basic_five == "true"){
+        if(basic_five === "true"){
             return [
                 <Link className="link" to={'/subjects/' + classes[4].class}>
                 <div className="subjects">
@@ -951,7 +943,7 @@ function Classroom() {
     }
     
     const basicSix = () => {
-        if(basic_six == "true"){
+        if(basic_six === "true"){
             return [
                 <Link className="link" to={'/subjects/' + classes[5].class}>
                 <div className="subjects">
@@ -978,7 +970,7 @@ function Classroom() {
     }
     
     const basicSeven = () => {
-        if(basic_seven == "true"){
+        if(basic_seven === "true"){
             return [
                 <Link className="link" to={'/subjects/' + classes[6].class}>
                 <div className="subjects">
@@ -1005,7 +997,7 @@ function Classroom() {
     }
     
     const basicEight = () => {
-        if(basic_eight == "true"){
+        if(basic_eight === "true"){
             return [
                 <Link className="link" to={'/subjects/' + classes[7].class}>
                 <div className="subjects">
@@ -1032,7 +1024,7 @@ function Classroom() {
     }
     
     const basicNine = () => {
-        if(basic_nine == "true"){
+        if(basic_nine === "true"){
             return [
                 <Link className="link" to={'/subjects/' + classes[8].class}>
                 <div className="subjects">
@@ -1059,7 +1051,7 @@ function Classroom() {
     }
     
     const basicTen = () => {
-        if(basic_ten == "true"){
+        if(basic_ten === "true"){
             return [
                 <Link className="link" to={'/subjects/' + classes[9].class}>
                 <div className="subjects">
@@ -1086,7 +1078,7 @@ function Classroom() {
     }
     
     const basicEleven = () => {
-        if(basic_eleven == "true"){
+        if(basic_eleven === "true"){
             return [
                 <Link className="link" to={'/subjects/' + classes[10].class}>
                 <div className="subjects">
@@ -1113,7 +1105,7 @@ function Classroom() {
     }
     
     const basicTwelve = () => {
-        if(basic_twelve == "true"){
+        if(basic_twelve === "true"){
             return [
                 <Link className="link" to={'/subjects/' + classes[11].class}>
                 <div className="subjects">
@@ -1140,7 +1132,7 @@ function Classroom() {
     }
     
     const basicThirteen = () => {
-        if(basic_thirteen == "true"){
+        if(basic_thirteen === "true"){
             return [
                 <Link className="link" to={'/subjects/' + classes[12].class}>
                 <div className="subjects">
@@ -1167,7 +1159,7 @@ function Classroom() {
     }
     
     const basicFourteen = () => {
-        if(basic_fourteen == "true"){
+        if(basic_fourteen === "true"){
             return [
                 <Link className="link" to={'/subjects/' + classes[13].class}>
                 <div className="subjects">
@@ -1194,7 +1186,7 @@ function Classroom() {
     }
     
     const basicFifteen = () => {
-        if(basic_fifteen == "true"){
+        if(basic_fifteen === "true"){
             return [
                 <Link className="link" to={'/subjects/' + classes[14].class}>
                 <div className="subjects">
@@ -1221,7 +1213,7 @@ function Classroom() {
     }
     
     const basicSixteen = () => {
-        if(basic_sixteen == "true"){
+        if(basic_sixteen === "true"){
             return [
                 <Link className="link" to={'/subjects/' + classes[15].class}>
                 <div className="subjects">
@@ -1248,7 +1240,7 @@ function Classroom() {
     }
     
     const basicSeventeen = () => {
-        if(basic_seventeen == "true"){
+        if(basic_seventeen === "true"){
             return [
                 <Link className="link" to={'/subjects/' + classes[16].class}>
                 <div className="subjects">

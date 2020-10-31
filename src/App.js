@@ -10,6 +10,9 @@ import {
 import './App.css';
 
 import Home from './pages/Home'
+import About from './pages/About'
+import Faq from './pages/Faq'
+import Contact from './pages/Contact'
 import Classroom from './pages/Classroom'
 import Subjects from './pages/Subjects'
 import Terms from './pages/Terms'
@@ -32,7 +35,7 @@ export const UserContext = createContext()
 
 const Routing = () => {
   const history = useHistory()
-  const {state, dispatch} = useContext(UserContext)
+  const {dispatch} = useContext(UserContext)
   useEffect(() => {
     const user = JSON.parse(localStorage.getItem("user"))
     if(user){
@@ -46,6 +49,9 @@ const Routing = () => {
   return(
     <Switch>
       <Route exact path='/' component={Home} />
+      <Route exact path='/faq' component={Faq} />
+      <Route exact path='/about' component={About} />
+      <Route exact path='/contact' component={Contact} />
       <Route exact path='/classroom' component={Classroom} />
       <Route exact path='/subjects/:classSelected' component={Subjects} />
       <Route exact path='/terms/:classSelected/:subject' component={Terms} />

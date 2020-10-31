@@ -12,33 +12,33 @@
 .footer .second{
     background:teal;
     color:#fff;
-    padding:2.5vh 7.5vw;
+    padding:10vh 7.5vw 2.5vh 7.5vw;
     display:grid;
-    grid-template-columns:1fr;
+    grid-template-columns:1fr 1fr 1fr 1fr;
 }
 .footer .head{
-    font-size:5vw;
+    font-size:1.25vw;
     font-weight:bold;
     padding-top:7.5vh;
 }
 .footer .head img{
-    width:5vw;
+    width:1vw;
     margin-right:1vw;
 }
 .footer .about{
     padding:7.5vh 0 0 0;
 }
 .footer .about p{
-    font-size:3vw;
+    font-size:.9vw;
 }
 
 .footer .footer-content{
-    font-size:2.5vw;
+    font-size:.9vw;
     padding-right:4vw;
 }
 .footer .footer-content h4{
-    margin-bottom:1vh;
-    font-size:3vw;
+    margin-bottom:2vh;
+    font-size:1.5vw;
     font-weight:bold;
 }
 .footer .social-media span{
@@ -49,7 +49,7 @@
     margin-bottom:.5vh;
 }
 .footer .footer-content span img{
-    width:4vw;
+    width:1.5vw;
     margin-right:2vw;
 }
 
@@ -58,7 +58,7 @@
 }
 .footer .footer-content .tab .head{
     font-weight:bold;
-    font-size:2.5vw;
+    font-size:.9vw;
     margin:0;
     padding:0;
 }
@@ -100,14 +100,157 @@
 
 .footer .copyright-container .logo{
     font-weight:bold;
-    font-size:3vw;
+    font-size:1vw;
+    color:#fff;
 }
 .footer .copyright-container .copyright{
     text-align:right;
-    font-size:2.5vw;
+    font-size:.9vw;
 }
 
 
 .footer .app-download{
     margin-top:4vh;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* mobile screen */
+@media screen and (max-width:414px){
+    .footer{
+        margin:0;
+        background:none;
+        padding:0;
+        position:relative;
+        overflow-x:hidden;
+    }
+    .footer .link{
+        text-decoration:none;
+        color:#fff;
+    }
+    .footer .second{
+        background:teal;
+        color:#fff;
+        padding:2.5vh 7.5vw;
+        display:grid;
+        grid-template-columns:1fr;
+    }
+    .footer .head{
+        font-size:5vw;
+        font-weight:bold;
+        padding-top:7.5vh;
+    }
+    .footer .head img{
+        width:5vw;
+        margin-right:1vw;
+    }
+    .footer .about{
+        padding:7.5vh 0 0 0;
+    }
+    .footer .about p{
+        font-size:3vw;
+    }
+    
+    .footer .footer-content{
+        font-size:2.5vw;
+        padding-right:4vw;
+    }
+    .footer .footer-content h4{
+        margin-bottom:1vh;
+        font-size:3vw;
+        font-weight:bold;
+    }
+    .footer .social-media span{
+        margin-right:.5vw;
+    }
+    .footer .useful-link span{
+        display:block;
+        margin-bottom:.5vh;
+    }
+    .footer .footer-content span img{
+        width:4vw;
+        margin-right:2vw;
+    }
+    
+    .footer .footer-content .tab{
+        margin-bottom:1.5vh;
+    }
+    .footer .footer-content .tab .head{
+        font-weight:bold;
+        font-size:2.5vw;
+        margin:0;
+        padding:0;
+    }
+    .footer .newsletter{
+        padding:.35vh .15vw;
+        background:#fff;
+        /* width:30vw; */
+        display:grid;
+        grid-template-columns:4fr 1fr;
+        border-radius:10px;
+    }
+    .footer .newsletter input{
+        background:none;
+        font-size:.9vw;
+        padding:1vh 1vw;
+        border:none;
+        outline:none;
+    }
+    .footer .newsletter button{
+        background:teal;
+        color:#fff;
+        font-size:.9vw;
+        padding:1vh 1vw;
+        border:none;
+        outline:none;
+        border-radius:10px;
+    }
+    
+    
+    .footer .copyright-container{
+        background:teal;
+        text-align:left;
+        border-top:1px solid rgb(41, 181, 171);
+        padding:2vh 7.5vw;
+        color:#fff;
+        display:grid;
+        grid-template-columns:1fr 2fr;
+    }
+    
+    .footer .copyright-container .logo{
+        font-weight:bold;
+        font-size:3vw;
+    }
+    .footer .copyright-container .copyright{
+        text-align:right;
+        font-size:2.5vw;
+    }
+    
+    
+    .footer .app-download{
+        margin-top:4vh;
+    }
 }

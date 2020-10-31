@@ -7,8 +7,6 @@ import Navigation from './Navigation'
 import './css/general.css'
 import './css/classroom.css'
 
-import goal from '../icons/goal.svg'
-
 function Classroom() {
     const [submitAnswers, setSubmitAnswers] = useState(false)
     

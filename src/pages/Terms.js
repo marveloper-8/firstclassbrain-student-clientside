@@ -1,5 +1,5 @@
-import React, {useState, useContext, useEffect} from 'react'
-import {Link, useHistory, useParams} from 'react-router-dom'
+import React from 'react'
+import {Link, useParams} from 'react-router-dom'
 
 import Footer from './Footer'
 import Navigation from './Navigation'
@@ -10,7 +10,6 @@ import './css/classroom.css'
 import goal from '../icons/goal.svg'
 
 // data
-import subjects from '../data/subjects.json'
 
 function Classroom() {
     const {classSelected, subject} = useParams()

@@ -1,0 +1,54 @@
+.about .content .tab{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    width:100%;
+}
+.about .content .tab .image{
+    height:100%;
+    width:100%;
+}
+.about .content .tab .text{
+    padding:10vh 10vw;
+}
+.about .content .tab .text img{
+    width:20%;
+    position:relative;
+    bottom:-2vh;
+}
+.about .content .tab .text .title{
+    font-size:3vw;
+    padding:0!important;
+    margin:0!important;
+}
+.about .content .tab .text .normal{
+    position:relative;
+    bottom:-5vh;
+}
+.about .content .tab .text .enhanced{
+    color:teal;
+    font-size:5vw;
+}
+.about .content .tab .text .line{
+    width:30%;
+    background:teal;
+    height:3px;
+    border-radius:50px;
+    position:relative;
+    top:-2vh;
+}
+.about .content .tab .text .text-container{
+    font-size:1.25vw;
+    padding:0 5vw 0 0!important;
+    margin:0!important;
+    text-align:justify;
+}
+.about .content .tab .text button{
+    background:teal;
+    color:#fff;
+    font-size:.9vw;
+    border-radius:6px;
+    padding:1.5vh 1.5vw;
+    margin:0!important;
+    position:relative;
+    bottom:2vh;
+}

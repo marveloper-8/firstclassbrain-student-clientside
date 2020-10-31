@@ -1,0 +1,227 @@
+.contact{
+    background:#fff;
+    padding:10vh;
+    text-align:center!important;
+}
+.contact .content{
+    display:grid;
+    background:#fff;
+    grid-template-columns:2fr 1fr;
+    position:relative;
+    width:70vw;
+    box-shadow: 0 4px 8px 0 rgba(132, 132, 132, 0.2), 0 6px 20px 0 rgba(177, 177, 177, 0.19);
+    font-size:1vw;
+    margin:auto!important;
+}
+.contact .title{
+    color:grey;
+    font-weight:bold;
+    font-size:2vw;
+    text-align:left;
+    padding:0!important;
+    margin-bottom:3vh!important;
+}
+.contact .info .title{
+    color:#fff;
+}
+.contact .content .info{
+    text-align:left;
+    background-image: linear-gradient(to right, rgb(0, 128, 128), rgb(4, 88, 68));
+    padding:6vh 2vw;
+    margin:auto;
+    color:#fff;
+    font-size:1vw;
+    height:100%;
+}
+.contact  .content .info .paragraph{
+    margin-bottom:4vh;
+}
+.contact .content .info .paragraph img{
+    width:1vw;
+    margin-right:1vw;
+}
+.contact .content .info .social{
+    margin-top:10vh;
+}
+.contact .content .info .social img{
+    width:1.5vw;
+    margin-right:2vw;
+}
+
+.contact .content .form{
+    text-align:left;
+    padding:6vh 2vw;
+}
+.contact .content .form .input-double{
+    display:grid;
+    grid-template-columns:12fr 1fr 12fr;
+    margin-bottom:4vh;
+}
+.contact .content .form .input-single{
+    margin-bottom:4vh;
+}
+.contact .content .form input{
+    border:none;
+    border-bottom:1px solid #bbb;
+    padding:2vh 0;
+    color:#000;
+    font-size:.9vw;
+    outline:none;
+}
+.contact .content .form textarea{
+    border:none;
+    border-bottom:1px solid #bbb;
+    color:#000;
+    font-size:.9vw;
+    outline:none;
+    height:10vh;
+    width:100%;
+}
+.contact .content .form button{
+    background:teal;
+    padding:2vh 1vw;
+    color:#fff;
+    font-size:.9vw;
+    border-radius:5px;
+    outline:none;
+    border:none;
+    width:100%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+    
+
+@media screen and (max-width:414px){    
+    .contact{
+        background:#fff;
+        padding:0;
+        text-align:center;
+    }
+    .contact .content{
+        display:grid;
+        background:#fff;
+        grid-template-columns:1fr;
+        position:relative;
+        width:100%;
+        box-shadow: 0 4px 8px 0 rgba(132, 132, 132, 0.2), 0 6px 20px 0 rgba(177, 177, 177, 0.19);
+        font-size:2.5vw;
+        margin:auto;
+    }
+    .contact .title{
+        color:grey;
+        font-weight:bold;
+        font-size:7.5vw;
+        text-align:left;
+        padding:0!important;
+        margin-bottom:1vh!important;
+    }
+    .contact .info .title{
+        color:#fff;
+    }
+    .contact .content .info{
+        text-align:left;
+        background-image: linear-gradient(to right, rgb(0, 128, 128), rgb(4, 88, 68));
+        padding:2.5vh 7.5vw;
+        margin:auto;
+        color:#fff;
+        font-size:2.5vw;
+        height:100%;
+    }
+    .contact  .content .info .paragraph{
+        margin-bottom:2vh;
+    }
+    .contact .content .info .paragraph img{
+        width:1vw;
+        margin-right:1vw;
+    }
+    .contact .content .info .social{
+        margin-top:5vh;
+    }
+    .contact .content .info .social img{
+        width:4vw;
+        margin-right:5vw;
+    }
+
+    .contact .content .form{
+        text-align:left;
+        padding:3vh 7.5vw;
+    }
+    .contact .content .form .input-double{
+        display:grid;
+        grid-template-columns:1fr;
+        margin:0;
+    }
+    .contact .content .form input{
+        border:none;
+        border-bottom:1px solid #bbb;
+        padding:1vh 0;
+        color:#000;
+        font-size:2.5vw;
+        outline:none;
+        margin-bottom:4vh;
+    }
+    .contact .content .form textarea{
+        border:none;
+        border-bottom:1px solid #bbb;
+        color:#000;
+        font-size:3vw;
+        outline:none;
+        height:10vh;
+        width:100%;
+    }
+    .contact .content .form button{
+        background:teal;
+        padding:1vh 1vw;
+        color:#fff;
+        font-size:2.5vw;
+        border-radius:5px;
+        outline:none;
+        border:none;
+        width:100%;
+    }
+}

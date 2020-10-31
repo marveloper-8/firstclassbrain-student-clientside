@@ -46,6 +46,10 @@
     color:teal;
     font-size:1vw;
 }
+.navigation .buttons .navigation-link{
+    border:none;
+    background:none;
+}
 .navigation .buttons .login{
     color:teal;
     background:#fff;
