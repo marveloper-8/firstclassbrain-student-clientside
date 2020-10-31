@@ -278,65 +278,6 @@
 
 
 
-.navigation .popup-toggle .inner .content .profile-image,
-.navigation .popup .inner .content .profile-image{
-    width:15vw;
-    height:15vw;
-    border-radius:15vw;
-    margin:auto;
-    border:10px rgb(8, 169, 169) solid;
-    animation-name:profile;
-    animation-duration:3s;
-    animation-iteration-count:infinite;
-}
-.navigation .popup-toggle .inner .content .name,
-.navigation .popup .inner .content .name{
-    font-size:2.5vw;
-    text-transform:uppercase;
-    font-weight:bolder;
-    text-align:center;
-    margin-top:1vh;
-}
-.navigation .popup-toggle .inner .content .name .surname,
-.navigation .popup .inner .content .name .surname{
-    color:teal;
-}
-.navigation .popup-toggle .inner .content .profile-tab,
-.navigation .popup .inner .content .profile-tab{
-    display:grid;
-    grid-template-columns:1fr 4fr;
-    margin:0!important;
-    padding-left:2vw;
-}
-.navigation .popup-toggle .inner .content .profile-tab .icon,
-.navigation .popup .inner .content .profile-tab .icon{
-    padding-left:2vw;
-    margin:0!important;
-}
-.navigation .popup-toggle .inner .content .profile-tab .icon img,
-.navigation .popup .inner .content .profile-tab .icon img{
-    width:1.5vw;
-}
-.navigation .popup-toggle .inner .content .profile-tab .value,
-.navigation .popup .inner .content .profile-tab .value{
-    font-size:1.2vw;
-    margin:0!important;
-    padding:0!important;
-}
-
-
-
-
-
-
-@keyframes profile {
-    0%   {border:10px rgb(8, 169, 169) solid;}
-    50% {border:5px rgb(8, 169, 169) solid;}
-    100%   {border:10px rgb(8, 169, 169) solid;}
-}
-
-
-
 
 
 

@@ -1,0 +1,55 @@
+.dashboard-section{
+    display:grid;
+    grid-template-columns:1fr;
+}
+.dashboard-section .profile-image{
+    width:15vw;
+    height:15vw;
+    border-radius:15vw;
+    margin:auto;
+    border:10px rgb(8, 169, 169) solid;
+    animation-name:profile;
+    animation-duration:3s;
+    animation-iteration-count:infinite;
+    display:block;
+}
+.dashboard-section .name{
+    font-size:2.5vw;
+    text-transform:uppercase;
+    font-weight:bolder;
+    text-align:center;
+    margin-top:1vh;
+    display:block;
+}
+.dashboard-section .name .surname{
+    color:teal;
+}
+.dashboard-section .profile-tab{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    margin:0!important;
+    padding-left:2vw;
+}
+.dashboard-section .profile-tab .icon{
+    padding-left:2vw;
+    margin:0!important;
+}
+.dashboard-section .profile-tab .icon img{
+    width:1.5vw;
+}
+.dashboard-section .profile-tab .value{
+    font-size:1.2vw;
+    margin:0!important;
+    padding:0!important;
+}
+
+
+
+
+
+
+@keyframes profile {
+    0%   {border:10px rgb(8, 169, 169) solid;}
+    50% {border:5px rgb(8, 169, 169) solid;}
+    100%   {border:10px rgb(8, 169, 169) solid;}
+}

@@ -13,7 +13,7 @@ import Home from './pages/Home'
 import About from './pages/About'
 import Faq from './pages/Faq'
 import Contact from './pages/Contact'
-import Classroom from './pages/Classroom'
+import Dashboard from './pages/Classroom'
 import Subjects from './pages/Subjects'
 import Terms from './pages/Terms'
 import Weeks from './pages/Weeks'
@@ -52,7 +52,7 @@ const Routing = () => {
       <Route exact path='/faq' component={Faq} />
       <Route exact path='/about' component={About} />
       <Route exact path='/contact' component={Contact} />
-      <Route exact path='/classroom' component={Classroom} />
+      <Route exact path='/dashboard' component={Dashboard} />
       <Route exact path='/subjects/:classSelected' component={Subjects} />
       <Route exact path='/terms/:classSelected/:subject' component={Terms} />
       <Route exact path='/weeks/:classSelected/:subject/:term' component={Weeks} />

@@ -7,6 +7,7 @@ import {
 
 import Footer from './Footer'
 import Navigation from './Navigation'
+import Dashboard from './Dashboard'
 
 import './css/general.css'
 import './css/classroom.css'
@@ -1284,77 +1285,82 @@ function Classroom() {
                     <span className="active"> classroom</span>
                 </div>
             </section>
-            
-            <div className="subjects-container">
-                <div>
-                    {basicOne()}
-                </div>
-            
-                <div>
-                    {basicTwo()}
-                </div>
-            
-                <div>
-                    {basicThree()}
-                </div>
-            
-                <div>
-                    {basicFour()}
-                </div>
-            
-                <div>
-                    {basicFive()}
-                </div>
-            
-                <div>
-                    {basicSix()}
-                </div>
-            
-                <div>
-                    {basicSeven()}
-                </div>
-            
-                <div>
-                    {basicEight()}
-                </div>
-            
-                <div>
-                    {basicNine()}
-                </div>
-            
-                <div>
-                    {basicTen()}
-                </div>
-            
-                <div>
-                    {basicEleven()}
-                </div>
-            
-                <div>
-                    {basicTwelve()}
-                </div>
-            
-                <div>
-                    {basicThirteen()}
-                </div>
-            
-                <div>
-                    {basicFourteen()}
-                </div>
-            
-                <div>
-                    {basicFifteen()}
-                </div>
-            
-                <div>
-                    {basicSixteen()}
-                </div>
-            
-                <div>
-                    {basicSeventeen()}
-                </div>
-            </div>
 
+            <div className="dashboard-container">
+                <Dashboard />
+                
+                <div className="subjects-container">
+                    <div>
+                        {basicOne()}
+                    </div>
+                
+                    <div>
+                        {basicTwo()}
+                    </div>
+                
+                    <div>
+                        {basicThree()}
+                    </div>
+                
+                    <div>
+                        {basicFour()}
+                    </div>
+                
+                    <div>
+                        {basicFive()}
+                    </div>
+                
+                    <div>
+                        {basicSix()}
+                    </div>
+                
+                    <div>
+                        {basicSeven()}
+                    </div>
+                
+                    <div>
+                        {basicEight()}
+                    </div>
+                
+                    <div>
+                        {basicNine()}
+                    </div>
+                
+                    <div>
+                        {basicTen()}
+                    </div>
+                
+                    <div>
+                        {basicEleven()}
+                    </div>
+                
+                    <div>
+                        {basicTwelve()}
+                    </div>
+                
+                    <div>
+                        {basicThirteen()}
+                    </div>
+                
+                    <div>
+                        {basicFourteen()}
+                    </div>
+                
+                    <div>
+                        {basicFifteen()}
+                    </div>
+                
+                    <div>
+                        {basicSixteen()}
+                    </div>
+                
+                    <div>
+                        {basicSeventeen()}
+                    </div>
+                </div>
+
+            </div>
+            
             <Footer />
         </div>
     )

@@ -33,7 +33,7 @@ const Navigation = () => {
     const [lastName, setLastName] = useState("")
     const [email, setEmail] = useState("")
     const [phone, setPhone] = useState("")
-    const [dateOfBirth, setDateOfBirth] = useState("")
+    // const [dateOfBirth, setDateOfBirth] = useState("")
     const [address, setAddress] = useState("")
     const [classSelected, setClassSelected] = useState("")
     const [password, setPassword] = useState("")
@@ -145,7 +145,7 @@ const Navigation = () => {
                     localStorage.setItem("jwt", data.token)
                     localStorage.setItem("student", JSON.stringify(data.student))
                     dispatch({type: "USER", payload: data.student})
-                    history.push('/classroom')
+                    history.push('/dashboard')
                 }
             })
             .catch(err => {
@@ -191,10 +191,9 @@ const Navigation = () => {
     const navItem = () => {
         if(state){
             return [
-                <Link className="link" to='/classroom'>
-                    <button className="login">CLASSROOM</button>
-                </Link>,
-                <button className="signup" onClick={() => setProfile(!profile)}>PROFILE</button>
+                <Link className="link" to='/dashboard'>
+                    <button className="login">DASHBOARD</button>
+                </Link>
             ]
         } else{
             return [
@@ -207,7 +206,7 @@ const Navigation = () => {
     return (
         <div className="navigation">
             <div className="nav-bar">
-                <Link className="link" to='/classroom'>
+                <Link className="link" to='/'>
                     <span className="logo-container">
                         <img src={logo} alt="logo" />
                     </span>
@@ -434,94 +433,6 @@ const Navigation = () => {
                 </div>
             </div>
 
-            <div className={profile ? "popup-toggle popup" : "popup"}>
-                <div className="background" onClick={() => setProfile(!profile)}></div>
-                <div className="inner">
-                    <div className="close-donate">
-                        <span onClick={() => setProfile(!profile)}>
-                            &times; close
-                        </span>
-                    </div>
-                    
-                    <div className="content">
-                        <div 
-                            className="profile-image"
-                            style={{
-                                backgroundImage: `url(${state ? state.pic: "loading"})`,
-                                backgroundSize:`cover`,
-                                backgroundPosition:`center`
-                            }}
-                        ></div>
-
-                        <div className="name title">
-                            {state ? state.firstName: "loading"}
-                            <span className="surname">{state ? state.lastName: "loading"}</span>
-                        </div>
-
-                        <div className="profile-tab">
-                            <div className="icon">
-                                <img src={phoneIcon} alt="phone icon" />
-                            </div>
-                            <div className="value">
-                                {state ? state.phone: "loading"}
-                            </div>
-                        </div>
-
-                        <div className="profile-tab">
-                            <div className="icon">
-                                <img src={emailIcon} alt="email icon" />
-                            </div>
-                            <div className="value">
-                                {state ? state.email: "loading"}
-                            </div>
-                        </div>
-
-                        <div className="profile-tab">
-                            <div className="icon">
-                                <img src={emailIcon} alt="address icon" />
-                            </div>
-                            <div className="value">
-                                {state ? state.address: "loading"}
-                            </div>
-                        </div>
-
-                        <div className="profile-tab">
-                            <div className="icon">
-                                <img src={user} alt="class icon" />
-                            </div>
-                            <div className="value">
-                                {state ? state.schoolClass: "loading"}
-                            </div>
-                        </div>
-
-                        {/* <div className="profile-tab">
-                            <div className="icon">
-                                <img src={user} alt="class icon" />
-                            </div>
-                            <div className="value">
-                                {state ? state.department: "loading"}
-                            </div>
-                        </div> */}
-
-                        <div 
-                            className="profile-tab logout-tab"
-                            onClick={() => {
-                                localStorage.clear()
-                                dispatch({type: "CLEAR"})
-                                history.push('/')
-                            }}
-                        >
-                            <div className="icon">
-                                <img src={logout} alt="class icon" />
-                            </div>
-                            <div className="value">
-                                Logout
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div> 
-            
         </div>
     )
 }
