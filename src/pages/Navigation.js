@@ -23,6 +23,9 @@ import './css/navigation.css'
 
 const Navigation = () => {
     const {state, dispatch} = useContext(UserContext)
+
+    const studentState = JSON.parse(localStorage.getItem("student"))
+
     const history = useHistory()
 
     const [login, setLogin] = useState(false)
@@ -189,7 +192,7 @@ const Navigation = () => {
     
 
     const navItem = () => {
-        if(state){
+        if(studentState){
             return [
                 <Link className="link" to='/dashboard'>
                     <button className="login">DASHBOARD</button>

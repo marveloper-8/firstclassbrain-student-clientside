@@ -15,6 +15,9 @@ import logout from '../icons/logout-two.svg'
 
 const Dashboard = (props) => {
     const {state, dispatch} = useContext(UserContext)
+
+    const studentState = JSON.parse(localStorage.getItem("student"))
+
     const history = useHistory()
 
     return (
@@ -22,15 +25,15 @@ const Dashboard = (props) => {
             <div 
                 className="profile-image"
                 style={{
-                    backgroundImage: `url(${state ? state.pic: "loading"})`,
+                    backgroundImage: `url(${studentState ? studentState.pic: "loading"})`,
                     backgroundSize:`cover`,
                     backgroundPosition:`center`
                 }}
             ></div>
 
             <div className="name title">
-                {state ? state.firstName: "loading"}
-                <span className="surname">{state ? state.lastName: "loading"}</span>
+                {studentState ? studentState.firstName: "loading"}
+                <span className="surname">{studentState ? studentState.lastName: "loading"}</span>
             </div>
 
             <div className="profile-tab">
@@ -38,7 +41,7 @@ const Dashboard = (props) => {
                     <img src={phoneIcon} alt="phone icon" />
                 </div>
                 <div className="value">
-                    {state ? state.phone: "loading"}
+                    {studentState ? studentState.phone: "loading"}
                 </div>
             </div>
 
@@ -47,7 +50,7 @@ const Dashboard = (props) => {
                     <img src={emailIcon} alt="email icon" />
                 </div>
                 <div className="value">
-                    {state ? state.email: "loading"}
+                    {studentState ? studentState.email: "loading"}
                 </div>
             </div>
 
@@ -56,7 +59,7 @@ const Dashboard = (props) => {
                     <img src={emailIcon} alt="address icon" />
                 </div>
                 <div className="value">
-                    {state ? state.address: "loading"}
+                    {studentState ? studentState.address: "loading"}
                 </div>
             </div>
 
@@ -65,7 +68,7 @@ const Dashboard = (props) => {
                     <img src={user} alt="class icon" />
                 </div>
                 <div className="value">
-                    {state ? state.schoolClass: "loading"}
+                    {studentState ? studentState.schoolClass: "loading"}
                 </div>
             </div>
 
