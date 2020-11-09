@@ -26,6 +26,8 @@ const Navigation = () => {
 
     const studentState = JSON.parse(localStorage.getItem("student"))
 
+    console.log(studentState)
+
     const history = useHistory()
 
     const [login, setLogin] = useState(false)
