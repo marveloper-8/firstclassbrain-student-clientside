@@ -39,5 +39,19 @@
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
+    <script type="text/javascript">
+      (function(w,d){
+        w.HelpCrunch=function(){w.HelpCrunch.q.push(arguments)};w.HelpCrunch.q=[];
+        function r(){var s=document.createElement('script');s.async=1;s.type='text/javascript';s.src='https://widget.helpcrunch.com/';(d.body%7C%7Cd.head).appendChild(s);}
+        if(w.attachEvent){w.attachEvent('onload',r)}else{w.addEventListener('load',r,false)}
+      })(window, document)
+      </script>
+      <script type="text/javascript">
+        HelpCrunch('init', 'prodevs', {
+          applicationId: 1,
+          applicationSecret: '1PyNXbyNe4PnZcQuAT3hHm2c1R5OPL8twbyBcsEqP1uMADhac6PyiPZR3A8ru4YnDiHrTlqYl1+Psrf55QXqbw=='
+        })
+        HelpCrunch('showChatWidget');
+      </script>
   </body>
 </html>

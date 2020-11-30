@@ -1,28 +1,31 @@
-import React, {useState, useContext, useEffect} from 'react'
+import React, {
+    useState, 
+    useContext, 
+    useEffect,
+    useCallback
+} from 'react'
 // import {ToastContainer} from "react-toastr"
 import {UserContext} from '../App'
 import {
     Link,
     useHistory
 } from 'react-router-dom'
-
-
+// logo
 import logo from '../logo.jpeg'
-
+// icon
 import emailIcon from '../icons/email.svg'
 import phoneIcon from '../icons/call-two.svg'
 import passwordIcon from '../icons/password.svg'
 import user from '../icons/user.svg'
-import group from '../icons/group.svg'
-import logout from '../icons/logout-two.svg'
-
+import classroom from '../icons/classroom.svg'
+import menuIcon from '../icons/menu.svg'
 // data
 import classes from '../data/classes.json'
-
+// css
 import './css/navigation.css'
 
 const Navigation = () => {
-    const {state, dispatch} = useContext(UserContext)
+    const {dispatch} = useContext(UserContext)
 
     const studentState = JSON.parse(localStorage.getItem("student"))
 
@@ -30,15 +33,15 @@ const Navigation = () => {
 
     const history = useHistory()
 
-    const [login, setLogin] = useState(false)
-    const [signup, setSignup] = useState(false)
-    const [profile, setProfile] = useState(false)
+    let [login, setLogin] = useState(false)
+    let [signup, setSignup] = useState(false)
+    let [forgotPassword, setForgotPassword] = useState(false)
+    let [menu, setMenu] = useState(false)
 
     const [firstName, setFirstName] = useState("")
     const [lastName, setLastName] = useState("")
     const [email, setEmail] = useState("")
     const [phone, setPhone] = useState("")
-    // const [dateOfBirth, setDateOfBirth] = useState("")
     const [address, setAddress] = useState("")
     const [classSelected, setClassSelected] = useState("")
     const [password, setPassword] = useState("")
@@ -47,7 +50,7 @@ const Navigation = () => {
 
     const [url, setUrl] = useState(undefined)
 
-    const uploadFields = () => {
+    const uploadFields = useCallback(() => {
         if(!/^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(email)){
             alert("invalid email")
             return
@@ -62,7 +65,6 @@ const Navigation = () => {
                 lastName,
                 email,
                 phone,
-                // dateOfBirth,
                 address,
                 classSelected,
                 pic: url,
@@ -81,7 +83,7 @@ const Navigation = () => {
             .catch(err => {
                 console.log(err)
             })
-    }
+    })
     
     useEffect(()=>{
         if(url){
@@ -116,21 +118,12 @@ const Navigation = () => {
         }
     }
 
-    const CloseSignUp = () => {
-        if(login){
-            setLogin(!login)
-            setSignup(!signup)
-        }else{
-            setLogin(!login)
-            setSignup(!signup)
-        }
-    }
-    // end of signup
-
-
-
     const PostSignin = (e) => {
         e.preventDefault()
+        if(!/^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(email)){
+            alert("invalid email")
+            return
+        }
         fetch("https://firstclassbrain-server.herokuapp.com/web/signin-student", {
             method: "post",
             headers: {
@@ -150,7 +143,35 @@ const Navigation = () => {
                     localStorage.setItem("jwt", data.token)
                     localStorage.setItem("student", JSON.stringify(data.student))
                     dispatch({type: "USER", payload: data.student})
-                    history.push('/dashboard')
+                    history.push('/classroom')
+                }
+            })
+            .catch(err => {
+                console.log(err)
+            })
+    }
+
+    const PostForgotPassword = (e) => {
+        e.preventDefault()
+        if(!/^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(email)){
+            alert("invalid email")
+            return
+        }
+        fetch("https://firstclassbrain-server.herokuapp.com/student/reset-password", {
+            method: "post",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({email})
+        }).then(res => res.json())
+            .then(data => {
+                console.log(data)
+                if(data.error){
+                    alert(data.error)
+                }
+                else{
+                    alert(data.message)
+                    history.push('/')
                 }
             })
             .catch(err => {
@@ -160,6 +181,36 @@ const Navigation = () => {
 
 
     // end of signin
+
+    const SignupOpen = () => {
+        if(signup === true || signup === false){
+            setSignup(signup = true)
+            setLogin(login = false)
+            setForgotPassword(forgotPassword = false)
+        }
+    }
+    const LoginOpen = () => {
+        if(login === true || login === false){
+            setSignup(signup = false)
+            setLogin(login = true)
+            setForgotPassword(forgotPassword = false)
+        }
+    }
+    const ForgotPasswordOpen = () => {
+        if(forgotPassword === true || forgotPassword === false){
+            setSignup(signup = false)
+            setLogin(login = false)
+            setForgotPassword(forgotPassword = true)
+        }
+    }
+    const CloseNav = () => {
+        setSignup(signup = false)
+        setLogin(login = false)
+        setForgotPassword(forgotPassword = false)
+    }
+    // end of signup
+
+
 
     // end of authentication system
 
@@ -196,54 +247,125 @@ const Navigation = () => {
     const navItem = () => {
         if(studentState){
             return [
+                <Link className="link" to='/classroom'>
+                    <button className="login desktop-hide">CLASSROOM</button>
+                </Link>,
+                <Link className="link" to='/classroom'>
+                    <div className="nav-item pro-nav-item mobile-hide">CLASSROOM</div>
+                </Link>,
                 <Link className="link" to='/dashboard'>
-                    <button className="login">DASHBOARD</button>
-                </Link>
+                    <div className="nav-item pro-nav-item mobile-hide">DASHBOARD</div>
+                </Link>,
+                <div 
+                    className="nav-item mobile-hide logout"
+                    onClick={() => {
+                        localStorage.clear()
+                        dispatch({type: "CLEAR"})
+                        history.push('/')
+                    }}
+                >LOGOUT</div>
             ]
         } else{
             return [
-                <button className="login" onClick={() => setLogin(!login)}>LOGIN</button>,
-                <button className="signup" onClick={() => setSignup(!signup)}>SIGNUP</button>
+                <button className="login desktop-hide" onClick={() => LoginOpen()}>LOGIN</button>,
+                <button className="signup desktop-hide" onClick={() => SignupOpen()}>SIGNUP</button>,
+                <div className="nav-item pro-nav-item mobile-hide" onClick={() => LoginOpen()}>LOGIN</div>,
+                <div className="nav-item pro-nav-item mobile-hide" onClick={() => SignupOpen()}>SIGNUP</div>
             ]
         }
     }
 
     return (
         <div className="navigation">
-            <div className="nav-bar">
-                <Link className="link" to='/'>
-                    <span className="logo-container">
-                        <img src={logo} alt="logo" />
-                    </span>
-                </Link>
+            <div className="mobile-hide">
+                <div className="nav-bar">
+                    <Link className="link" to='/'>
+                        <span className="logo-container">
+                            <img src={logo} alt="logo" />
+                        </span>
+                    </Link>
 
-                <div className="buttons">
-                    <Link className="link" to='/about'>
-                        <button className="navigation-link">
-                            ABOUT US
-                        </button>
+                    <div className="buttons menu-icon">
+                        <img src={menuIcon} alt="menu" onClick={() => setMenu(!menu)} />
+                    </div>
+                </div>
+            </div>
+    
+            <div className="desktop-hide">
+                <div className="nav-bar">
+                    <Link className="link" to='/'>
+                        <span className="logo-container">
+                            <img src={logo} alt="logo" />
+                        </span>
                     </Link>
-                    
-                    <Link className="link" to='/faq'>
-                        <button className="navigation-link">
-                            FAQ
-                        </button>
-                    </Link>
-                    
-                    <Link className="link" to='/contact'>
-                        <button className="navigation-link">
-                            CONTACT US
-                        </button>
-                    </Link>
-                    {navItem()}
+
+                    <div className="buttons">
+                        <Link className="link" to='/about'>
+                            <button className="navigation-link">
+                                ABOUT US
+                            </button>
+                        </Link>
+                        
+                        <Link className="link" to='/faq'>
+                            <button className="navigation-link">
+                                FAQ
+                            </button>
+                        </Link>
+                        
+                        <Link className="link" to='/contact'>
+                            <button className="navigation-link">
+                                CONTACT US
+                            </button>
+                        </Link>
+                        {navItem()}
+                    </div>
+                </div>    
+            </div>
+
+            <div className={menu ? "popup-toggle popup" : "popup"}>
+                <div className="background" onClick={() => setMenu(!menu)}></div>
+                <div className="inner">
+                    <div className="close-donate">
+                        <span onClick={() => setMenu(!menu)}>
+                            &times; close
+                        </span>
+                    </div>
+
+                    <div className="content">
+                        <Link className="link" to='/'>
+                            <div className="nav-item">
+                                HOME
+                            </div>
+                        </Link>
+
+                        <Link className="link" to='/about'>
+                            <div className="nav-item">
+                                ABOUT US
+                            </div>
+                        </Link>
+                        
+                        <Link className="link" to='/faq'>
+                            <div className="nav-item">
+                                FAQ
+                            </div>
+                        </Link>
+                        
+                        <Link className="link" to='/contact'>
+                            <div className="nav-item">
+                                CONTACT US
+                            </div>
+                        </Link>
+                        
+                        {navItem()}
+                    </div>
                 </div>
             </div>
         
             <div className={login ? "popup-toggle popup" : "popup"}>
-                <div className="background" onClick={() => setLogin(!login)}></div>
+                <div className="background" onClick={() => CloseNav()}></div>
                 <div className="inner">
                     <div className="close-donate">
-                        <span onClick={() => setLogin(!login)}>
+                        <span onClick={() => CloseNav()}>
                             &times; close
                         </span>
                     </div>
@@ -278,12 +400,12 @@ const Navigation = () => {
                                 />
                             </div>
 
-                            <button>LOGIN</button>
+                            <button type="submit">LOGIN</button>
                         </form>
                         
                         <div className="extras">
-                            <p>Forgot Password?</p>
-                            <p>Don't have an account? <span className="important"  onClick={() => CloseSignUp()}>Sign up</span></p>
+                            <p><span className="important" onClick={() => ForgotPasswordOpen()}>Forgot Password?</span></p>
+                            <p>Don't have an account? <span className="important"  onClick={() => SignupOpen()}>Sign up</span></p>
                         </div>
                         
 
@@ -292,10 +414,10 @@ const Navigation = () => {
             </div>
         
             <div className={signup ? "popup-toggle popup" : "popup"}>
-                <div className="background" onClick={() => setSignup(!signup)}></div>
+                <div className="background" onClick={() => CloseNav()}></div>
                 <div className="inner">
                     <div className="close-donate">
-                        <span onClick={() => setSignup(!signup)}>
+                        <span onClick={() => CloseNav()}>
                             &times; close
                         </span>
                     </div>
@@ -383,7 +505,7 @@ const Navigation = () => {
                             </div>
 
                             <div className="input">
-                                <img src={group} alt="class" />
+                                <img src={classroom} alt="class" />
                                 <select 
                                     className="sub-title"
                                     value={classSelected}
@@ -432,12 +554,52 @@ const Navigation = () => {
 
                         <div className="extras">
                             <p>By signing up, you agree to our <a className="important" href="https://google.com">TOC</a> & <a className="important" href="https://google.com">Privacy Policy</a></p>
-                            <p>Already have an account? <span className="important" onClick={() => CloseSignUp()}>Login</span></p>
+                            <p>Already have an account? <span className="important" onClick={() => LoginOpen()}>Login</span></p>
                         </div>
                     </div>
                 </div>
             </div>
 
+            <div className={forgotPassword ? "popup-toggle popup" : "popup"}>
+                <div className="background" onClick={() => CloseNav()}></div>
+                <div className="inner">
+                    <div className="close-donate">
+                        <span onClick={() => CloseNav()}>
+                            &times; close
+                        </span>
+                    </div>
+
+                    <div className="content">
+                        {/* <div className="image">
+                            <img src={signinImage} alt="signin" />
+                        </div> */}
+
+                        <form className="text" onSubmit={PostForgotPassword}>
+                            <h1 className="title">FORGOT PASSWORD?</h1>
+
+                            <div className="input">
+                                <img src={emailIcon} alt="email" />
+                                <input 
+                                    type="email" 
+                                    placeholder="Email Address" 
+                                    value={email}
+                                    onChange={(e) => setEmail(e.target.value)}
+                                    required 
+                                />
+                            </div>
+
+                            <button type="submit">EMAIL ME A RESET PASSWORD LINK</button>
+                        </form>
+                        
+                        <div className="extras">
+                            <p>Go back to <span className="important"  onClick={() => LoginOpen()}>login</span></p>
+                        </div>
+                        
+
+                    </div>
+                </div>
+            </div>
+        
         </div>
     )
 }

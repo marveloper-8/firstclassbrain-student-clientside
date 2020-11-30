@@ -10,11 +10,17 @@ import {
 import './App.css';
 
 import Home from './pages/Home'
+import Dashboard from './pages/Dashboard'
 import About from './pages/About'
 import Faq from './pages/Faq'
 import Contact from './pages/Contact'
-import Dashboard from './pages/Classroom'
-import Subjects from './pages/Subjects'
+import Classroom from './pages/Classroom'
+import PaymentStatusMonthly from './pages/PaymentStatusMonthly'
+import PaymentStatusQuarterly from './pages/PaymentStatusQuarterly'
+import PaymentStatusBiannually from './pages/PaymentStatusBiannually'
+import PaymentStatusYearly from './pages/PaymentStatusYearly'
+import ResetPassword from './pages/ResetPassword'
+import VerifyEmail from './pages/VerifyEmail'
 import Terms from './pages/Terms'
 import Weeks from './pages/Weeks'
 import Topics from './pages/Topics'
@@ -36,30 +42,37 @@ export const UserContext = createContext()
 const Routing = () => {
   const history = useHistory()
   const {dispatch} = useContext(UserContext)
+  const user = JSON.parse(localStorage.getItem("user"))
   useEffect(() => {
-    const user = JSON.parse(localStorage.getItem("user"))
     if(user){
       dispatch({type: "USER", payload: user})
       // history.push('/classroom')
     } else{
       // history.push('/')
     }
-  }, [history, dispatch])
+  })
 
   return(
     <Switch>
       <Route exact path='/' component={Home} />
+      <Route exact path='/dashboard' component={Dashboard} />
       <Route exact path='/faq' component={Faq} />
       <Route exact path='/about' component={About} />
       <Route exact path='/contact' component={Contact} />
-      <Route exact path='/dashboard' component={Dashboard} />
-      <Route exact path='/subjects/:classSelected' component={Subjects} />
-      <Route exact path='/terms/:classSelected/:subject' component={Terms} />
-      <Route exact path='/weeks/:classSelected/:subject/:term' component={Weeks} />
-      <Route exact path='/topics/:classSelected/:subject/:term/:week' component={Topics} />
+      <Route exact path='/classroom' component={Classroom} />
+      <Route exact path='/payment_status/monthly' component={PaymentStatusMonthly} />
+      <Route exact path='/payment_status/quarterly' component={PaymentStatusQuarterly} />
+      <Route exact path='/payment_status/biannually' component={PaymentStatusBiannually} />
+      <Route exact path='/payment_status/yearly' component={PaymentStatusYearly} />
+      <Route exact path='/reset/student/:token' component={ResetPassword} />
+      <Route exact path='/verify-email/student' component={VerifyEmail} />
+      <Route exact path='/terms/:subject' component={Terms} />
+      <Route exact path='/weeks/:subject/:term' component={Weeks} />
+      <Route exact path='/topics/:subject/:term/:week' component={Topics} />
       <Route exact path='/course-video/:postId' component={CourseVideo} />
       <Route exact path='/course-text/:postId' component={CourseText} />
-      <Route exact path='/assignment/:postId/:week' component={Assignment} />
+      {/* <Route exact path='/assignment/:postId/:week' component={Assignment} /> */}
+      <Route exact path='/assignment/:postId' component={Assignment} />
       <Route exact path='/examination' component={Examination} />
       <Route exact path='/assignment-score' component={AssignmentScore} />
       <Route exact path='/examination-score' component={ExaminationScore} />

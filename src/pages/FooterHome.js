@@ -22,22 +22,22 @@ function Footer() {
                     <h4 className="sub-title">Follow Us</h4>
 
                     <span>
-                        <a className="link" href="https://www.facebook.com/aoestatechariots" rel="noopener noreferrer" target="_blank">
+                        <a className="link" href="https://www.linkedIn.com/company/firstclassbrain" rel="noopener noreferrer" target="_blank">
                             <img src={facebook} alt="facebook" /> 
                         </a>
                     </span>
                     <span>
-                        <a className="link" href="https://www.linkedin.com/company/aoestatechariots" rel="noopener noreferrer" target="_blank">
-                            <img src={linkedin} alt="linkedin" /> 
+                        <a className="link" href="https://www.linkedIn.com/company/firstclassbrain" rel="noopener noreferrer" target="_blank">
+                            <img src={linkedin} alt="linkedin" />
                         </a>
                     </span>
                     <span>
-                        <a className="link" href="https://twitter.com/AOEstateChariot" rel="noopener noreferrer" target="_blank">
+                        <a className="link" href="https://mobile.twitter.com/firstclassbrain" rel="noopener noreferrer" target="_blank">
                             <img src={twitter} alt="facebook" /> 
                         </a>
                     </span>
                     <span>
-                        <a className="link" href="https://www.instagram.com/aoestatechariots" rel="noopener noreferrer" target="_blank">
+                        <a className="link" href="https://www.instagram.com/firstclassbrain" rel="noopener noreferrer" target="_blank">
                             <img src={instagram} alt="instagram" /> 
                         </a>
                     </span>
@@ -56,9 +56,13 @@ function Footer() {
                             Phone Number
                         </div>
                         <span>
-                            +234-(0)907-455-4735
+                            <a className="link" href="tel:+2349074554735">
+                                +234-(0)907-455-4735,
+                            </a>
                             <br />
-                            +234-(0)815-832-6626
+                            <a className="link" href="tel:+2348158326626">
+                                +234-(0)815-832-6626
+                            </a>
                         </span>
                     </div>
                     <div className="tab">
@@ -66,8 +70,13 @@ function Footer() {
                             Email Address
                         </div>
                         <span>
-                            firstclassbrain11@gmail.com
-                            hello@firstclassbrain.com
+                            <a className="link" href="mailto:firstclassbrain11@gmail.com">
+                                firstclassbrain11@gmail.com,
+                            </a>
+                            <br />
+                            <a className="link" href="mailto:hello@firstclassbrain.com">
+                                hello@firstclassbrain.com
+                            </a>
                         </span>
                     </div>
                     <div className="tab">
@@ -75,7 +84,9 @@ function Footer() {
                             Location
                         </div>
                         <span>
-                            No. 27, Olayiwola Street, New Oko-oba, Lagos State
+                            <a className="link" href="https://goo.gl/maps/mMbMwrJQVxoRrb1R8" rel="noopener noreferrer" target="_blank">
+                                No. 27, Olayiwola Street, New Oko-oba, Lagos State
+                            </a>
                         </span>
                     </div>
                 </div>

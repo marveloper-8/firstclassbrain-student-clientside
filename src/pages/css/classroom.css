@@ -7,14 +7,20 @@
     overflow-x:hidden;
     background:#fff;
 }
+.classroom .desktop{
+    display:block;
+}
+.classroom .mobile{
+    display:none;
+}
 
 .classroom section{
     display:grid;
     grid-template-columns:1fr 1fr;
-    padding:25vh 7.5vw 0 7.5vw;
+    padding:17.5vh 2.5vw 0 2.5vw;
 }
 .classroom section .head{
-    font-size:.85vw;
+    font-size:10px;
     color:grey;
     font-weight:bold;
 }
@@ -43,12 +49,12 @@
     padding:.5vh 1.5vw;
     color:teal;
     font-weight:bold;
-    font-size:1vw;
+    font-size:14px;
     margin-right:2vw;
 }
 .classroom section .navigation .back{
     color:grey;
-    font-size:1vw;
+    font-size:14px;
     font-weight:bold;
 }
 
@@ -64,7 +70,7 @@
     padding-top:40vh;
     color:#fff;
     font-weight:400;
-    font-size:2vw;
+    font-size:14px;
     display:block;
 }
 .classroom .paid{
@@ -87,7 +93,7 @@
     border-top:1px #707070 solid;
 }
 .classroom .main-content .score-projection .incline-decline{
-    font-size:1vw;
+    font-size:14px;
     color:teal;
     font-weight:bold;
 }
@@ -96,12 +102,12 @@
     margin-bottom:2vh;
 }
 .classroom .main-content .score-projection .percentage{
-    font-size:1vw;
+    font-size:14px;
     font-weight:bold;
     color:teal;
 }
 .classroom .main-content .score-projection .percentage .bold{
-    font-size:4.5vw;
+    font-size:16px;
     font-weight:bold;
     color:teal;
 }
@@ -110,13 +116,13 @@
 
 .classroom .dashboard-container{
     display:grid;
-    grid-template-columns:1fr 3fr;
+    grid-template-columns:1fr 5fr;
 }
 
 .classroom .subjects-container{
-    padding:10vh 5vw 20vh 5vw;
+    padding:5vh 1.5vw 20vh 1.5vw;
     display:grid;
-    grid-template-columns:1fr 1fr 1fr 1fr;
+    grid-template-columns:1fr 1fr 1fr 1fr 1fr 1fr;
     text-align:center;
 }
 .classroom .subjects-container .subjects{
@@ -126,49 +132,30 @@
     padding: 5vh 3vw;
     text-align:center;
     transition:.5s ease-in-out all;
+    cursor:pointer;
 }
-.classroom .subjects-container .unpaid-class{
-    background:#dadada!important;
-}
-.classroom .subjects-container .unpaid-class .pay-button{
-    padding:.5vh 0;
-    border-radius:3px;
-    border:1.5px #f00 solid;
-    color:red;
-    width:100%;
-    transition:.5s ease all;
-}
-.classroom .subjects-container .unpaid-class .pay-button:hover{
-    padding:.5vh 0;
-    border-radius:3px;
-    background:#f00;
-    border:1.5px #f00 solid;
-    color:#fff;
-    width:100%;
-    transition:.5s ease all;
-}
-.classroom .subjects-container .disappear{
-    display:none;
+.classroom .subjects-container .subjects:hover{
+    box-shadow:0px 0px 10px rgba(0, 130, 130, 0.809);
 }
 .classroom .subjects-container .image img{
     width: 60%;
 }
 .classroom .subjects-container .subjects .label{
-    font-size:1vw;
+    font-size:10px;
     color:teal;
     font-weight:normal;
     margin-top:1vh;
     font-weight:bold;
 }
 .classroom .subjects-container .subjects .department{
-    font-size:1vw;
+    font-size:14px;
     color:#f00;
     font-weight:normal;
     margin-top:1vh;
 }
 .classroom .subjects-container .topics{
     box-shadow:0px 3px 6px #00000029;
-    width:80%;
+    width:90%;
     margin:0 auto 7.5vh auto;
     text-align:center;
     transition:.5s ease-in-out all;
@@ -177,7 +164,7 @@
     position:relative;
 }
 .classroom .subjects-container .topics:hover{
-    width:80%;
+    width:90%;
     margin:0 auto 7.5vh auto;
     background:#dadada;
     text-align:center;
@@ -190,7 +177,7 @@
     display:none;
 }
 .classroom .subjects-container .topics .label{
-    font-size:1vw;
+    font-size:14px;
     color:teal;
     font-weight:normal;
     padding:2vh 3vw;
@@ -205,7 +192,7 @@
     overflow-y:hidden;
 }
 .classroom .subjects-container .topics:hover .label{
-    font-size:1vw;
+    font-size:10px;
     color:teal;
     font-weight:normal;
     padding:2vh 3vw;
@@ -220,14 +207,14 @@
     overflow-y:hidden;
 }
 .classroom .subjects-container .topics .label .button-container{
-    font-size:1vw;
+    font-size:10px!important;
     color:#f00;
     font-weight:normal;
     padding-top:15%;
     position:relative;
 }
 .classroom .subjects-container .topics .label .button-container button{
-    font-size:.9vw;
+    font-size:10px!important;
     background:#fff;
     font-weight:bold;
     padding:.75vh 0;
@@ -254,6 +241,120 @@
 
 
 
+
+.payment-plans{
+    position:fixed;
+    top:-100vh;
+    left:0;
+    transition:.5s ease-in-out all;
+    width:100vw;
+    height:100vh;
+}
+.payment-plans .payment-plans-inner{
+    position:absolute;
+    background:rgba(0, 0, 0, .9);
+    width:100vw;
+    min-height:100vh;
+    padding:15vh 20vw 0 20vw;
+    top:0;
+    left:0;
+}
+.payment-plans .close-payment{
+    color:#fff;
+    font-size:14px;
+    border:none;
+    cursor:pointer;
+}
+.payment-plans .payment-title{
+    color:#fff;
+    font-size:16px;
+}
+.open-payment-plans{
+    top:0;
+    transition:.5s ease-in-out all;
+}
+.payment-plans .payment-table{
+    text-align:center;
+    padding-top:5vh;
+    display:grid;
+    grid-template-columns:1fr 1fr 1fr 1fr;
+}
+.payment-plans .payment-table .item{
+    padding:0 .5vw;
+}
+.payment-plans .payment-table .item .inner{
+    margin:0 auto;
+    background:#fff;
+    border-radius:6px 6px 0 0;
+    text-align:center;
+    padding-bottom:2vh;
+}
+.payment-plans .payment-table .item .inner .title{
+    font-size:16px;
+    padding:2vh 2.5vw;
+    transition:.5s ease-in-out all;
+}
+.payment-plans .payment-table .item .inner .price{
+    padding:1vh 2.5vw;
+    background:teal;
+    text-align:center;
+    font-size:14px;
+    color:#fff;
+}
+.payment-plans .payment-table .item .inner .price .subscription{
+    font-size:10px;
+}
+.payment-plans .payment-table .item .inner button{
+    background:teal;
+    color:#fff;
+    width:80%;
+    padding:1vh 0;
+    margin:3vh auto;
+    display:block;
+    font-size:10px;
+    border-radius:3px;
+    border:1.5px teal solid;
+    transition:.5s ease-in-out all;
+}
+.payment-plans .payment-table .item .inner button:hover{
+    background:#fff;
+    color:teal;
+    width:80%;
+    padding:1vh 0;
+    margin:3vh auto;
+    display:block;
+    font-size:10px;
+    border-radius:3px;
+    border:1.5px teal solid;
+    transition:.5s ease-in-out all;
+}
+.payment-plans .payment-table .item .inner button:hover ~ .payment-plans .payment-table .item .inner .title{
+    color:teal;
+    transition:.5s ease-in-out all;
+}
+
+
+
+
+
+
+
+.classroom .verify-email{
+    padding:10vh 25vw;
+    font-size:14px;
+    text-align:center;
+}
+.classroom .verify-email img{
+    display:block;
+    margin:0 auto 4vh auto;
+    width:10vw;
+}
+
+
+
+
+
+
 .course-details{
     position:relative;
     top:0;
@@ -272,7 +373,7 @@
     left:0;
     width:12vw;
     height:100vh;
-    font-size:.9vw;
+    font-size:10px;
 }
 .course-details .side-nav .week{
     padding:0 1vw 7.5vh 1vw;
@@ -280,11 +381,11 @@
     margin-bottom:7.5vh;
 }
 .course-details .side-nav .week img{
-    width:50%;
+    width:40%;
 }
 .course-details .side-nav .week .label{
     font-weight:bold;
-    font-size:1.5vw;
+    font-size:14px;
     color:teal;
     margin-top:1vh;
 }
@@ -314,14 +415,22 @@
     top:0;
     right:0;
     width:87vw;
+    padding-top:5vh;
+}
+.course-details .test-container{
+    width:100vw;
+    padding:5vh 0 0 0;
+}
+.course-details .test-container .test-container-inner{
+    padding:0 20vw;
 }
 .course-details .main-content section{
     display:grid;
     grid-template-columns:4fr 1fr;
-    padding:25vh 5vw 0 5vw;
+    padding:15vh 5vw 0 5vw;
 }
 .course-details .main-content section .head{
-    font-size:1.5vw;
+    font-size:14px;
     color:grey;
     text-transform:uppercase;
     font-weight:bold;
@@ -336,17 +445,17 @@
     padding:.5vh 1.5vw;
     color:teal;
     font-weight:bold;
-    font-size:1vw;
+    font-size:14px;
     margin-right:2vw;
 }
 .course-details .main-content section .navigation .back{
     color:grey;
-    font-size:1vw;
+    font-size:14px;
     font-weight:bold;
 }
 .course-details .main-content section .time{
     color:grey;
-    font-size:1vw;
+    font-size:14px;
     font-weight:bold;
 }
 .course-details .main-content section .time-remaining,
@@ -368,7 +477,7 @@
     border-top:1px #707070 solid;
 }
 .course-details .main-content .score-projection .incline-decline{
-    font-size:1vw;
+    font-size:14px;
     color:teal;
     font-weight:bold;
 }
@@ -377,12 +486,12 @@
     margin-bottom:2vh;
 }
 .course-details .main-content .score-projection .percentage{
-    font-size:1vw;
+    font-size:14px;
     font-weight:bold;
     color:teal;
 }
 .course-details .main-content .score-projection .percentage .bold{
-    font-size:4.5vw;
+    font-size:16px;
     font-weight:bold;
     color:teal;
 }
@@ -398,27 +507,91 @@
     margin-bottom:5vh;
 }
 .course-details .main-content .content .sub-title{
-    font-size:2.5vw;
+    font-size:16px;
     font-weight:bold;
 }
 .course-details .main-content .content .text{
-    font-size:1.25vw;
+    font-size:14px;
     text-align:justify;
 }
-.course-details .main-content .attendance{
-    grid-template-columns:1fr 15fr;
-    font-size:1.25vw;
+.course-details .main-content .course-details-extras{
+    display:grid;
+    grid-template-columns:1fr 1fr!important;
+    font-size:10px;
     font-weight:bold;
     color:grey;
     border-top:1px #dadada solid;
     padding:7vh 5vw;
 }
-.course-details .main-content .attendance input{
-    margin-right:1vw;
-    width:1.25vw;
-    height:1.25vw;
+.course-details .main-content .course-details-extras .right{
+    text-align:right;
 }
-
+.course-details .main-content .course-details-extras .attendance{
+    width:100%;
+    background:grey;
+    color:#fff;
+    padding:10px 0!important;
+    text-align:center;
+    border-radius:6px;
+}
+.course-details .main-content .course-details-extras .assignment{
+    width:90%;
+    background:teal;
+    color:#fff;
+    padding:10px 0!important;
+    text-align:center;
+    border-radius:6px;
+}
+.course-details .main-content .take-test{
+    position:fixed;
+    z-index:1000000;
+    top:0;
+    left:0;
+    width:100vw;
+    height:100vh;
+    display:none;
+}
+.course-details .main-content .take-test-visible{
+    display:block;
+}
+.course-details .main-content .take-test .background{
+    background:rgba(0,0,0,.9);
+    position:fixed;
+    top:0;
+    left:0;
+    width:100vw;
+    height:100vh;
+}
+.course-details .main-content .take-test .container .title{
+    font-size:16px;
+    font-weight:bolder;
+    margin-bottom:10px;
+}
+.course-details .main-content .take-test .container{
+    background:#fff;
+    position:absolute;
+    top:30vh;
+    left:30vw;
+    width:40vw;
+    height:auto;
+    padding:3vh 2vw;
+    font-size:12px;
+}
+.course-details .main-content .take-test .container .close{
+    position:absolute;
+    top:2vh;
+    right:1vw;
+    color:#f00;
+    font-size:30px;
+    cursor:pointer;
+}
+.course-details .main-content .take-test button{
+    border-radius:6px;
+    background:teal;
+    color:#fff;
+    padding:5px 10px;
+    margin-top:10px;
+}
 
 
 
@@ -437,7 +610,7 @@
     padding:4vh 3vw;
 }
 .course-details .main-content .test-questions .item .number{
-    font-size:1.25vw;
+    font-size:14px;
     font-weight:600;
     color:grey;
     margin-bottom:2vh;
@@ -449,13 +622,13 @@
     border:none;
     border-radius:7px;
     margin-bottom:2vh;
-    font-size:1vw;
+    font-size:14px;
 }
 .course-details .main-content .test-questions .item .answer-options .tab{
     display:grid;
-    grid-template-columns:6fr .2fr 6fr;
+    grid-template-columns:2fr .2fr 10fr;
     margin-bottom:2vh;
-    font-size: 1vw;
+    font-size: 12px;
 }
 .course-details .main-content .test-questions .item .answer-options .tab .select,
 .course-details .main-content .test-questions .item .answer-options .tab .label{
@@ -466,10 +639,57 @@
 .course-details .main-content .test-questions .item .answer-options .tab .select{
     color:teal;
     font-weight:bold;
+    position:relative;
+    cursor:pointer;
+    display:inline-block!important;
+    transition:.25s ease-in-out all;
+}
+.course-details .main-content .test-questions .item .answer-options .tab .select .radio{
+    color:teal;
+    background:teal;
+    position:absolute;
+    top:0;
+    left:0;
+    opacity:0;
+    z-index:100000000;
+    width:10vw;
+    height:5vh;
+    cursor:pointer;
+    transition:.25s ease-in-out all;
+}
+.course-details .main-content .test-questions .item .answer-options .tab .select .text{
+    z-index:100;
+    position:relative;
+}
+.course-details .main-content .test-questions .item .answer-options .tab .select .checkmark{
+    width:100%;
+    height:100%;
+    background:#f6f5f5;
+    position:absolute;
+    top:0;
+    left:0;
+    border-radius:7px;
+    transition:.25s ease-in-out all;
+}
+.course-details .main-content .test-questions .item .answer-options .tab .select .select-background-change{
+    background:rgba(0, 128, 128, 0.292)!important;
+}
+.course-details .main-content .test-questions .item .answer-options .tab .select .radio:checked ~ .select-background-change{
+    background:teal!important;
+    transition:.25s ease-in-out all;
+}
+.course-details .main-content .test-questions .item .answer-options .tab .select .radio:checked ~ .checkmark,
+.course-details .main-content .test-questions .item .answer-options .tab .select .radio:checked ~ .select-background-change{
+    background:teal;
+    transition:.25s ease-in-out all;
+}
+.course-details .main-content .test-questions .item .answer-options .tab .select .radio:checked ~ .text{
+    color:#fff;
+    transition:.25s ease-in-out all;
 }
 .course-details .main-content .test-questions .item .answer-options .tab .label input{
     width:100%;
-    font-size:1vw;
+    font-size:14px;
     background:none;
     outline:none;
     border:none;
@@ -481,7 +701,7 @@
 .course-details .main-content .test-questions button{
     background:teal;
     color:#fff;
-    font-size:1.5vw;
+    font-size:14px;
     padding:1.5vh 0;
     width:92.5%;
     display:block;
@@ -532,10 +752,13 @@
     padding:4vh 3vw;
 }
 .examination .main-content .test-questions .item .number{
-    font-size:1.25vw;
+    font-size:14px;
     font-weight:600;
     color:grey;
     margin-bottom:2vh;
+}
+.examination .main-content .test-questions .item .number .digits{
+    display:inline-block;
 }
 .examination .main-content .test-questions .item .question{
     width:96%;
@@ -562,7 +785,7 @@
 }
 .examination .main-content .test-questions .item .answer-options .tab .label input{
     width:100%;
-    font-size:1vw;
+    font-size:14px;
     background:none;
     outline:none;
     border:none;
@@ -574,7 +797,7 @@
 .examination .main-content .test-questions button{
     background:teal;
     color:#fff;
-    font-size:1.5vw;
+    font-size:14px;
     padding:1.5vh 0;
     width:92.5%;
     display:block;
@@ -604,80 +827,18 @@
     cursor:pointer;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+/* break */
+/* break */
+/* break */
+/* break */
+/* break */
+/* break */
+/* break */
+/* break */
+/* break */
 
 /* mobile screen */
-@media screen and (max-width:414px){
+@media screen and (max-width:600px){
     .classroom{
         position:relative;
         top:0;
@@ -687,6 +848,12 @@
         overflow-x:hidden;
         background:#fff;
     }
+    .classroom .mobile{
+        display:block;
+    }
+    .classroom .desktop{
+        display:none!important;
+    }
     
     .classroom section{
         display:grid;
@@ -694,7 +861,7 @@
         padding:9vh 7.5vw 0 7.5vw;
     }
     .classroom section .head{
-        font-size:2.5vw;
+        font-size:16px;
         color:grey;
         font-weight:bold;
     }
@@ -723,12 +890,12 @@
         padding:.5vh 1.5vw;
         color:teal;
         font-weight:bold;
-        font-size:1vw;
+        font-size:14px;
         margin-right:2vw;
     }
     .classroom section .navigation .back{
         color:grey;
-        font-size:1vw;
+        font-size:14px;
         font-weight:bold;
     }
     
@@ -744,7 +911,7 @@
         padding-top:40vh;
         color:#fff;
         font-weight:400;
-        font-size:2vw;
+        font-size:14px;
         display:block;
     }
     .classroom .paid{
@@ -767,7 +934,7 @@
         border-top:1px #707070 solid;
     }
     .classroom .main-content .score-projection .incline-decline{
-        font-size:1vw;
+        font-size:14px;
         color:teal;
         font-weight:bold;
     }
@@ -776,18 +943,22 @@
         margin-bottom:2vh;
     }
     .classroom .main-content .score-projection .percentage{
-        font-size:1vw;
+        font-size:14px;
         font-weight:bold;
         color:teal;
     }
     .classroom .main-content .score-projection .percentage .bold{
-        font-size:4.5vw;
+        font-size:16px;
         font-weight:bold;
         color:teal;
     }
     
     
-    
+        
+    .classroom .dashboard-container{
+        display:grid;
+        grid-template-columns:1fr;
+    }
     .classroom .subjects-container{
         padding:2vh 5vw 20vh 5vw;
         display:grid;
@@ -796,51 +967,20 @@
     }
     .classroom .subjects-container .subjects{
         box-shadow:0px 3px 6px #00000029;
-        width:80%;
+        width:90%;
         margin:0 auto 2.5vh auto;
         padding: 1.5vh 3vw;
         text-align:center;
         transition:.5s ease-in-out all;
     }
-    .classroom .subjects-container .subjects:hover{
-        width:80%;
-        margin:0 auto 7.5vh auto;
-        background:#dadada;
-        padding: 5vh 3vw;
-        text-align:center;
-        transition:.5s ease-in-out all;
-        display:block;
-    }
     .classroom .subjects-container .unpaid-class{
         background:#dadada!important;
-    }
-    .classroom .subjects-container .unpaid-class .pay-button{
-        padding:.5vh 0;
-        border-radius:3px;
-        border:1.5px #f00 solid;
-        color:red;
-        width:100%;
-        transition:.5s ease all;
-        font-size:2.5vw;
-    }
-    .classroom .subjects-container .unpaid-class .pay-button:hover{
-        padding:.5vh 0;
-        border-radius:3px;
-        background:#f00;
-        border:1.5px #f00 solid;
-        color:#fff;
-        width:100%;
-        transition:.5s ease all;
-        font-size:2.5vw;
-    }
-    .classroom .subjects-container .disappear{
-        display:none;
     }
     .classroom .subjects-container .image img{
         width: 40%;
     }
     .classroom .subjects-container .subjects .label{
-        font-size:2.5vw;
+        font-size:16px;
         color:teal;
         font-weight:normal;
         margin-top:1vh;
@@ -870,7 +1010,7 @@
         display:none;
     }
     .classroom .subjects-container .topics .label{
-        font-size:2.5vw;
+        font-size:16px;
         color:teal;
         font-weight:normal;
         padding:1vh 3vw;
@@ -885,7 +1025,7 @@
         overflow-y:hidden;
     }
     .classroom .subjects-container .topics:hover .label{
-        font-size:2.5vw;
+        font-size:16px;
         color:teal;
         font-weight:normal;
         padding:2vh 3vw;
@@ -900,14 +1040,14 @@
         overflow-y:hidden;
     }
     .classroom .subjects-container .topics .label .button-container{
-        font-size:2.5vw;
+        font-size:16px;
         color:#f00;
         font-weight:normal;
         padding-top:15%;
         position:relative;
     }
     .classroom .subjects-container .topics .label .button-container button{
-        font-size:2vw;
+        font-size:14px;
         background:#fff;
         font-weight:bold;
         padding:.75vh 0;
@@ -927,6 +1067,123 @@
     }
     .classroom .main-content .test-questions .item .answer-selection .wrong-answer{
         background:rgba(128, 0, 0, 0.211)!important;
+    }
+
+
+
+
+
+
+
+    .payment-plans{
+        position:fixed;
+        top:-150vh;
+        left:0;
+        transition:.5s ease-in-out all;
+        width:100vw;
+        height:100vh;
+        overflow-x:scroll;
+    }
+    .payment-plans .payment-plans-inner{
+        position:absolute;
+        background:rgba(0, 0, 0, .9);
+        width:100vw;
+        min-height:100vh;
+        padding:10vh 20vw 10vh 20vw;
+        top:0;
+        left:0;
+        overflow-x:scroll;
+    }
+    .payment-plans .close-payment{
+        color:#fff;
+        font-size:16px;
+        border:none;
+        cursor:pointer;
+    }
+    .payment-plans .payment-title{
+        color:#fff;
+        font-size:18px;
+    }
+    .open-payment-plans{
+        top:0;
+        transition:.5s ease-in-out all;
+    }
+    .payment-plans .payment-table{
+        text-align:center;
+        padding-top:5vh;
+        display:grid;
+        grid-template-columns:1fr;
+    }
+    .payment-plans .payment-table .item{
+        padding:0 7.5vw;
+        margin-bottom:2vh;
+    }
+    .payment-plans .payment-table .item .inner{
+        margin:0 auto;
+        background:#fff;
+        border-radius:6px 6px 0 0;
+        text-align:center;
+        padding-bottom:1vh;
+    }
+    .payment-plans .payment-table .item .inner .title{
+        font-size:18px;
+        padding:1vh 2.5vw;
+        transition:.5s ease-in-out all;
+    }
+    .payment-plans .payment-table .item .inner .price{
+        padding:1vh 5vw;
+        background:teal;
+        text-align:center;
+        font-size:18px;
+        color:#fff;
+    }
+    .payment-plans .payment-table .item .inner .price .subscription{
+        font-size:16px;
+    }
+    .payment-plans .payment-table .item .inner button{
+        background:teal;
+        color:#fff;
+        width:80%;
+        padding:1vh 0;
+        margin:2vh auto;
+        display:block;
+        font-size:16px;
+        border-radius:3px;
+        border:1.5px teal solid;
+        transition:.5s ease-in-out all;
+    }
+    .payment-plans .payment-table .item .inner button:hover{
+        background:#fff;
+        color:teal;
+        width:80%;
+        padding:1vh 0;
+        margin:3vh auto;
+        display:block;
+        font-size:10px;
+        border-radius:3px;
+        border:1.5px teal solid;
+        transition:.5s ease-in-out all;
+    }
+    .payment-plans .payment-table .item .inner button:hover ~ .payment-plans .payment-table .item .inner .title{
+        color:teal;
+        transition:.5s ease-in-out all;
+    }
+
+
+
+
+
+
+
+    .classroom .verify-email{
+        padding:10vh 20vw;
+        font-size:16px;
+        text-align:center;
+    }
+    .classroom .verify-email img{
+        display:block;
+        margin:0 auto 1.5vh auto;
+        width:30vw;
     }
     
     
@@ -949,7 +1206,7 @@
         text-align:center;
         position:relative;
         width:100%!important;
-        font-size:2.5vw;
+        font-size:16px;
         height:0;
         margin:0;
         z-index:100;
@@ -969,7 +1226,7 @@
     }
     .course-details .side-nav .week .label{
         font-weight:bold;
-        font-size:7.5vw;
+        font-size:18px;
         color:teal;
         margin:1vh 0 0 5vw;
         display:inline-block;
@@ -1010,7 +1267,7 @@
         padding:27.5vh 5vw 0 5vw;
     }
     .course-details .main-content section .head{
-        font-size:2.5vw;
+        font-size:16px;
         color:grey;
         text-transform:uppercase;
         font-weight:bold;
@@ -1025,17 +1282,17 @@
         padding:.5vh 1.5vw;
         color:teal;
         font-weight:bold;
-        font-size:1vw;
+        font-size:14px;
         margin-right:2vw;
     }
     .course-details .main-content section .navigation .back{
         color:grey;
-        font-size:1vw;
+        font-size:14px;
         font-weight:bold;
     }
     .course-details .main-content section .time{
         color:grey;
-        font-size:2.5vw;
+        font-size:16px;
         font-weight:bold;
         margin:0!important;
         padding:0!important;
@@ -1057,7 +1314,7 @@
         border-top:1px #707070 solid;
     }
     .course-details .main-content .score-projection .incline-decline{
-        font-size:1vw;
+        font-size:14px;
         color:teal;
         font-weight:bold;
     }
@@ -1066,12 +1323,12 @@
         margin-bottom:2vh;
     }
     .course-details .main-content .score-projection .percentage{
-        font-size:1vw;
+        font-size:14px;
         font-weight:bold;
         color:teal;
     }
     .course-details .main-content .score-projection .percentage .bold{
-        font-size:4.5vw;
+        font-size:16px;
         font-weight:bold;
         color:teal;
     }
@@ -1081,7 +1338,7 @@
         padding:2vh 5vw;
     }
     .course-details .main-content .head{
-        font-size:4vw;
+        font-size:18px;
     }
     .course-details .main-content .margin-bottom{
         margin-bottom:1vh;
@@ -1093,17 +1350,17 @@
         margin-bottom:0vh;
     }
     .course-details .main-content .content .sub-title{
-        font-size:3.5vw;
+        font-size:18px;
         margin-top:1.5vh;
         font-weight:bold;
     }
     .course-details .main-content .content .text{
-        font-size:2.5vw;
+        font-size:16px;
         text-align:justify;
     }
     .course-details .main-content .attendance{
         grid-template-columns:1fr 15fr;
-        font-size:2.5vw;
+        font-size:16px;
         font-weight:bold;
         color:grey;
         border-top:1px #dadada solid;
@@ -1133,7 +1390,7 @@
         padding:4vh 3vw;
     }
     .course-details .main-content .test-questions .item .number{
-        font-size:2.5vw;
+        font-size:16px;
         font-weight:600;
         color:grey;
         margin-bottom:1vh;
@@ -1145,13 +1402,13 @@
         border:none;
         border-radius:7px;
         margin-bottom:1vh;
-        font-size:2.5vw;
+        font-size:16px;
     }
     .course-details .main-content .test-questions .item .answer-options .tab{
         display:grid;
         grid-template-columns:6fr .2fr 18fr;
         margin-bottom:2vh;
-        font-size: 2vw;
+        font-size: 16px;
     }
     .course-details .main-content .test-questions .item .answer-options .tab .select,
     .course-details .main-content .test-questions .item .answer-options .tab .label{
@@ -1165,7 +1422,7 @@
     }
     .course-details .main-content .test-questions .item .answer-options .tab .label input{
         width:100%;
-        font-size:1vw;
+        font-size:14px;
         background:none;
         outline:none;
         border:none;
@@ -1177,7 +1434,7 @@
     .course-details .main-content .test-questions button{
         background:teal;
         color:#fff;
-        font-size:1.5vw;
+        font-size:14px;
         padding:1.5vh 0;
         width:92.5%;
         display:block;
@@ -1228,7 +1485,7 @@
         padding:1vh 3vw;
     }
     .examination .main-content .test-questions .item .number{
-        font-size:1.25vw;
+        font-size:14px;
         font-weight:600;
         color:grey;
         margin-bottom:2vh;
@@ -1258,7 +1515,7 @@
     }
     .examination .main-content .test-questions .item .answer-options .tab .label input{
         width:100%;
-        font-size:1vw;
+        font-size:14px;
         background:none;
         outline:none;
         border:none;
@@ -1270,7 +1527,7 @@
     .examination .main-content .test-questions button{
         background:teal;
         color:#fff;
-        font-size:1.5vw;
+        font-size:14px;
         padding:1.5vh 0;
         width:92.5%;
         display:block;

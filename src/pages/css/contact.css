@@ -3,6 +3,9 @@
     padding:10vh;
     text-align:center!important;
 }
+.contact .link{
+    color:#fff;
+}
 .contact .content{
     display:grid;
     background:#fff;
@@ -35,6 +38,7 @@
 }
 .contact  .content .info .paragraph{
     margin-bottom:4vh;
+    color:#fff;
 }
 .contact .content .info .paragraph img{
     width:1vw;

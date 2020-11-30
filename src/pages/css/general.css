@@ -1,3 +1,6 @@
+*{
+    transition:.5s ease-in-out all;
+}
 .App{
     position:relative;
     /* top:0;
@@ -247,20 +250,6 @@
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 .App .popup{
     display:none;
 }
@@ -349,164 +338,66 @@
     border-radius:5px;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+.App .payment-status{
+    padding:20vh 20vw 25vh 20vw;
+    text-align:center;
+    font-size:1vw;
+}
+.App .payment-status img{
+    width:20%;
+    display:block;
+    margin:5vh auto;
+}
+
+
+.App .payment-status form{
+    width:40%;
+    margin:auto;
+}
+.App .payment-status form .input{
+    display:grid;
+    grid-template-columns:1fr 15fr;
+    background:#bbb;
+    border-radius:5px;
+    padding:1.5vh 1vw!important;
+    margin-bottom:3vh;
+    position:relative;
+}
+.App .payment-status form .input img{
+    width:80%;
+    margin:0!important;
+}
+.App .payment-status form .input input{
+    padding:0 1vw;
+    border:none;
+    outline:none;
+    font-size:.85vw;
+    background:none;
+}
+.App .payment-status form button{
+    padding:1.5vh 0;
+    text-align:center;
+    width:100%;
+    background:teal;
+    border-radius:5px;
+    border:none;
+    color:#fff;
+    font-size:.85vw;
+    cursor:pointer;
+}
+
+/* break */
+/* break */
+/* break */
+/* break */
+/* break */
+/* break */
+/* break */
+/* break */
+/* break */
 
 /* mobile screen */
-@media screen and (max-width:414px){
+@media screen and (max-width:600px){
     .App .testimonial{
         text-align:center;
         margin:0;
@@ -707,19 +598,6 @@
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     .App .popup{
         display:none;
     }
@@ -733,6 +611,7 @@
         display:block;
         text-align:center;
         overflow-x:hidden;
+        transition:.5s ease-in-out all;
     }
     .App .popup-toggle .background{
         background:rgba(0,0,0,.8);
@@ -806,5 +685,58 @@
         background:grey;
         height:50vh;
         border-radius:5px;
+    }
+
+    .App .payment-status{
+        padding:10vh 20vw 15vh 20vw;
+        text-align:center;
+        font-size:3vw;
+    }
+    .App .payment-status img{
+        width:50%;
+        display:block;
+        margin:5vh auto;
+    }
+
+
+    .App .payment-status form{
+        width:100%;
+        margin:auto;
+        padding-top:4vh;
+    }
+    .App .payment-status form .title{
+        font-size:7vw;
+    }
+    .App .payment-status form .input{
+        display:grid;
+        grid-template-columns:1fr;
+        background:#bbb;
+        border-radius:5px;
+        padding:1.5vh 1vw!important;
+        margin-bottom:3vh;
+        position:relative;
+    }
+    .App .payment-status form .input img{
+        width:80%;
+        margin:0!important;
+        display:none;
+    }
+    .App .payment-status form .input input{
+        padding:0 1vw;
+        border:none;
+        outline:none;
+        font-size:2.5vw;
+        background:none;
+    }
+    .App .payment-status form button{
+        padding:1.5vh 0;
+        text-align:center;
+        width:100%;
+        background:teal;
+        border-radius:5px;
+        border:none;
+        color:#fff;
+        font-size:2.5vw;
+        cursor:pointer;
     }
 }

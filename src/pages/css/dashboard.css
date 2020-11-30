@@ -1,12 +1,19 @@
 .dashboard-section{
-    display:grid;
-    grid-template-columns:1fr;
+    margin-top:5vh;
+    border-right:1px #ddd solid;
+}
+.dashboard-section .bullet{
+    width:.5vw;
+    height:.5vw;
+    border-radius:.5vw;
+    background:#ddd;
+    margin:auto;
 }
 .dashboard-section .profile-image{
-    width:15vw;
-    height:15vw;
-    border-radius:15vw;
-    margin:auto;
+    width:10vw;
+    height:10vw;
+    border-radius:10vw;
+    margin:0 auto 2vh auto;
     border:10px rgb(8, 169, 169) solid;
     animation-name:profile;
     animation-duration:3s;
@@ -14,42 +21,250 @@
     display:block;
 }
 .dashboard-section .name{
-    font-size:2.5vw;
+    font-size:1.25vw;
     text-transform:uppercase;
     font-weight:bolder;
     text-align:center;
-    margin-top:1vh;
+    margin:0!important;
     display:block;
+    padding:0!important;
 }
 .dashboard-section .name .surname{
     color:teal;
 }
-.dashboard-section .profile-tab{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    margin:0!important;
-    padding-left:2vw;
+.dashboard-section .profile{
+    text-align:center;
 }
-.dashboard-section .profile-tab .icon{
-    padding-left:2vw;
-    margin:0!important;
-}
-.dashboard-section .profile-tab .icon img{
-    width:1.5vw;
-}
-.dashboard-section .profile-tab .value{
-    font-size:1.2vw;
+.dashboard-section .profile .value{
+    font-size:.9vw;
     margin:0!important;
     padding:0!important;
 }
 
+.dashboard-section .extras{
+    padding:0;
+    width:80%;
+    margin:2.5vh auto 0 auto;
+    border-top:1px #ddd solid;
+    border-bottom:1px #ddd solid;
+    display:grid;
+    grid-template-columns:1fr 1fr 1fr 1fr;
+}
+.dashboard-section .extras div{
+    text-align:center;
+    padding:0!important;
+    margin:0!important;
+}
+.dashboard-section .extras img{
+    width:2vw;
+    margin:0!important;
+}
 
 
+.dashboard-section .logout{
+    font-size:.9vw;
+    color:#f00;
+    text-align:center;
+    padding:2.5vh 0;
+    margin:0;
+    cursor:pointer;
+}
+.dashboard-section .logout img{
+    width:1vw;
+}
 
+.dashboard-section .reset-password{
+    font-size:.9vw;
+    color:teal;
+    text-align:center;
+    padding:2.5vh 0;
+    margin:0;
+    cursor:pointer;
+}
+.dashboard-section .reset-password img{
+    width:1vw;
+}
 
+.dashboard-section .forgot-password{
+    font-size:.9vw;
+    color:#f00;
+    text-align:center;
+    padding:0 1.5vw;
+    margin:0;
+    height:0;
+    overflow-y:hidden;
+    background:#fff;
+    transition:.5s ease-in-out all;
+}
+.dashboard-section .open-forgot-password{
+    font-size:.9vw;
+    color:#f00;
+    text-align:center;
+    padding:0 1.5vw;
+    margin:0;
+    height:auto;
+    overflow-y:hidden;
+    background:#fff;
+    transition:.5s ease-in-out all;
+}
+.dashboard-section .forgot-password input{
+    width:100%;
+    border:none;
+    border-bottom:1px teal solid;
+    margin-bottom:1vh;
+}
+.dashboard-section .forgot-password button{
+    background:teal;
+    border-radius:6px;
+    padding:.5vh 2vw;
+    color:#fff;
+}
 
 @keyframes profile {
-    0%   {border:10px rgb(8, 169, 169) solid;}
-    50% {border:5px rgb(8, 169, 169) solid;}
-    100%   {border:10px rgb(8, 169, 169) solid;}
+    0%   {border:5px rgb(8, 169, 169) solid;}
+    50% {border:1px rgb(8, 169, 169) solid;}
+    100%   {border:5px rgb(8, 169, 169) solid;}
+}
+
+/* break */
+/* break */
+/* break */
+/* break */
+/* break */
+/* break */
+/* break */
+/* break */
+/* break */
+
+/* mobile screen */
+@media screen and (max-width:600px){
+    .dashboard-page{
+        margin-top:10vh;
+        border-right:1px #ddd solid;
+    }
+    .dashboard-page .bullet{
+        width:.5vw;
+        height:.5vw;
+        border-radius:.5vw;
+        background:#ddd;
+        margin:auto;
+    }
+    .dashboard-page .profile-image{
+        width:50vw;
+        height:50vw;
+        border-radius:50vw;
+        margin:0 auto 2vh auto;
+        border:10px rgb(8, 169, 169) solid;
+        animation-name:profile;
+        animation-duration:3s;
+        animation-iteration-count:infinite;
+        display:block;
+    }
+    .dashboard-page .name{
+        font-size:10vw;
+        text-transform:uppercase;
+        font-weight:bolder;
+        text-align:center;
+        margin:0!important;
+        display:block;
+        padding:0!important;
+    }
+    .dashboard-page .name .surname{
+        color:teal;
+    }
+    .dashboard-page .profile{
+        text-align:center;
+    }
+    .dashboard-page .profile .value{
+        font-size:3vw;
+        margin:0!important;
+        padding:0!important;
+    }
+
+    .dashboard-page .extras{
+        padding:3vh 0;
+        width:80%;
+        margin:2.5vh auto 0 auto;
+        border-top:1px #ddd solid;
+        border-bottom:1px #ddd solid;
+        display:grid;
+        grid-template-columns:1fr 1fr 1fr 1fr;
+    }
+    .dashboard-page .extras div{
+        text-align:center;
+        padding:0!important;
+        margin:0!important;
+    }
+    .dashboard-page .extras img{
+        width:50%;
+        margin:0!important;
+    }
+
+
+    .dashboard-page .logout{
+        font-size:3vw;
+        color:#f00;
+        text-align:center;
+        padding:2.5vh 0;
+        margin:0;
+    }
+    .dashboard-page .logout img{
+        width:3vw;
+        margin-right:1vw;
+    }
+
+    .dashboard-page .reset-password{
+        font-size:3vw;
+        color:teal;
+        text-align:center;
+        padding:2.5vh 0;
+        margin:0;
+    }
+    .dashboard-page .reset-password img{
+        width:3vw;
+        margin-right:1vw;
+    }
+    
+    .dashboard-page .forgot-password{
+        font-size:.9vw;
+        color:#f00;
+        text-align:center;
+        padding:0 1.5vw;
+        margin:0 0 5vh 0;
+        height:0;
+        overflow-y:hidden;
+        background:#fff;
+        transition:.5s ease-in-out all;
+    }
+    .dashboard-page .open-forgot-password{
+        font-size:2.5vw;
+        color:#f00;
+        text-align:center;
+        padding:0 10vw;
+        margin:0;
+        height:auto;
+        overflow-y:hidden;
+        background:#fff;
+        transition:.5s ease-in-out all;
+    }
+    .dashboard-page .forgot-password input{
+        width:100%;
+        border:none;
+        border-bottom:1px teal solid;
+        margin-bottom:1vh;
+    }
+    .dashboard-page .forgot-password button{
+        background:teal;
+        border-radius:2px;
+        padding:1vh 2vw;
+        color:#fff;
+        width:100%;
+        margin-bottom:5vh;
+    }
+
+    @keyframes profile {
+        0%   {border:5px rgb(8, 169, 169) solid;}
+        50% {border:1px rgb(8, 169, 169) solid;}
+        100%   {border:5px rgb(8, 169, 169) solid;}
+    }
 }

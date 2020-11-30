@@ -61,3 +61,81 @@
     padding:2.5vh 7.5vw 2.5vh 0;
     text-align:justify;
 }
+
+/* breakkkk */
+/* breakkkk */
+/* breakkkk */
+/* breakkkk */
+/* breakkkk */
+/* breakkkk */
+/* breakkkk */
+/* breakkkk */
+/* breakkkk */
+/* breakkkk */
+
+/* mobile version */
+@media screen and (max-width:600px){
+    .faq{
+        display:grid;
+        grid-template-columns:1fr;
+        padding:5vh 7.5vw;
+    }
+    
+    .faq .info{
+        box-shadow: 0 4px 8px 0 rgba(132, 132, 132, 0.2), 0 6px 20px 0 rgba(177, 177, 177, 0.19);
+        width:100%;
+        margin:0;
+        padding:2vh 5vw;
+    }
+    .faq .info .title{
+        font-size:5vw;
+    }
+    .faq .info .title .enhanced{
+        color:teal;
+    }
+    .faq .info .paragraph{
+        font-size:2.5vw;
+        border-top:1px grey solid;
+        padding-top:1.5vh;
+        margin-top:1.5vh;
+    }
+    .faq .info .paragraph img{
+        width:6vw;
+        margin-right:2vw;
+    }
+    
+    
+    
+    .faq .faq-container{
+        padding-top:0;
+    }
+    .faq .faq-container .tab{
+        margin-bottom:2vh;
+        padding:0;
+    }
+    .faq .faq-container .tab .nav{
+        width:100%;
+        display:grid;
+        grid-template-columns:5fr 1fr;
+        background:#fff;
+    }
+    .faq .faq-container .tab .nav .head{
+        font-weight:bold;
+        font-size:3vw;
+    }
+    .faq .faq-container .tab .nav .nav-arrow{
+        text-align:right!important;
+        padding:0!important;
+        margin:0!important;
+    }
+    .faq .faq-container .tab .nav img{
+        width:4vw;
+        float:right;
+        margin:0!important;
+    }
+    .faq .faq-container .tab .content{
+        font-size:2.5vw;
+        padding:.5vh 0;
+        text-align:justify;
+    }
+}

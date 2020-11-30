@@ -112,9 +112,9 @@ $letterStagger: 0.1s;
 
     &-subheading {
       margin-bottom: 0;
-      font-size: 2.5vw;
+      font-size: 2vw;
       text-align:left;
-      padding:10vh 40vw 0 15vw;
+      padding:20vh 40vw 0 10vw;
       letter-spacing: 2px;
       transform: translateY(20px);
       z-index:150;
@@ -126,7 +126,7 @@ $letterStagger: 0.1s;
     @media screen and (max-width:414px){
       &-subheading {
         margin-bottom: 0;
-        font-size: 7vw;
+        font-size: 6vw;
         text-align:left;
         padding:30vh 7.5vw 0 7.5vw;
         letter-spacing: 2px;

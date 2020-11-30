@@ -2,12 +2,18 @@
     padding:0;
     margin:0;
 }
+.mobile-hide{
+    display:none;
+}
+.desktop-hide{
+    display:block;
+}
 .navigation .nav-bar{
     position:fixed;
     top:0;
     left:0;
     display:grid;
-    grid-template-columns:1fr 2fr;
+    grid-template-columns:1fr 3fr;
     padding:0 10vw;
     z-index:100;
     width:100vw;
@@ -27,7 +33,7 @@
     height:5vh;
 }
 .navigation .buttons{
-    font-size:.9vw;
+    font-size:.85vw;
     text-align:right;
     color:#000;
     text-decoration:none;
@@ -44,7 +50,7 @@
     cursor:pointer;
     font-weight:bold;
     color:teal;
-    font-size:1vw;
+    font-size:.85vw;
 }
 .navigation .buttons .navigation-link{
     border:none;
@@ -53,10 +59,12 @@
 .navigation .buttons .login{
     color:teal;
     background:#fff;
+    display:inline-block;
 }
 .navigation .buttons .signup{
     background:teal;
     color:#fff;
+    display:inline-block;
 }
 .navigation .buttons .logout{
     background:#f6f5f5;
@@ -211,7 +219,7 @@
 .navigation .popup .inner .content .text .input-file{
     outline:none;
     border:none;
-    font-size:1vw;
+    font-size:.9vw;
     text-align:left;
     padding-left:1vw;
     position:relative;
@@ -276,90 +284,35 @@
     cursor:pointer;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-@media screen and (max-width:414px){
+/* breakkkk */
+/* breakkkk */
+/* breakkkk */
+/* breakkkk */
+/* breakkkk */
+/* breakkkk */
+/* breakkkk */
+/* breakkkk */
+/* breakkkk */
+/* breakkkk */
+
+/* mobile version */
+@media screen and (max-width:600px){
     .navigation{
         padding:0;
         margin:0;
+    }
+    .desktop-hide{
+        display:none;
+    }
+    .mobile-hide{
+        display:block;
     }
     .navigation .nav-bar{
         position:fixed;
         top:0;
         left:0;
-        display:grid;
-        grid-template-columns:1fr 2fr;
+        display:grid!important;
+        grid-template-columns:1fr 1fr;
         padding:0 7.5vw;
         z-index:100;
         width:100vw;
@@ -373,15 +326,22 @@
     .navigation .logo-container{
         display:inline-block;
         text-align:left!important;
-        padding:1vh 0;
+        padding:2vh 0;
     }
     
     .navigation .logo-container img{
-        height:4vh;
+        height:3vh;
+    }
+    .navigation .nav-bar .menu-icon{
+        text-align:right!important;
+        padding:2vh 0;
+    }
+    .navigation .nav-bar .menu-icon img{
+        height:3vh;
     }
     .navigation .buttons{
         font-size:.9vw;
-        text-align:right;
+        text-align:right!important;
         color:#000;
         text-decoration:none;
         display:inline-block;
@@ -407,12 +367,22 @@
         background:teal;
         color:#fff;
     }
-    .navigation .buttons .logout{
-        background:#f6f5f5;
+    .navigation .nav-item{
+        font-size:3vw;
+        color:rgb(45, 45, 45);
+        padding-bottom:2vh;
+        margin-bottom:2vh;
+        border-bottom:1px rgb(202, 202, 202) solid;
+    }
+    .navigation .pro-nav-item{
+        font-weight:bold;
+        color:teal;
+    }
+    .navigation .logout{
         color:#f00;
         font-weight:bold;
         border:none;
-        border:#f6f5f5 1.5px solid;
+        border:none;
     }
     .navigation .profile-picture{
         width:3vw!important;
@@ -481,6 +451,7 @@
         text-align:left;
         height:100vh;
         overflow-y:scroll;
+        transition:.5s ease-in-out all;
     }
     
     /* width */

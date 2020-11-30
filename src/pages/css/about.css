@@ -22,7 +22,7 @@
 }
 .about .content .tab .text .normal{
     position:relative;
-    bottom:-5vh;
+    bottom:-4vh;
 }
 .about .content .tab .text .enhanced{
     color:teal;
@@ -51,4 +51,79 @@
     margin:0!important;
     position:relative;
     bottom:2vh;
+}
+
+/* breakkkk */
+/* breakkkk */
+/* breakkkk */
+/* breakkkk */
+/* breakkkk */
+/* breakkkk */
+/* breakkkk */
+/* breakkkk */
+/* breakkkk */
+/* breakkkk */
+
+/* mobile version */
+@media screen and (max-width:600px){
+    .about .content .tab{
+        display:grid;
+        grid-template-columns:1fr;
+        width:100%;
+    }
+    .about .content .tab .image{
+        height:100%;
+        width:100%;
+    }
+    .about .content .tab .text{
+        padding:5vh 10vw;
+        text-align:center;
+    }
+    .about .content .tab .text img{
+        width:40%;
+        position:relative;
+        bottom:0;
+        display:block;
+        margin:auto;
+    }
+    .about .content .tab .text .title{
+        font-size:10vw;
+        padding:0!important;
+        margin:0!important;
+    }
+    .about .content .tab .text .normal{
+        position:relative;
+        bottom:-0;
+        display:inline-block;
+    }
+    .about .content .tab .text .enhanced{
+        color:teal;
+        font-size:10vw;
+        display:inline-block;
+    }
+    .about .content .tab .text .line{
+        width:30%;
+        background:teal;
+        height:3px;
+        border-radius:50px;
+        position:relative;
+        top:-2vh;
+        display:none;
+    }
+    .about .content .tab .text .text-container{
+        font-size:3vw;
+        padding:0 10vw 2.5vh 10vw!important;
+        margin:0!important;
+        text-align:justify;
+    }
+    .about .content .tab .text button{
+        background:teal;
+        color:#fff;
+        font-size:2.5vw;
+        border-radius:6px;
+        padding:1.5vh 1.5vw;
+        margin:0!important;
+        position:relative;
+        bottom:0;
+    }
 }
