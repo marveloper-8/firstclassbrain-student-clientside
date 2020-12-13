@@ -64,8 +64,13 @@ function Terms() {
                 </section>
                 
                 <div className="content">
-                    <iframe className="video" src={postDetails.post ? postDetails.post.video : "loading"} title="video">
-                    </iframe>
+                    <video className="video" 
+                        src={postDetails.post ? postDetails.post.video : "loading"} 
+                        title="video"
+                        controls 
+                    >
+                        Your browser does not support the HTML5 Video element.
+                    </video>
                 </div>
 
                 <div className="course-details-extras">

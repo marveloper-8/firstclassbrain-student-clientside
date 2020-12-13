@@ -1,5 +1,6 @@
 import React, {useState} from 'react'
 import {useHistory, useParams} from 'react-router-dom'
+import { toast } from 'react-toastify';
 // components
 import Footer from './FooterHome'
 import Navigation from './Navigation'
@@ -10,12 +11,16 @@ import './css/contact.css'
 import passwordIcon from '../icons/password.svg'
 
 function ResetPassword() {
-    const {token} = useParams()
     const history = useHistory()
+
+    const {token} = useParams()
     const [password, setPassword] = useState("")
+    const [confirmPassword, setConfirmPassword] = useState("")
+    const [loading, setLoading] = useState(false)
 
     const ResetPassword = (e) => {
         e.preventDefault()
+        setLoading(true)
         fetch("https://firstclassbrain-server.herokuapp.com/student/new-password", {
             method: "post",
             headers: {
@@ -26,14 +31,17 @@ function ResetPassword() {
             .then(data => {
                 console.log(data)
                 if(data.error){
-                    alert(data.error)
+                    toast.error(data.error)
+                    setLoading(false)
                 }
                 else{
-                    history.push('/classroom')
+                    toast.success("Password changed successfully.")
+                    history.push('/')
                 }
             })
             .catch(err => {
                 console.log(err)
+                setLoading(false)
             })
     }
 
@@ -55,8 +63,43 @@ function ResetPassword() {
                             required 
                         />
                     </div>
+                    
+                    <div className="input">
+                        <img src={passwordIcon} alt="password" />
+                        <input 
+                            type="password" 
+                            placeholder="Confirm New Password" 
+                            value={confirmPassword}
+                            onChange={(e) => setConfirmPassword(e.target.value)}
+                            required 
+                        />
+                    </div>
 
-                    <button type="submit">RESET PASSWORD</button>
+                    <button 
+                        disabled={loading || password.length < 6 || password != confirmPassword ? true : false}
+                        type="submit"
+                        className={loading || password.length < 6 || password != confirmPassword ? "disabled" : ""}
+                    >
+                        {loading ? "LOADING.." : "RESET PASSWORD"}
+                    </button>
+                    <div className="warning">
+                        {
+                            password.length < 6
+                            ?
+                            "Password must be more than 6 characters"
+                            :
+                            ""
+                        }
+                    </div>
+                    <div className="warning">
+                        {
+                            password != confirmPassword
+                            ?
+                            "Password does not match"
+                            :
+                            ""
+                        }
+                    </div>
                 </form>
             </div>
 

@@ -6,6 +6,8 @@ import {
   Switch,
   useHistory
 } from 'react-router-dom'
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 import './App.css';
 
@@ -20,7 +22,7 @@ import PaymentStatusQuarterly from './pages/PaymentStatusQuarterly'
 import PaymentStatusBiannually from './pages/PaymentStatusBiannually'
 import PaymentStatusYearly from './pages/PaymentStatusYearly'
 import ResetPassword from './pages/ResetPassword'
-import VerifyEmail from './pages/VerifyEmail'
+import VerifyEmail from './pages/VerifyAccount'
 import Terms from './pages/Terms'
 import Weeks from './pages/Weeks'
 import Topics from './pages/Topics'
@@ -34,6 +36,7 @@ import WeeklyAssessment from './pages/WeeklyAssessment'
 import WeeklyAssessmentScore from './pages/WeeklyAssessmentScore'
 import MidTermTest from './pages/MidTermTest'
 import MidTermTestScore from './pages/MidTermTestScore'
+import BadRequest from './pages/BadRequest'
 
 import {reducer, initialState} from './reducers/userReducer'
 
@@ -64,8 +67,8 @@ const Routing = () => {
       <Route exact path='/payment_status/quarterly' component={PaymentStatusQuarterly} />
       <Route exact path='/payment_status/biannually' component={PaymentStatusBiannually} />
       <Route exact path='/payment_status/yearly' component={PaymentStatusYearly} />
-      <Route exact path='/reset/student/:token' component={ResetPassword} />
-      <Route exact path='/verify-email/student' component={VerifyEmail} />
+      <Route exact path='/reset-password/:token' component={ResetPassword} />
+      <Route exact path='/verify-account/:token' component={VerifyEmail} />
       <Route exact path='/terms/:subject' component={Terms} />
       <Route exact path='/weeks/:subject/:term' component={Weeks} />
       <Route exact path='/topics/:subject/:term/:week' component={Topics} />
@@ -80,6 +83,7 @@ const Routing = () => {
       <Route exact path='/weekly-assessment-score' component={WeeklyAssessmentScore} />
       <Route exact path='/mid-term-test' component={MidTermTest} />
       <Route exact path='/mid-term-test-score' component={MidTermTestScore} />
+      <Route component={BadRequest} />
     </Switch>
   )
 }
@@ -90,6 +94,7 @@ function App() {
     <div className="App">
       <UserContext.Provider value={{state, dispatch}}>
         <Router>
+          <ToastContainer className="toaster" />
           <Routing />
         </Router>
       </UserContext.Provider>

@@ -1,4 +1,5 @@
 import React from 'react'
+import {Link} from 'react-router-dom'
 
 import './css/footer.css'
 
@@ -94,9 +95,18 @@ function Footer() {
                 <div className="footer-content">
                     <h4 className="sub-title">Navigation</h4>
 
-                    <p>About Us</p>
-                    <p>Contact Us</p>
-                    <p>FAQ</p>
+                    <Link className="link" to='/about'>
+                        <p>About Us</p>
+                    </Link>
+                    
+                    <Link className="link" to='/contact'>
+                        <p>Contact Us</p>
+                    </Link>
+                    
+                    <Link className="link" to='/faq'>
+                        <p>FAQ</p>
+                    </Link>
+                    
                 </div>
             </div>
 

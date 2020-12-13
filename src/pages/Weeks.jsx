@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState} from 'react'
 import {Link, useParams} from 'react-router-dom'
 // components
 import Dashboard from './DashboardComp'
@@ -9,10 +9,12 @@ import './css/general.css'
 import './css/classroom.css'
 // calender
 import calendar from '../icons/calender.svg'
+import tests from '../icons/tests.svg'
 // data
 import weeks from '../data/weeks.json'
 
 function Classroom() {
+    const [test, setTest] = useState(false)
     const {subject, term} = useParams()
     console.log(subject, term)
     let compsTerm = ""
@@ -63,11 +65,30 @@ function Classroom() {
                             )
                         })
                     }
-                    <div className="button-container">
-                        <button>TAKE EXAM</button>
+                    <div className="subjects take-test-container" onClick={() => setTest(!test)}>
+                        <div className="image">
+                            <img src={tests} alt="Mathematics" />
+                        </div>
+                        <div className="label">TAKE EXAM</div>
                     </div>
                 </div>
             </div>
+                
+            <div className={test == false ? "take-test" : "take-test take-test-visible"}>
+                <div className="background" onClick={() => setTest(!test)}></div>
+
+                <div className="container">
+                    <span className="close" onClick={() => setTest(!test)}>&times;</span>
+                    <div className="title">Take this test</div>
+                    <div className="text">
+                        By clicking on the "Proceed to Test" button, you have therefore agreed to take this test. Reloading this page will result to automatic termination of the test and will result in a fail. Closing your browser will result to automatic termination of the test and will result in a fail.
+                    </div>
+                    <Link className="link" to={'/examination/' + subject + '/' + term}>
+                        <button>PROCEED TO TEST</button>
+                    </Link>
+                </div>
+            </div>
+
             
             <Footer />
         </div>

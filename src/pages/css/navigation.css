@@ -203,6 +203,8 @@
 .navigation .popup-toggle .inner .content .text .title,
 .navigation .popup .inner .content .text .title{
     margin-bottom:3vh;
+    font-size:30px!important;
+    font-weight:bold;
 }
 
 .navigation .popup-toggle .inner .content .text .input,
@@ -267,6 +269,11 @@
     color:#fff;
     font-size:.85vw;
     cursor:pointer;
+}
+.navigation .popup-toggle .inner .content .text button.disabled,
+.navigation .popup .inner .content .text button.disabled{
+    background:rgb(129, 167, 167);
+    transition:.5s ease-in-out all;
 }
 .navigation .popup-toggle .inner .content .extras,
 .navigation .popup .inner .content .extras{

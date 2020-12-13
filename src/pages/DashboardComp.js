@@ -156,7 +156,7 @@ const Dashboard = (props) => {
                     required 
                 />
 
-                <button type="submit">EMAIL ME A RESET PASSWORD LINK</button>
+                <button className="reset-password" type="submit">EMAIL ME A RESET PASSWORD LINK</button>
             </form>
             
             <div 

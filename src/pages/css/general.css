@@ -14,10 +14,26 @@
     cursor:pointer;
     outline:none;
 }
+.App .warning{
+    color:#f00;
+    font-size:10px;
+}
 .App button{
     outline:none;
     border:none;
     cursor:pointer;
+}
+.App button.delete{
+    background:rgb(199, 9, 9)!important;
+    transition:.5s ease-in-out all!important;
+}
+.App button.delete-disabled{
+    background:rgb(91, 15, 15)!important;
+    transition:.5s ease-in-out all!important;
+}
+.App button.disabled{
+    background:rgb(129, 167, 167)!important;
+    transition:.5s ease-in-out all!important;
 }
 
 .App .disappear{
@@ -49,6 +65,8 @@
 }
 
 
+
+.App .bad-request .title{font-size:60px; font-weight:bold;}
 
 
 .App .testimonial{
@@ -339,7 +357,7 @@
 }
 
 .App .payment-status{
-    padding:20vh 20vw 25vh 20vw;
+    padding:25vh 20vw 25vh 20vw;
     text-align:center;
     font-size:1vw;
 }
@@ -688,7 +706,7 @@
     }
 
     .App .payment-status{
-        padding:10vh 20vw 15vh 20vw;
+        padding:15vh 20vw 15vh 20vw;
         text-align:center;
         font-size:3vw;
     }
@@ -697,6 +715,8 @@
         display:block;
         margin:5vh auto;
     }
+
+    .App .bad-request .title{font-size:30px; font-weight:bold;}
 
 
     .App .payment-status form{

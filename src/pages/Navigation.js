@@ -1,15 +1,8 @@
-import React, {
-    useState, 
-    useContext, 
-    useEffect,
-    useCallback
-} from 'react'
+import React, {useState, useContext, useEffect, useCallback} from 'react'
 // import {ToastContainer} from "react-toastr"
 import {UserContext} from '../App'
-import {
-    Link,
-    useHistory
-} from 'react-router-dom'
+import {Link, useHistory} from 'react-router-dom'
+import { toast } from 'react-toastify';
 // logo
 import logo from '../logo.jpeg'
 // icon
@@ -26,11 +19,8 @@ import './css/navigation.css'
 
 const Navigation = () => {
     const {dispatch} = useContext(UserContext)
-
-    const studentState = JSON.parse(localStorage.getItem("student"))
-
-    console.log(studentState)
-
+    const [loading, setLoading] = useState(false)
+    const student = JSON.parse(localStorage.getItem("student"))
     const history = useHistory()
 
     let [login, setLogin] = useState(false)
@@ -38,13 +28,27 @@ const Navigation = () => {
     let [forgotPassword, setForgotPassword] = useState(false)
     let [menu, setMenu] = useState(false)
 
+    // random password
+    const randomPassword = (length) => {
+        var result           = '';
+        var characters       = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!/^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/';
+        var charactersLength = characters.length;
+        for ( var i = 0; i < length; i++ ) {
+           result += characters.charAt(Math.floor(Math.random() * charactersLength));
+        }
+        return result;
+     }
+    // random password end
+
     const [firstName, setFirstName] = useState("")
     const [lastName, setLastName] = useState("")
     const [email, setEmail] = useState("")
     const [phone, setPhone] = useState("")
     const [address, setAddress] = useState("")
-    const [classSelected, setClassSelected] = useState("")
-    const [password, setPassword] = useState("")
+    const [classSelected, setClassSelected] = useState({})
+    const [createPassword] = useState(randomPassword(15))
+    const [password, setPassword] = useState(randomPassword(15))
+    const [originalPassword] = useState(createPassword)
 
     // const [image, setImage] = useState("")
 
@@ -55,6 +59,7 @@ const Navigation = () => {
             alert("invalid email")
             return
         }
+        setLoading(true)
         fetch("https://firstclassbrain-server.herokuapp.com/signup-student", {
             method: "post",
             headers: {
@@ -68,19 +73,23 @@ const Navigation = () => {
                 address,
                 classSelected,
                 pic: url,
-                password
+                originalPassword,
+                password: createPassword
             })
         }).then(res => res.json())
             .then(data => {
                 if(data.error){
-                    alert(data.error)
+                    setLoading(false)
+                    toast.error(data.error)
                 }
                 else{
-                    alert(data.message)
+                    toast.success(data.message)
+                    setLoading(false)
                     history.push('/')
                 }
             })
             .catch(err => {
+                setLoading(false)
                 console.log(err)
             })
     })
@@ -89,22 +98,25 @@ const Navigation = () => {
         if(url){
             uploadFields()
         }
-    },[url, uploadFields])
+    },[url])
     
     const uploadPic = ()=>{
         const data = new FormData()
         data.append("file",image)
         data.append("upload_preset","ao-estate")
         data.append("cloud_name","josh-equere")
+        setLoading(true)
         fetch("https://api.cloudinary.com/v1_1/josh-equere/image/upload",{
             method:"post",
             body:data
         })
         .then(res=>res.json())
         .then(data=>{
-           setUrl(data.url)
+            setLoading(false)
+            setUrl(data.url)
         })
         .catch(err=>{
+            setLoading(false)
             console.log(err)
         })
     }
@@ -121,9 +133,10 @@ const Navigation = () => {
     const PostSignin = (e) => {
         e.preventDefault()
         if(!/^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(email)){
-            alert("invalid email")
+            toast.error("invalid email")
             return
         }
+        setLoading(true)
         fetch("https://firstclassbrain-server.herokuapp.com/web/signin-student", {
             method: "post",
             headers: {
@@ -137,16 +150,19 @@ const Navigation = () => {
             .then(data => {
                 console.log(data)
                 if(data.error){
-                    alert(data.error)
+                    toast.error(data.error)
+                    setLoading(false)
                 }
                 else{
                     localStorage.setItem("jwt", data.token)
                     localStorage.setItem("student", JSON.stringify(data.student))
                     dispatch({type: "USER", payload: data.student})
+                    toast.success("Signed in successfully")
                     history.push('/classroom')
                 }
             })
             .catch(err => {
+                setLoading(false)
                 console.log(err)
             })
     }
@@ -154,9 +170,10 @@ const Navigation = () => {
     const PostForgotPassword = (e) => {
         e.preventDefault()
         if(!/^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(email)){
-            alert("invalid email")
+            toast.error("invalid email")
             return
         }
+        setLoading(true)
         fetch("https://firstclassbrain-server.herokuapp.com/student/reset-password", {
             method: "post",
             headers: {
@@ -167,14 +184,17 @@ const Navigation = () => {
             .then(data => {
                 console.log(data)
                 if(data.error){
-                    alert(data.error)
+                    toast.error(data.error)
+                    setLoading(false)
                 }
                 else{
-                    alert(data.message)
+                    toast.success(data.message)
+                    setLoading(false)
                     history.push('/')
                 }
             })
             .catch(err => {
+                setLoading(false)
                 console.log(err)
             })
     }
@@ -245,7 +265,7 @@ const Navigation = () => {
     
 
     const navItem = () => {
-        if(studentState){
+        if(student){
             return [
                 <Link className="link" to='/classroom'>
                     <button className="login desktop-hide">CLASSROOM</button>
@@ -400,7 +420,13 @@ const Navigation = () => {
                                 />
                             </div>
 
-                            <button type="submit">LOGIN</button>
+                            <button 
+                                disabled={loading ? true : false}
+                                type="submit"
+                                className={loading ? "disabled" : ""}
+                            >
+                                {loading ? "LOADING.." : "LOGIN"}
+                            </button>
                         </form>
                         
                         <div className="extras">
@@ -510,8 +536,9 @@ const Navigation = () => {
                                     className="sub-title"
                                     value={classSelected}
                                     onChange={(e) => setClassSelected(e.target.value)}
-                                    required
+                                    required="true"
                                 >
+                                    <option>-- Select a class</option>
                                     {
                                         classes.map(item => {
                                             return(
@@ -522,34 +549,31 @@ const Navigation = () => {
                                 </select>
                             </div>
 
-                            {/* <div className="input">
-                                <img src={group} alt="department" />
-                                <input 
-                                    type="text" 
-                                    placeholder="Department" 
-                                    value={department}
-                                    onChange={(e) => setDepartment(e.target.value)}
-                                    required 
-                                />
-                            </div> */}
-
-                            <div className="input">
-                                <img src={passwordIcon} alt="password" />
-                                <input 
-                                    type="password" 
-                                    placeholder="Password" 
-                                    value={password}
-                                    onChange={(e) => setPassword(e.target.value)}
-                                    required 
-                                />
+                            <button 
+                                disabled={loading || phone.length != 11 || isNaN(phone) ? true : false}
+                                type="submit"
+                                className={loading || phone.length != 11 || isNaN(phone) ? "disabled" : ""}
+                            >
+                                {loading ? "LOADING.." : "CREATE ACCOUNT"}
+                            </button>
+                            <div className="warning">
+                                {
+                                    phone.length == 11
+                                    ?
+                                    ""
+                                    :
+                                    "Phone number must be eleven (11) digits"
+                                }
                             </div>
-
-                            <div className="input">
-                                <img src={passwordIcon} alt="password" />
-                                <input type="password" placeholder="Confirm Password" required />
+                            <div className="warning">
+                                {
+                                    isNaN(phone)
+                                    ?
+                                    "Must be a valid phone number starting with 0 (zero)"
+                                    :
+                                    ""
+                                }
                             </div>
-
-                            <button type="submit">SIGN UP</button>
                         </form>
 
                         <div className="extras">
@@ -588,7 +612,13 @@ const Navigation = () => {
                                 />
                             </div>
 
-                            <button type="submit">EMAIL ME A RESET PASSWORD LINK</button>
+                            <button 
+                                disabled={loading ? true : false}
+                                type="submit"
+                                className={loading ? "disabled" : ""}
+                            >
+                                {loading ? "LOADING.." : "EMAIL ME A RESET PASSWORD LINK"}
+                            </button>
                         </form>
                         
                         <div className="extras">

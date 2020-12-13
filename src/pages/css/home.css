@@ -599,7 +599,7 @@
         padding:5vh 5vw 10vh 5vw;
         display:grid;
         background:#f5f5f5!important;
-        grid-template-columns:1fr 1fr;
+        grid-template-columns:1fr;
     }
     .home .testimonials .content .tabs{
         width:90%;

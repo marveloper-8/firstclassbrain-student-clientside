@@ -15,20 +15,20 @@
     position:relative;
     bottom:-2vh;
 }
-.about .content .tab .text .title{
+.about .title{
     font-size:3vw;
     padding:0!important;
     margin:0!important;
 }
-.about .content .tab .text .normal{
+.about .normal{
     position:relative;
-    bottom:-4vh;
+    bottom:-2vh;
 }
-.about .content .tab .text .enhanced{
+.about .enhanced{
     color:teal;
-    font-size:5vw;
+    font-size:40px;
 }
-.about .content .tab .text .line{
+.about .line{
     width:30%;
     background:teal;
     height:3px;
@@ -36,8 +36,8 @@
     position:relative;
     top:-2vh;
 }
-.about .content .tab .text .text-container{
-    font-size:1.25vw;
+.about .text-container{
+    font-size:12px;
     padding:0 5vw 0 0!important;
     margin:0!important;
     text-align:justify;
@@ -51,6 +51,11 @@
     margin:0!important;
     position:relative;
     bottom:2vh;
+}
+.about .board-members{
+    padding:2vh 5vw;
+    border-top:1px #707070 solid;
+    margin:10vh 2vw;
 }
 
 /* breakkkk */
@@ -86,22 +91,21 @@
         display:block;
         margin:auto;
     }
-    .about .content .tab .text .title{
+    .about .title{
         font-size:10vw;
         padding:0!important;
         margin:0!important;
     }
-    .about .content .tab .text .normal{
+    .about .normal{
         position:relative;
         bottom:-0;
         display:inline-block;
     }
-    .about .content .tab .text .enhanced{
+    .about .enhanced{
         color:teal;
-        font-size:10vw;
         display:inline-block;
     }
-    .about .content .tab .text .line{
+    .about .line{
         width:30%;
         background:teal;
         height:3px;
@@ -110,9 +114,13 @@
         top:-2vh;
         display:none;
     }
-    .about .content .tab .text .text-container{
-        font-size:3vw;
+    .about .text-container{
         padding:0 10vw 2.5vh 10vw!important;
+        margin:0!important;
+        text-align:justify;
+    }
+    .about .board-members .text-container{
+        padding:0!important;
         margin:0!important;
         text-align:justify;
     }

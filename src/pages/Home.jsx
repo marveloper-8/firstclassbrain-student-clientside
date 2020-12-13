@@ -8,6 +8,9 @@ import Navigation from './Navigation'
 import Slides from './Slides'
 
 import header from '../images/student-learning.png'
+import shalom from '../images/shalom.jpeg'
+import faith from '../images/faith.jpeg'
+import jane from '../images/jane.jpeg'
 
 import students from '../icons/students.svg'
 import courses from '../icons/courses.svg'
@@ -164,15 +167,15 @@ const Home = () => {
                                 <div className="quote-mark title">"</div>
                                 <div className="text">
                                     <div className="main">
-                                        The course and trainer was awesome. He took time explaining in detail.
+                                        Thanks to first class Brain app for engaging my child with classes on his iPad after school . He doesn’t have to play all day anymore
                                     </div>
                                     
-                                    <div className="name title">Tega Ikechukwu</div>
+                                    <div className="name title">Mrs. Jane Omoruyi</div>
                                 </div>
                                 <div 
                                     className="image"
                                     style={{
-                                        backgroundImage: `url(${header})`,
+                                        backgroundImage: `url(${jane})`,
                                         backgroundSize:`cover`,
                                         backgroundPosition:`center`
                                     }}
@@ -183,15 +186,15 @@ const Home = () => {
                                 <div className="quote-mark title">"</div>
                                 <div className="text">
                                     <div className="main">
-                                        The course and trainer was awesome. He took time explaining in detail.
+                                        The instructors were awesome. They took time explaining in detail what I don’t understand in school.
                                     </div>
                                     
-                                    <div className="name title">Tega Ikechukwu</div>
+                                    <div className="name title">Shalom Jibulu</div>
                                 </div>
                                 <div 
                                     className="image"
                                     style={{
-                                        backgroundImage: `url(${header})`,
+                                        backgroundImage: `url(${shalom})`,
                                         backgroundSize:`cover`,
                                         backgroundPosition:`center`
                                     }}
@@ -202,76 +205,15 @@ const Home = () => {
                                 <div className="quote-mark title">"</div>
                                 <div className="text">
                                     <div className="main">
-                                        The course and trainer was awesome. He took time explaining in detail.
+                                        The courses were good . I understand every courses I have taken on first class brain
                                     </div>
                                     
-                                    <div className="name title">Tega Ikechukwu</div>
+                                    <div className="name title">Faith Jibulu</div>
                                 </div>
                                 <div 
                                     className="image"
                                     style={{
-                                        backgroundImage: `url(${header})`,
-                                        backgroundSize:`cover`,
-                                        backgroundPosition:`center`
-                                    }}
-                                ></div>
-                            </div></div>
-                        </div>
-                        </Carousel.Item>
-                        
-                        <Carousel.Item>
-                        <div className="content">
-                            <div><div className="tabs">
-                                <div className="quote-mark title">"</div>
-                                <div className="text">
-                                    <div className="main">
-                                        The course and trainer was awesome. He took time explaining in detail.
-                                    </div>
-                                    
-                                    <div className="name title">Tega Ikechukwu</div>
-                                </div>
-                                <div 
-                                    className="image"
-                                    style={{
-                                        backgroundImage: `url(${header})`,
-                                        backgroundSize:`cover`,
-                                        backgroundPosition:`center`
-                                    }}
-                                ></div>
-                            </div></div>
-                            
-                            <div><div className="tabs">
-                                <div className="quote-mark title">"</div>
-                                <div className="text">
-                                    <div className="main">
-                                        The course and trainer was awesome. He took time explaining in detail.
-                                    </div>
-                                    
-                                    <div className="name title">Tega Ikechukwu</div>
-                                </div>
-                                <div 
-                                    className="image"
-                                    style={{
-                                        backgroundImage: `url(${header})`,
-                                        backgroundSize:`cover`,
-                                        backgroundPosition:`center`
-                                    }}
-                                ></div>
-                            </div></div>
-                            
-                            <div><div className="tabs">
-                                <div className="quote-mark title">"</div>
-                                <div className="text">
-                                    <div className="main">
-                                        The course and trainer was awesome. He took time explaining in detail.
-                                    </div>
-                                    
-                                    <div className="name title">Tega Ikechukwu</div>
-                                </div>
-                                <div 
-                                    className="image"
-                                    style={{
-                                        backgroundImage: `url(${header})`,
+                                        backgroundImage: `url(${faith})`,
                                         backgroundSize:`cover`,
                                         backgroundPosition:`center`
                                     }}
@@ -291,34 +233,15 @@ const Home = () => {
                                 <div className="quote-mark title">"</div>
                                 <div className="text">
                                     <div className="main">
-                                        The course and trainer was awesome. He took time explaining in detail.
+                                        Thanks to first class Brain app for engaging my child with classes on his iPad after school . He doesn’t have to play all day anymore
                                     </div>
                                     
-                                    <div className="name title">Tega Ikechukwu</div>
+                                    <div className="name title">Mrs. Jane Omoruyi</div>
                                 </div>
                                 <div 
                                     className="image"
                                     style={{
-                                        backgroundImage: `url(${header})`,
-                                        backgroundSize:`cover`,
-                                        backgroundPosition:`center`
-                                    }}
-                                ></div>
-                            </div></div>
-                            
-                            <div><div className="tabs">
-                                <div className="quote-mark title">"</div>
-                                <div className="text">
-                                    <div className="main">
-                                        The course and trainer was awesome. He took time explaining in detail.
-                                    </div>
-                                    
-                                    <div className="name title">Tega Ikechukwu</div>
-                                </div>
-                                <div 
-                                    className="image"
-                                    style={{
-                                        backgroundImage: `url(${header})`,
+                                        backgroundImage: `url(${jane})`,
                                         backgroundSize:`cover`,
                                         backgroundPosition:`center`
                                     }}
@@ -333,34 +256,38 @@ const Home = () => {
                                 <div className="quote-mark title">"</div>
                                 <div className="text">
                                     <div className="main">
-                                        The course and trainer was awesome. He took time explaining in detail.
+                                        The instructors were awesome. They took time explaining in detail what I don’t understand in school.
                                     </div>
                                     
-                                    <div className="name title">Tega Ikechukwu</div>
+                                    <div className="name title">Shalom Jibulu</div>
                                 </div>
                                 <div 
                                     className="image"
                                     style={{
-                                        backgroundImage: `url(${header})`,
+                                        backgroundImage: `url(${shalom})`,
                                         backgroundSize:`cover`,
                                         backgroundPosition:`center`
                                     }}
                                 ></div>
                             </div></div>
-                            
+                        </div>
+                        </Carousel.Item>
+                        
+                        <Carousel.Item>
+                        <div className="content">
                             <div><div className="tabs">
                                 <div className="quote-mark title">"</div>
                                 <div className="text">
                                     <div className="main">
-                                        The course and trainer was awesome. He took time explaining in detail.
+                                        The courses were good . I understand every courses I have taken on first class brain
                                     </div>
                                     
-                                    <div className="name title">Tega Ikechukwu</div>
+                                    <div className="name title">Faith Jibulu</div>
                                 </div>
                                 <div 
                                     className="image"
                                     style={{
-                                        backgroundImage: `url(${header})`,
+                                        backgroundImage: `url(${faith})`,
                                         backgroundSize:`cover`,
                                         backgroundPosition:`center`
                                     }}

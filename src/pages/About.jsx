@@ -89,6 +89,28 @@ function About() {
                     </div>
                     
                 </div>
+
+                <div className="board-members">
+                    <div className="title enhanced">Board Members</div>
+
+                    <div className="text-container">
+                        <p>First class brain is an initiative a first class Fimmol Integrted Nig limited with interest in SME, manufacture representatives and media under the leadership of Mr Rupert Ojenuwa, The chief Executive Officer. Rupert Ojenuwa is a man of multiple sides, an entrepreneur, whose business interest cuts across media to Banking and Manufacturing.</p>
+
+                        <p>Rupert also has a passion for reforming Society, hence he initiated prestigious HOG(Hall of Fame) Awards, now Africa hall of Fame Awards. His objective was using the awards platform to shape the society by ensuring quality and inspiring countless young people. Recipients of the awards include very influential Nigerians including Alh. Atiku Abubakar, Ooni Adeyeye Enitan Oguwusi , Dr Akinwunmi Ambode Adesina, Dr. Olusegun Mimiko, Babatunde Fashola SAN, Dr Aliko Dangote , Sen Shehu Sani, to mention a few.</p>
+
+                        <p>His desire to impact the educational sector led him to putting together the First Class Brain App to Bridge the wide gap in the teaching and learning experience in Nigeria and Africa.</p>
+                    </div>
+                </div>
+            
+                <div className="board-members">
+                    <div className="title enhanced">For Schools and Organisations</div>
+
+                    <div className="text-container">
+                        <p>First class brain offers schools, Humanitarianism, organizations and well-meaning people across the globe the opportunity to sponsor the education of pupil and students on our platform.</p>
+
+                        <p>You may discuss a school package on how to train a community through the FCB app with us. Please se reach out to us by filling in the form on the website and you could also call or send an email to our email address also on the website.</p>
+                    </div>
+                </div>
             </div>
 
             <Footer />

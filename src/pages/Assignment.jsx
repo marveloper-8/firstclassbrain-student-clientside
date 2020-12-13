@@ -9,21 +9,6 @@ import './css/general.css'
 import './css/classroom.css'
 
 function Terms() {
-    const expiryTimestamp = new Date();
-    expiryTimestamp.setSeconds(expiryTimestamp.getSeconds() + 30);
-
-    const {
-      seconds,
-      minutes,
-      hours,
-      days,
-      isRunning,
-      start,
-      pause,
-      resume,
-      restart,
-    } = useTimer({ expiryTimestamp, autoStart:true, onExpire: () => console.warn('onExpire called') });
-    
     const [submitAnswers, setSubmitAnswers] = useState(false)
     const [testScore, setTestScore] = useState(0)
     // const [answerSelected, setAnswerSelected] = useState("answerA")
@@ -52,24 +37,13 @@ function Terms() {
         alert("Hello")
     }
 
-    const {postId} = useParams()
-
     const submitAction = e => {
         e.preventDefault()
         setSubmitAnswers(!submitAnswers)
     }
-    
-    useEffect(()=>{
-        fetch(`https://firstclassbrain-server.herokuapp.com/all-tests`, {
-            headers: {
-                "Authorization": "Bearer " + localStorage.getItem("jwt")
-            }
-        })
-            .then(res => res.json())
-            .then(result => {
-                setData(result.tests)
-            })
-    },[])
+
+
+    const {postId} = useParams()
 
     useEffect(() => {
         fetch(`https://firstclassbrain-server.herokuapp.com/student/test-details/${postId}`, {
@@ -86,7 +60,28 @@ function Terms() {
 
     console.log({postId})
 
-    console.log(testDetails.test)
+    const test_minutes = `${testDetails.test ? testDetails.test.minutes : "loading"}`
+
+    const test_minutes_number = test_minutes
+
+    console.log(test_minutes)
+
+
+    const expiryTimestamp = new Date();
+    expiryTimestamp.setSeconds(expiryTimestamp.getSeconds() + 30);
+    expiryTimestamp.setMinutes(expiryTimestamp.getMinutes() + parseInt(test_minutes_number));
+
+    const {
+      seconds,
+      minutes,
+      hours,
+      days,
+      isRunning,
+      start,
+      pause,
+      resume,
+      restart,
+    } = useTimer({ expiryTimestamp, autoStart:true, onExpire: () => console.warn('onExpire called') });
 
     
     
@@ -112,7 +107,7 @@ function Terms() {
                         <div></div>
 
                         <div className="time">
-                            Time Limit: 0:45 minutes
+                            Time Limit: 0:{parseInt(`${test_minutes_number}`)} minutes
                         </div>
 
                         <div className="time time-remaining">
