@@ -12,6 +12,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import './App.css';
 
 import Home from './pages/Home'
+import PrivacyPolicy from './pages/PrivacyPolicy'
 import Dashboard from './pages/Dashboard'
 import About from './pages/About'
 import Faq from './pages/Faq'
@@ -58,6 +59,7 @@ const Routing = () => {
   return(
     <Switch>
       <Route exact path='/' component={Home} />
+      <Route exact path='/privacy-policy' component={PrivacyPolicy} />
       <Route exact path='/dashboard' component={Dashboard} />
       <Route exact path='/faq' component={Faq} />
       <Route exact path='/about' component={About} />
