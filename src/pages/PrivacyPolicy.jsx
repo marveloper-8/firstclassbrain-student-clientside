@@ -1,14 +1,8 @@
-import React, {useState} from 'react'
+import React from 'react'
 // components
 import Footer from './FooterHome'
 import Navigation from './Navigation'
 import Header from './Header'
-// icons
-import facebook from '../icons/facebook-square-teal.svg'
-import instagram from '../icons/instagram-square-teal.svg'
-import twitter from '../icons/twitter-square-teal.svg'
-import linkedin from '../icons/linkedin-square-teal.svg'
-import pagination_arrow from '../icons/pagination-arrow.svg'
 // css
 import './css/general.css'
 import './css/privacy-policy.css'

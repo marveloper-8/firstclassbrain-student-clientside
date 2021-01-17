@@ -16,6 +16,11 @@
 .faq .info .title .enhanced{
     color:teal;
 }
+
+.privacy .content p {
+    font-size: 14px;
+}
+
 .faq .info .paragraph{
     font-size:.9vw;
     border-top:1px grey solid;

@@ -12,10 +12,10 @@ import 'react-toastify/dist/ReactToastify.css';
 import './App.css';
 
 import Home from './pages/Home'
+import PrivacyPolicy from './pages/PrivacyPolicy'
 import Dashboard from './pages/Dashboard'
 import About from './pages/About'
 import Faq from './pages/Faq'
-import PrivacyPolicy from './pages/PrivacyPolicy'
 import Contact from './pages/Contact'
 import Classroom from './pages/Classroom'
 import PaymentStatusMonthly from './pages/PaymentStatusMonthly'
@@ -60,6 +60,7 @@ const Routing = () => {
   return(
     <Switch>
       <Route exact path='/' component={Home} />
+      <Route exact path='/privacy-policy' component={PrivacyPolicy} />
       <Route exact path='/dashboard' component={Dashboard} />
       <Route exact path='/faq' component={Faq} />
       <Route exact path='/privacy-policy' component={PrivacyPolicy} />
