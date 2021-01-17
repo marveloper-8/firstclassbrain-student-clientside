@@ -107,6 +107,10 @@ function Footer() {
                         <p>FAQ</p>
                     </Link>
                     
+                    <Link className="link" to='/privacy-policy'>
+                        <p>Privacy Policy</p>
+                    </Link>
+                    
                 </div>
             </div>
 

@@ -1,7 +1,7 @@
 import React, {useContext, useState} from 'react'
 // import {ToastContainer} from "react-toastr"
 import {UserContext} from '../App'
-import {useHistory} from 'react-router-dom'
+import {useHistory, Link} from 'react-router-dom'
 // css
 import './css/App.scss'
 import './css/dashboard.css'
@@ -15,12 +15,13 @@ import email_svg from '../icons/email-svg.svg'
 
 const Dashboard = (props) => {
     const [openEmail, setOpenEmail] = useState(false)
+    const [video, setVideo] = useState(false)
+    const [text, setText] = useState(false)
     const [email, setEmail] = useState("")
     const studentState = JSON.parse(localStorage.getItem("student"))
     const history = useHistory()
     const {dispatch} = useContext(UserContext)
     const classSelected = `${studentState ? studentState.classSelected: "loading"}`
-    console.log(classSelected)
     let compsClass = ""
     switch(classSelected){
         case `1`: compsClass = "Basic 1";
@@ -136,10 +137,18 @@ const Dashboard = (props) => {
                     <img src={phone_call} alt="phone" />
                 </div>
                 <div>
-                    <img src={video_call} alt="video" />
+                    <img 
+                        src={video_call} 
+                        alt="video" 
+                        onClick={() => setVideo(!video)}
+                    />
                 </div>
                 <div>
-                    <img src={text_message} alt="text message" />
+                    <img 
+                        src={text_message} 
+                        alt="text message" 
+                        onClick={() => setText(!text)} 
+                    />
                 </div>
             </div>
             
@@ -169,6 +178,132 @@ const Dashboard = (props) => {
             >
                 <img src={logout} alt="class icon" /> Logout
             </div>
+
+            <div className={text ? "chat text-chat-open" : "chat text-chat-close"}>
+                <div className="background" onClick={() => setText(!text)}></div>
+
+                <div className="container">
+                    <div className="close" onClick={() => setText(!text)}>&times;</div>
+                    <div className="content">
+                        <div className="title">TEXT AN INSTRUCTOR</div>
+                        <hr />
+                        <div className="list">
+                            <div className="item">
+                                <Link to="/chat-text" className="link" target="_blank">
+                                    <div className="picture">
+                                        <div className="online"></div>
+                                    </div>
+                                </Link>
+                                <div className="name">
+                                    <Link to="/chat-text" className="link" target="_blank">
+                                            John Doe
+                                    </Link>
+                                </div>
+                                <div className="email">
+                                    <Link to="/chat-text" className="link" target="_blank">
+                                        john@email.com
+                                    </Link>
+                                </div>
+                                
+                            </div>
+                            
+                            <div className="item">
+                                <div className="picture">
+                                    <div className="online"></div>
+                                </div>
+                                <div className="name">John Doe</div>
+                                <div className="email">john@email.com</div>
+                            </div>
+                            
+                            <div className="item">
+                                <div className="picture">
+                                    <div className="online"></div>
+                                </div>
+                                <div className="name">John Doe</div>
+                                <div className="email">john@email.com</div>
+                            </div>
+                            
+                            <div className="item">
+                                <div className="picture">
+                                    <div className="online"></div>
+                                </div>
+                                <div className="name">John Doe</div>
+                                <div className="email">john@email.com</div>
+                            </div>
+                            
+                            <div className="item">
+                                <div className="picture">
+                                    <div className="online"></div>
+                                </div>
+                                <div className="name">John Doe</div>
+                                <div className="email">john@email.com</div>
+                            </div>
+                            
+                            <div className="item">
+                                <div className="picture">
+                                    <div className="online"></div>
+                                </div>
+                                <div className="name">John Doe</div>
+                                <div className="email">john@email.com</div>
+                            </div>
+                            
+                            <div className="item">
+                                <div className="picture">
+                                    <div className="online"></div>
+                                </div>
+                                <div className="name">John Doe</div>
+                                <div className="email">john@email.com</div>
+                            </div>
+                            
+                            <div className="item">
+                                <div className="picture">
+                                    <div className="online"></div>
+                                </div>
+                                <div className="name">John Doe</div>
+                                <div className="email">john@email.com</div>
+                            </div>
+                            
+                            <div className="item">
+                                <div className="picture">
+                                    <div className="online"></div>
+                                </div>
+                                <div className="name">John Doe</div>
+                                <div className="email">john@email.com</div>
+                            </div>
+                            
+                            <div className="item">
+                                <div className="picture">
+                                    <div className="online"></div>
+                                </div>
+                                <div className="name">John Doe</div>
+                                <div className="email">john@email.com</div>
+                            </div>
+                            
+                            <div className="item">
+                                <div className="picture">
+                                    <div className="online"></div>
+                                </div>
+                                <div className="name">John Doe</div>
+                                <div className="email">john@email.com</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className="content">
+                        <div className="title">JOIN A CLASSROOM CHAT</div>
+                        <hr />
+                        <div className="list">
+                            <div className="item">
+                                <div className="picture"></div>
+                                <div className="name">Groupie</div>
+                                <div className="email">15 active students online</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+
         </div>
     
     )

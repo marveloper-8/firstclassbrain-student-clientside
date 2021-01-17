@@ -15,6 +15,7 @@ import Home from './pages/Home'
 import Dashboard from './pages/Dashboard'
 import About from './pages/About'
 import Faq from './pages/Faq'
+import PrivacyPolicy from './pages/PrivacyPolicy'
 import Contact from './pages/Contact'
 import Classroom from './pages/Classroom'
 import PaymentStatusMonthly from './pages/PaymentStatusMonthly'
@@ -36,6 +37,7 @@ import WeeklyAssessment from './pages/WeeklyAssessment'
 import WeeklyAssessmentScore from './pages/WeeklyAssessmentScore'
 import MidTermTest from './pages/MidTermTest'
 import MidTermTestScore from './pages/MidTermTestScore'
+import ChatText from './pages/ChatText'
 import BadRequest from './pages/BadRequest'
 
 import {reducer, initialState} from './reducers/userReducer'
@@ -60,6 +62,7 @@ const Routing = () => {
       <Route exact path='/' component={Home} />
       <Route exact path='/dashboard' component={Dashboard} />
       <Route exact path='/faq' component={Faq} />
+      <Route exact path='/privacy-policy' component={PrivacyPolicy} />
       <Route exact path='/about' component={About} />
       <Route exact path='/contact' component={Contact} />
       <Route exact path='/classroom' component={Classroom} />
@@ -77,12 +80,13 @@ const Routing = () => {
       {/* <Route exact path='/assignment/:postId/:week' component={Assignment} /> */}
       <Route exact path='/assignment/:postId' component={Assignment} />
       <Route exact path='/examination' component={Examination} />
-      <Route exact path='/assignment-score' component={AssignmentScore} />
+      <Route exact path='/assignment-score/:postId/:score' component={AssignmentScore} />
       <Route exact path='/examination-score' component={ExaminationScore} />
       <Route exact path='/weekly-assessment' component={WeeklyAssessment} />
       <Route exact path='/weekly-assessment-score' component={WeeklyAssessmentScore} />
       <Route exact path='/mid-term-test' component={MidTermTest} />
       <Route exact path='/mid-term-test-score' component={MidTermTestScore} />
+      <Route exact path='/chat-text' component={ChatText} />
       <Route component={BadRequest} />
     </Switch>
   )

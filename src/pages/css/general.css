@@ -644,18 +644,21 @@
         padding-bottom:5vh;
         top:30vh;
         position:absolute;
-        width:20vw;
+        width:80vw;
         box-shadow: 0 4px 8px 0 rgba(132, 132, 132, 0.2), 0 6px 20px 0 rgba(177, 177, 177, 0.19);
-        left:40vw;
+        left:10vw;
         text-align:center;
         padding:5vh 0;
     }
     .App .popup-toggle .submit-answers-inner .text{
-        font-size:1vw;
-        margin-bottom:4vh;
+        font-size:3vw;
+        margin-bottom:2vh;
+    }
+    .App .popup-toggle .submit-answers-inner .buttons{
+        margin-top:5vh!important;
     }
     .App .popup-toggle .submit-answers-inner .buttons button{
-        padding:1vh 1.5vw;
+        padding:1vh 5vw;
         border-radius:5px;
     }
     .App .popup-toggle .submit-answers-inner .buttons button.no{

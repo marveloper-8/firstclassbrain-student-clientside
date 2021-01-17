@@ -1,3 +1,7 @@
+.dashboard-section .link{
+    text-decoration:none;
+    color:#000;
+}
 .dashboard-section{
     margin-top:5vh;
     border-right:1px #ddd solid;
@@ -58,6 +62,7 @@
 .dashboard-section .extras img{
     width:2vw;
     margin:0!important;
+    cursor:pointer;
 }
 
 
@@ -119,6 +124,92 @@
     padding:.5vh 2vw;
     color:#fff;
 }
+
+
+.dashboard-section .text-chat-open{
+    display:block;
+}
+.dashboard-section .text-chat-close{
+    display:none;
+}
+.dashbaord-section .chat{
+    width:100vw;
+    height:100vh;
+    position:fixed;
+    top:0;
+    left:0;
+    z-index:100;
+}
+
+.dashboard-section .chat .background{
+    background:rgba(0,0,0,.9);
+    width:100vw;
+    height:100vh;
+    position:fixed;
+    top:0;
+    left:0;
+    z-index:100;
+}
+.dashboard-section .chat .container .close{
+    position:absolute;
+    cursor:pointer;
+    right:20px;
+    top:15px;
+}
+.dashboard-section .chat .container{
+    background:#fff;
+    border-radius:4px;
+    width:70vw;
+    height:80vh;
+    position:fixed;
+    z-index:100;
+    top:10vh;
+    left:15vw;
+    overflow-y:scroll;
+}
+.dashboard-section .chat .container .title{
+    font-size:20px;
+    font-weight:bolder;
+    margin:0 0 20px 50px;
+}
+.dashboard-section .chat .container .email{
+    font-size:10px;
+}
+.dashboard-section .chat .container .name{
+    font-size:14px;
+    font-weight:bolder;
+}
+.dashboard-section .chat .container .content{
+    margin-top:50px;
+}
+.dashboard-section .chat .container .content .list{
+    display:grid;
+    grid-template-columns:1fr 1fr 1fr 1fr 1fr;
+}
+.dashboard-section .chat .container .content .list .item{
+    text-align:center;
+    margin-bottom:20px;
+    padding:0 10px;
+}
+.dashboard-section .chat .container .content .list .item .picture{
+    width:100px;
+    height:100px;
+    border-radius:100px;
+    background:grey;
+    margin:0 auto 5px auto;
+    position:relative;
+}
+.dashboard-section .chat .container .content .list .item .picture .online{
+    width:15px;
+    height:15px;
+    border-radius:15px;
+    background:green;
+    position:absolute;
+    bottom:10px;
+    right:7px;
+    border:2px #fff solid;
+}
+
 
 @keyframes profile {
     0%   {border:5px rgb(8, 169, 169) solid;}

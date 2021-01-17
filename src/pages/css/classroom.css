@@ -24,6 +24,12 @@
     color:grey;
     font-weight:bold;
 }
+.course-details .main-content section .sub-title{
+    font-size:16px;
+    color:grey;
+    text-transform:uppercase;
+    font-weight:bold;
+}
 .classroom section .head .link:hover,
 .classroom section .head .inactive:hover{
     color:#000;
@@ -83,6 +89,8 @@
     color:#fff;
     margin-top:5vh;
     border-radius:10px;
+}.course-details .main-content section{
+    margin-bottom:20px;
 }
 .classroom .main-content .score-projection{
     display:grid;
@@ -106,9 +114,9 @@
     font-weight:bold;
     color:teal;
 }
-.classroom .main-content .score-projection .percentage .bold{
-    font-size:16px;
-    font-weight:bold;
+.course-details .main-content .score-projection .percentage .bold{
+    font-size:50px!important;
+    font-weight:bolder!important;
     color:teal;
 }
 
@@ -532,7 +540,7 @@
 }
 .course-details .main-content .score-projection{
     display:grid;
-    grid-template-columns:1fr 4fr 1fr;
+    grid-template-columns:1fr 2fr 1fr!important;
     text-align:center;
     margin:0 5vw;
     padding:4vh 5vw;
@@ -544,17 +552,18 @@
     font-weight:bold;
 }
 .course-details .main-content .score-projection .incline-decline img{
-    width:5vw;
+    width:15vw!important;
     margin-bottom:2vh;
 }
 .course-details .main-content .score-projection .percentage{
     font-size:14px;
     font-weight:bold;
     color:teal;
+    padding:0 20px;
 }
 .course-details .main-content .score-projection .percentage .bold{
-    font-size:16px;
-    font-weight:bold;
+    font-size:50px!important;
+    font-weight:bolder;
     color:teal;
 }
 
@@ -606,7 +615,7 @@
 }
 .course-details .main-content .take-test{
     position:fixed;
-    z-index:1000000;
+    z-index:100000000000000000000000000000000000000000!important;
     top:0;
     left:0;
     width:100vw;
@@ -669,7 +678,8 @@
 }
 .course-details .main-content .test-questions .item{
     border-top:1px #707070 solid;
-    padding:4vh 3vw;
+    padding:4vh 0;
+    font-size:16px;
 }
 .course-details .main-content .test-questions .item .number{
     font-size:14px;
@@ -775,7 +785,7 @@
 }
 .course-details .main-content .test-questions .item .answer-selection{
     display:grid;
-    grid-template-columns:15fr 1fr 15fr 1fr 15fr;
+    grid-template-columns:45fr 1fr 15fr;
     margin:4vh 0;
 }
 .course-details .main-content .test-questions .item .answer-selection .answer{
@@ -794,6 +804,17 @@
     color:#fff;
     text-align:center;
     cursor:pointer;
+}
+.App .course-details .main-content .popup-toggle .submit-answers-inner .text{
+    padding:0;
+    margin:0;
+}
+.App .course-details .main-content .popup-toggle .submit-answers-inner .buttons{
+    margin:0!important;
+    padding:0!important;
+}
+.App .course-details .main-content .popup-toggle .submit-answers-inner .buttons button{
+    font-size:14px;
 }
 
 
@@ -1326,9 +1347,16 @@
     .course-details .main-content section{
         display:grid;
         grid-template-columns:4fr 1fr;
-        padding:27.5vh 5vw 0 5vw;
+        padding:5vh 5vw 0 5vw;
     }
     .course-details .main-content section .head{
+        font-size:16px;
+        color:grey;
+        text-transform:uppercase;
+        font-weight:bold;
+        margin-top:20vh;
+    }
+    .course-details .main-content section .sub-title{
         font-size:16px;
         color:grey;
         text-transform:uppercase;
@@ -1442,6 +1470,16 @@
     .course-details .main-content .test-questions{
         padding:0 5vw 10vh 5vw;
     }
+    .course-details .main-content .take-test .container{
+        background:#fff;
+        position:absolute;
+        top:30vh;
+        left:10vw;
+        width:80vw;
+        height:auto;
+        padding:3vh 5vw;
+        font-size:12px;
+    }
     .course-details .main-content .test-questions .add-test-filter-columns .tab select{
         margin-left:1vw;
         padding:1vh .5vw;
@@ -1508,13 +1546,14 @@
     }
     .course-details .main-content .test-questions .item .answer-selection{
         display:grid;
-        grid-template-columns:15fr 1fr 15fr 1fr 15fr;
-        margin:4vh 0;
+        grid-template-columns:1fr;
+        margin:0;
     }
     .course-details .main-content .test-questions .item .answer-selection .answer{
         background:#f6f5f5;
         padding:1.5vh 1vw;
         border-radius:5px;
+        margin-bottom:10px;
     }
     .course-details .main-content .test-questions .item .answer-selection .correct-answer{
         background:rgba(0, 128, 128, 0.211);
@@ -1534,6 +1573,9 @@
     
     
     
+    .course-details .test-container .test-container-inner{
+        padding:0 5vw;
+    }
     .examination .main-content .test-questions{
         padding:0 5vw 10vh 5vw;
     }
@@ -1618,4 +1660,16 @@
         text-align:center;
         cursor:pointer;
     }
+    .App .course-details .main-content .popup-toggle .submit-answers-inner .text{
+        padding:0;
+        margin:0;
+    }
+    .App .course-details .main-content .popup-toggle .submit-answers-inner .buttons{
+        margin:10px 0 0 0!important;
+        padding:0!important;
+    }
+    .App .course-details .main-content .popup-toggle .submit-answers-inner .buttons button{
+        font-size:14px;
+    }
+    
 }

@@ -14,369 +14,346 @@ function Terms() {
     const [submitAnswers, setSubmitAnswers] = useState(false)
     
     return (
-        <div className="course-details-desktop">
+        <div className="course-details">
             <Navigation />
 
-            <div className="side-nav">
-                <div className="week">
-                    <img src={calender} alt="week" />
-                    <div className="label">Week One</div>
-                </div>
+            <div className="main-content test-container">
+                <div className="test-container-inner">
+                    <section style={{marginBottom:`5vh`}}>
+                        <div className="head">
+                            Anatomy and Metabolism One: Test Score and Corrections
+                        </div>
 
-                <div className="details-assignment">
-                    <Link className="link" to='/course-details'>
-                    <div className="navigation">
-                        <img src={courses} alt="course details" />
-                        Course Details
+                        <div className="navigation">
+                            <Link className="link" to='/topics'>
+                                <span className="back">{`<`} Back</span>
+                            </Link>
+                        </div>
+
+                        <div style={{marginBottom:`5vh`}}></div>
+                        <div></div>
+                    </section>
+
+                    <div className="score-projection">
+                        <div className="incline-decline">
+                            <img src={calender} alt="incline" />
+                            <br />
+                            6 wrong answers
+                        </div>
+                        <div className="percentage">
+                            <div className="bold">40%</div>
+                            answered correctly
+                        </div>
+                        <div className="incline-decline">
+                            <img src={calender} alt="decline" />
+                            <br />
+                            4 correct answers
+                        </div>
                     </div>
-                    </Link>
                     
-                    <Link className="link" to='/assignment'>
-                    <div className="navigation active">
-                        <img src={courses} alt="Assignment" />
-                        Assignment
-                    </div>
-                    </Link>
+                    <div className="test-questions">
+                        <div className="item">
+                            <div className="number">Question 1</div>
+                            <div className="question">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Commodo nulla facilisi nullam vehicula ipsum. Augue ut lectus arcu bibendum at varius vel pharetra. Aliquam purus sit amet luctus venenatis lectus magna fringilla urna. Ut aliquam purus sit amet luctus venenatis lectus. Quisque egestas diam in arcu cursus euismod. Pharetra sit amet aliquam id diam maecenas ultricies mi eget. Lacinia quis vel eros donec ac odio. In aliquam sem fringilla ut morbi tincidunt augue interdum. Sed nisi lacus sed viverra tellus. Pellentesque adipiscing commodo elit at imperdiet dui accumsan sit. Arcu bibendum at varius vel pharetra vel turpis nunc eget. Vulputate odio ut enim blandit. Ut venenatis tellus in metus. Sed velit dignissim sodales ut. Orci sagittis eu volutpat odio facilisis mauris sit amet. Ultricies leo integer malesuada nunc vel risus.
+                            </div>
+                            <div className="answer-selection">
+                                <div>
+                                    <div className="answer">
+                                        Correct Answer: <b>A</b>
+                                    </div>
+                                </div>
+
+                                <div></div>
+
+                                <div>
+                                    <div className="answer correct-answer">
+                                        Your Answer: <b>A</b>
+                                    </div>
+                                </div>
+
+                                <div></div>
+
+                                <div>
+                                    <div className="answer view-correction" onClick={() => setSubmitAnswers(!submitAnswers)}>
+                                        View Correction
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     
+                        <div className="item">
+                            <div className="number">Question 2</div>
+                            <div className="question">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Commodo nulla facilisi nullam vehicula ipsum. Augue ut lectus arcu bibendum at varius vel pharetra. Aliquam purus sit amet luctus venenatis lectus magna fringilla urna. Ut aliquam purus sit amet luctus venenatis lectus. Quisque egestas diam in arcu cursus euismod. Pharetra sit amet aliquam id diam maecenas ultricies mi eget. Lacinia quis vel eros donec ac odio. In aliquam sem fringilla ut morbi tincidunt augue interdum. Sed nisi lacus sed viverra tellus. Pellentesque adipiscing commodo elit at imperdiet dui accumsan sit. Arcu bibendum at varius vel pharetra vel turpis nunc eget. Vulputate odio ut enim blandit. Ut venenatis tellus in metus. Sed velit dignissim sodales ut. Orci sagittis eu volutpat odio facilisis mauris sit amet. Ultricies leo integer malesuada nunc vel risus.
+                            </div>
+                            <div className="answer-selection">
+                                <div>
+                                    <div className="answer">
+                                        Correct Answer: <b>A</b>
+                                    </div>
+                                </div>
+
+                                <div></div>
+
+                                <div>
+                                    <div className="answer wrong-answer">
+                                        Your Answer: <b>A</b>
+                                    </div>
+                                </div>
+
+                                <div></div>
+
+                                <div>
+                                    <div className="answer view-correction" onClick={() => setSubmitAnswers(!submitAnswers)}>
+                                        View Correction
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    
+                        <div className="item">
+                            <div className="number">Question 3</div>
+                            <div className="question">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Commodo nulla facilisi nullam vehicula ipsum. Augue ut lectus arcu bibendum at varius vel pharetra. Aliquam purus sit amet luctus venenatis lectus magna fringilla urna. Ut aliquam purus sit amet luctus venenatis lectus. Quisque egestas diam in arcu cursus euismod. Pharetra sit amet aliquam id diam maecenas ultricies mi eget. Lacinia quis vel eros donec ac odio. In aliquam sem fringilla ut morbi tincidunt augue interdum. Sed nisi lacus sed viverra tellus. Pellentesque adipiscing commodo elit at imperdiet dui accumsan sit. Arcu bibendum at varius vel pharetra vel turpis nunc eget. Vulputate odio ut enim blandit. Ut venenatis tellus in metus. Sed velit dignissim sodales ut. Orci sagittis eu volutpat odio facilisis mauris sit amet. Ultricies leo integer malesuada nunc vel risus.
+                            </div>
+                            <div className="answer-selection">
+                                <div>
+                                    <div className="answer">
+                                        Correct Answer: <b>A</b>
+                                    </div>
+                                </div>
+
+                                <div></div>
+
+                                <div>
+                                    <div className="answer wrong-answer">
+                                        Your Answer: <b>A</b>
+                                    </div>
+                                </div>
+
+                                <div></div>
+
+                                <div>
+                                    <div className="answer view-correction" onClick={() => setSubmitAnswers(!submitAnswers)}>
+                                        View Correction
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    
+                        <div className="item">
+                            <div className="number">Question 4</div>
+                            <div className="question">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Commodo nulla facilisi nullam vehicula ipsum. Augue ut lectus arcu bibendum at varius vel pharetra. Aliquam purus sit amet luctus venenatis lectus magna fringilla urna. Ut aliquam purus sit amet luctus venenatis lectus. Quisque egestas diam in arcu cursus euismod. Pharetra sit amet aliquam id diam maecenas ultricies mi eget. Lacinia quis vel eros donec ac odio. In aliquam sem fringilla ut morbi tincidunt augue interdum. Sed nisi lacus sed viverra tellus. Pellentesque adipiscing commodo elit at imperdiet dui accumsan sit. Arcu bibendum at varius vel pharetra vel turpis nunc eget. Vulputate odio ut enim blandit. Ut venenatis tellus in metus. Sed velit dignissim sodales ut. Orci sagittis eu volutpat odio facilisis mauris sit amet. Ultricies leo integer malesuada nunc vel risus.
+                            </div>
+                            <div className="answer-selection">
+                                <div>
+                                    <div className="answer">
+                                        Correct Answer: <b>A</b>
+                                    </div>
+                                </div>
+
+                                <div></div>
+
+                                <div>
+                                    <div className="answer correct-answer">
+                                        Your Answer: <b>A</b>
+                                    </div>
+                                </div>
+
+                                <div></div>
+
+                                <div>
+                                    <div className="answer view-correction" onClick={() => setSubmitAnswers(!submitAnswers)}>
+                                        View Correction
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    
+                        <div className="item">
+                            <div className="number">Question 5</div>
+                            <div className="question">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Commodo nulla facilisi nullam vehicula ipsum. Augue ut lectus arcu bibendum at varius vel pharetra. Aliquam purus sit amet luctus venenatis lectus magna fringilla urna. Ut aliquam purus sit amet luctus venenatis lectus. Quisque egestas diam in arcu cursus euismod. Pharetra sit amet aliquam id diam maecenas ultricies mi eget. Lacinia quis vel eros donec ac odio. In aliquam sem fringilla ut morbi tincidunt augue interdum. Sed nisi lacus sed viverra tellus. Pellentesque adipiscing commodo elit at imperdiet dui accumsan sit. Arcu bibendum at varius vel pharetra vel turpis nunc eget. Vulputate odio ut enim blandit. Ut venenatis tellus in metus. Sed velit dignissim sodales ut. Orci sagittis eu volutpat odio facilisis mauris sit amet. Ultricies leo integer malesuada nunc vel risus.
+                            </div>
+                            <div className="answer-selection">
+                                <div>
+                                    <div className="answer">
+                                        Correct Answer: <b>A</b>
+                                    </div>
+                                </div>
+
+                                <div></div>
+
+                                <div>
+                                    <div className="answer wrong-answer">
+                                        Your Answer: <b>A</b>
+                                    </div>
+                                </div>
+
+                                <div></div>
+
+                                <div>
+                                    <div className="answer view-correction" onClick={() => setSubmitAnswers(!submitAnswers)}>
+                                        View Correction
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    
+                        <div className="item">
+                            <div className="number">Question 6</div>
+                            <div className="question">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Commodo nulla facilisi nullam vehicula ipsum. Augue ut lectus arcu bibendum at varius vel pharetra. Aliquam purus sit amet luctus venenatis lectus magna fringilla urna. Ut aliquam purus sit amet luctus venenatis lectus. Quisque egestas diam in arcu cursus euismod. Pharetra sit amet aliquam id diam maecenas ultricies mi eget. Lacinia quis vel eros donec ac odio. In aliquam sem fringilla ut morbi tincidunt augue interdum. Sed nisi lacus sed viverra tellus. Pellentesque adipiscing commodo elit at imperdiet dui accumsan sit. Arcu bibendum at varius vel pharetra vel turpis nunc eget. Vulputate odio ut enim blandit. Ut venenatis tellus in metus. Sed velit dignissim sodales ut. Orci sagittis eu volutpat odio facilisis mauris sit amet. Ultricies leo integer malesuada nunc vel risus.
+                            </div>
+                            <div className="answer-selection">
+                                <div>
+                                    <div className="answer">
+                                        Correct Answer: <b>A</b>
+                                    </div>
+                                </div>
+
+                                <div></div>
+
+                                <div>
+                                    <div className="answer wrong-answer">
+                                        Your Answer: <b>A</b>
+                                    </div>
+                                </div>
+
+                                <div></div>
+
+                                <div>
+                                    <div className="answer view-correction" onClick={() => setSubmitAnswers(!submitAnswers)}>
+                                        View Correction
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    
+                        <div className="item">
+                            <div className="number">Question 7</div>
+                            <div className="question">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Commodo nulla facilisi nullam vehicula ipsum. Augue ut lectus arcu bibendum at varius vel pharetra. Aliquam purus sit amet luctus venenatis lectus magna fringilla urna. Ut aliquam purus sit amet luctus venenatis lectus. Quisque egestas diam in arcu cursus euismod. Pharetra sit amet aliquam id diam maecenas ultricies mi eget. Lacinia quis vel eros donec ac odio. In aliquam sem fringilla ut morbi tincidunt augue interdum. Sed nisi lacus sed viverra tellus. Pellentesque adipiscing commodo elit at imperdiet dui accumsan sit. Arcu bibendum at varius vel pharetra vel turpis nunc eget. Vulputate odio ut enim blandit. Ut venenatis tellus in metus. Sed velit dignissim sodales ut. Orci sagittis eu volutpat odio facilisis mauris sit amet. Ultricies leo integer malesuada nunc vel risus.
+                            </div>
+                            <div className="answer-selection">
+                                <div>
+                                    <div className="answer">
+                                        Correct Answer: <b>A</b>
+                                    </div>
+                                </div>
+
+                                <div></div>
+
+                                <div>
+                                    <div className="answer wrong-answer">
+                                        Your Answer: <b>A</b>
+                                    </div>
+                                </div>
+
+                                <div></div>
+
+                                <div>
+                                    <div className="answer view-correction" onClick={() => setSubmitAnswers(!submitAnswers)}>
+                                        View Correction
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    
+                        <div className="item">
+                            <div className="number">Question 8</div>
+                            <div className="question">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Commodo nulla facilisi nullam vehicula ipsum. Augue ut lectus arcu bibendum at varius vel pharetra. Aliquam purus sit amet luctus venenatis lectus magna fringilla urna. Ut aliquam purus sit amet luctus venenatis lectus. Quisque egestas diam in arcu cursus euismod. Pharetra sit amet aliquam id diam maecenas ultricies mi eget. Lacinia quis vel eros donec ac odio. In aliquam sem fringilla ut morbi tincidunt augue interdum. Sed nisi lacus sed viverra tellus. Pellentesque adipiscing commodo elit at imperdiet dui accumsan sit. Arcu bibendum at varius vel pharetra vel turpis nunc eget. Vulputate odio ut enim blandit. Ut venenatis tellus in metus. Sed velit dignissim sodales ut. Orci sagittis eu volutpat odio facilisis mauris sit amet. Ultricies leo integer malesuada nunc vel risus.
+                            </div>
+                            <div className="answer-selection">
+                                <div>
+                                    <div className="answer">
+                                        Correct Answer: <b>A</b>
+                                    </div>
+                                </div>
+
+                                <div></div>
+
+                                <div>
+                                    <div className="answer correct-answer">
+                                        Your Answer: <b>A</b>
+                                    </div>
+                                </div>
+
+                                <div></div>
+
+                                <div>
+                                    <div className="answer view-correction" onClick={() => setSubmitAnswers(!submitAnswers)}>
+                                        View Correction
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    
+                        <div className="item">
+                            <div className="number">Question 9</div>
+                            <div className="question">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Commodo nulla facilisi nullam vehicula ipsum. Augue ut lectus arcu bibendum at varius vel pharetra. Aliquam purus sit amet luctus venenatis lectus magna fringilla urna. Ut aliquam purus sit amet luctus venenatis lectus. Quisque egestas diam in arcu cursus euismod. Pharetra sit amet aliquam id diam maecenas ultricies mi eget. Lacinia quis vel eros donec ac odio. In aliquam sem fringilla ut morbi tincidunt augue interdum. Sed nisi lacus sed viverra tellus. Pellentesque adipiscing commodo elit at imperdiet dui accumsan sit. Arcu bibendum at varius vel pharetra vel turpis nunc eget. Vulputate odio ut enim blandit. Ut venenatis tellus in metus. Sed velit dignissim sodales ut. Orci sagittis eu volutpat odio facilisis mauris sit amet. Ultricies leo integer malesuada nunc vel risus.
+                            </div>
+                            <div className="answer-selection">
+                                <div>
+                                    <div className="answer">
+                                        Correct Answer: <b>A</b>
+                                    </div>
+                                </div>
+
+                                <div></div>
+
+                                <div>
+                                    <div className="answer wrong-answer">
+                                        Your Answer: <b>A</b>
+                                    </div>
+                                </div>
+
+                                <div></div>
+
+                                <div>
+                                    <div className="answer view-correction" onClick={() => setSubmitAnswers(!submitAnswers)}>
+                                        View Correction
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    
+                        <div className="item">
+                            <div className="number">Question 10</div>
+                            <div className="question">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Commodo nulla facilisi nullam vehicula ipsum. Augue ut lectus arcu bibendum at varius vel pharetra. Aliquam purus sit amet luctus venenatis lectus magna fringilla urna. Ut aliquam purus sit amet luctus venenatis lectus. Quisque egestas diam in arcu cursus euismod. Pharetra sit amet aliquam id diam maecenas ultricies mi eget. Lacinia quis vel eros donec ac odio. In aliquam sem fringilla ut morbi tincidunt augue interdum. Sed nisi lacus sed viverra tellus. Pellentesque adipiscing commodo elit at imperdiet dui accumsan sit. Arcu bibendum at varius vel pharetra vel turpis nunc eget. Vulputate odio ut enim blandit. Ut venenatis tellus in metus. Sed velit dignissim sodales ut. Orci sagittis eu volutpat odio facilisis mauris sit amet. Ultricies leo integer malesuada nunc vel risus.
+                            </div>
+                            <div className="answer-selection">
+                                <div>
+                                    <div className="answer">
+                                        Correct Answer: <b>A</b>
+                                    </div>
+                                </div>
+
+                                <div></div>
+
+                                <div>
+                                    <div className="answer correct-answer">
+                                        Your Answer: <b>A</b>
+                                    </div>
+                                </div>
+
+                                <div></div>
+
+                                <div>
+                                    <div className="answer view-correction" onClick={() => setSubmitAnswers(!submitAnswers)}>
+                                        View Correction
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
-            </div>
-
-            <div className="main-content">
-                <section style={{marginBottom:`5vh`}}>
-                    <div className="head">
-                        Anatomy and Metabolism One: Test Score and Corrections
-                    </div>
-
-                    <div className="navigation">
-                        <Link className="link" to='/topics'>
-                            <span className="back">{`<`} Back</span>
-                        </Link>
-                    </div>
-
-                    <div style={{marginBottom:`5vh`}}></div>
-                    <div></div>
-                </section>
-
-                <div className="score-projection">
-                    <div className="incline-decline">
-                        <img src={calender} alt="incline" />
-                        <br />
-                        6 wrong answers
-                    </div>
-                    <div className="percentage">
-                        <div className="bold">40%</div>
-                        answered correctly
-                    </div>
-                    <div className="incline-decline">
-                        <img src={calender} alt="decline" />
-                        <br />
-                        4 correct answers
-                    </div>
-                </div>
-                
-                <div className="test-questions">
-                    <div className="item">
-                        <div className="number">Question 1</div>
-                        <div className="question">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Commodo nulla facilisi nullam vehicula ipsum. Augue ut lectus arcu bibendum at varius vel pharetra. Aliquam purus sit amet luctus venenatis lectus magna fringilla urna. Ut aliquam purus sit amet luctus venenatis lectus. Quisque egestas diam in arcu cursus euismod. Pharetra sit amet aliquam id diam maecenas ultricies mi eget. Lacinia quis vel eros donec ac odio. In aliquam sem fringilla ut morbi tincidunt augue interdum. Sed nisi lacus sed viverra tellus. Pellentesque adipiscing commodo elit at imperdiet dui accumsan sit. Arcu bibendum at varius vel pharetra vel turpis nunc eget. Vulputate odio ut enim blandit. Ut venenatis tellus in metus. Sed velit dignissim sodales ut. Orci sagittis eu volutpat odio facilisis mauris sit amet. Ultricies leo integer malesuada nunc vel risus.
-                        </div>
-                        <div className="answer-selection">
-                            <div>
-                                <div className="answer">
-                                    Correct Answer: <b>A</b>
-                                </div>
-                            </div>
-
-                            <div></div>
-
-                            <div>
-                                <div className="answer correct-answer">
-                                    Your Answer: <b>A</b>
-                                </div>
-                            </div>
-
-                            <div></div>
-
-                            <div>
-                                <div className="answer view-correction" onClick={() => setSubmitAnswers(!submitAnswers)}>
-                                    View Correction
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                
-                    <div className="item">
-                        <div className="number">Question 2</div>
-                        <div className="question">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Commodo nulla facilisi nullam vehicula ipsum. Augue ut lectus arcu bibendum at varius vel pharetra. Aliquam purus sit amet luctus venenatis lectus magna fringilla urna. Ut aliquam purus sit amet luctus venenatis lectus. Quisque egestas diam in arcu cursus euismod. Pharetra sit amet aliquam id diam maecenas ultricies mi eget. Lacinia quis vel eros donec ac odio. In aliquam sem fringilla ut morbi tincidunt augue interdum. Sed nisi lacus sed viverra tellus. Pellentesque adipiscing commodo elit at imperdiet dui accumsan sit. Arcu bibendum at varius vel pharetra vel turpis nunc eget. Vulputate odio ut enim blandit. Ut venenatis tellus in metus. Sed velit dignissim sodales ut. Orci sagittis eu volutpat odio facilisis mauris sit amet. Ultricies leo integer malesuada nunc vel risus.
-                        </div>
-                        <div className="answer-selection">
-                            <div>
-                                <div className="answer">
-                                    Correct Answer: <b>A</b>
-                                </div>
-                            </div>
-
-                            <div></div>
-
-                            <div>
-                                <div className="answer wrong-answer">
-                                    Your Answer: <b>A</b>
-                                </div>
-                            </div>
-
-                            <div></div>
-
-                            <div>
-                                <div className="answer view-correction" onClick={() => setSubmitAnswers(!submitAnswers)}>
-                                    View Correction
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                
-                    <div className="item">
-                        <div className="number">Question 3</div>
-                        <div className="question">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Commodo nulla facilisi nullam vehicula ipsum. Augue ut lectus arcu bibendum at varius vel pharetra. Aliquam purus sit amet luctus venenatis lectus magna fringilla urna. Ut aliquam purus sit amet luctus venenatis lectus. Quisque egestas diam in arcu cursus euismod. Pharetra sit amet aliquam id diam maecenas ultricies mi eget. Lacinia quis vel eros donec ac odio. In aliquam sem fringilla ut morbi tincidunt augue interdum. Sed nisi lacus sed viverra tellus. Pellentesque adipiscing commodo elit at imperdiet dui accumsan sit. Arcu bibendum at varius vel pharetra vel turpis nunc eget. Vulputate odio ut enim blandit. Ut venenatis tellus in metus. Sed velit dignissim sodales ut. Orci sagittis eu volutpat odio facilisis mauris sit amet. Ultricies leo integer malesuada nunc vel risus.
-                        </div>
-                        <div className="answer-selection">
-                            <div>
-                                <div className="answer">
-                                    Correct Answer: <b>A</b>
-                                </div>
-                            </div>
-
-                            <div></div>
-
-                            <div>
-                                <div className="answer wrong-answer">
-                                    Your Answer: <b>A</b>
-                                </div>
-                            </div>
-
-                            <div></div>
-
-                            <div>
-                                <div className="answer view-correction" onClick={() => setSubmitAnswers(!submitAnswers)}>
-                                    View Correction
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                
-                    <div className="item">
-                        <div className="number">Question 4</div>
-                        <div className="question">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Commodo nulla facilisi nullam vehicula ipsum. Augue ut lectus arcu bibendum at varius vel pharetra. Aliquam purus sit amet luctus venenatis lectus magna fringilla urna. Ut aliquam purus sit amet luctus venenatis lectus. Quisque egestas diam in arcu cursus euismod. Pharetra sit amet aliquam id diam maecenas ultricies mi eget. Lacinia quis vel eros donec ac odio. In aliquam sem fringilla ut morbi tincidunt augue interdum. Sed nisi lacus sed viverra tellus. Pellentesque adipiscing commodo elit at imperdiet dui accumsan sit. Arcu bibendum at varius vel pharetra vel turpis nunc eget. Vulputate odio ut enim blandit. Ut venenatis tellus in metus. Sed velit dignissim sodales ut. Orci sagittis eu volutpat odio facilisis mauris sit amet. Ultricies leo integer malesuada nunc vel risus.
-                        </div>
-                        <div className="answer-selection">
-                            <div>
-                                <div className="answer">
-                                    Correct Answer: <b>A</b>
-                                </div>
-                            </div>
-
-                            <div></div>
-
-                            <div>
-                                <div className="answer correct-answer">
-                                    Your Answer: <b>A</b>
-                                </div>
-                            </div>
-
-                            <div></div>
-
-                            <div>
-                                <div className="answer view-correction" onClick={() => setSubmitAnswers(!submitAnswers)}>
-                                    View Correction
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                
-                    <div className="item">
-                        <div className="number">Question 5</div>
-                        <div className="question">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Commodo nulla facilisi nullam vehicula ipsum. Augue ut lectus arcu bibendum at varius vel pharetra. Aliquam purus sit amet luctus venenatis lectus magna fringilla urna. Ut aliquam purus sit amet luctus venenatis lectus. Quisque egestas diam in arcu cursus euismod. Pharetra sit amet aliquam id diam maecenas ultricies mi eget. Lacinia quis vel eros donec ac odio. In aliquam sem fringilla ut morbi tincidunt augue interdum. Sed nisi lacus sed viverra tellus. Pellentesque adipiscing commodo elit at imperdiet dui accumsan sit. Arcu bibendum at varius vel pharetra vel turpis nunc eget. Vulputate odio ut enim blandit. Ut venenatis tellus in metus. Sed velit dignissim sodales ut. Orci sagittis eu volutpat odio facilisis mauris sit amet. Ultricies leo integer malesuada nunc vel risus.
-                        </div>
-                        <div className="answer-selection">
-                            <div>
-                                <div className="answer">
-                                    Correct Answer: <b>A</b>
-                                </div>
-                            </div>
-
-                            <div></div>
-
-                            <div>
-                                <div className="answer wrong-answer">
-                                    Your Answer: <b>A</b>
-                                </div>
-                            </div>
-
-                            <div></div>
-
-                            <div>
-                                <div className="answer view-correction" onClick={() => setSubmitAnswers(!submitAnswers)}>
-                                    View Correction
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                
-                    <div className="item">
-                        <div className="number">Question 6</div>
-                        <div className="question">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Commodo nulla facilisi nullam vehicula ipsum. Augue ut lectus arcu bibendum at varius vel pharetra. Aliquam purus sit amet luctus venenatis lectus magna fringilla urna. Ut aliquam purus sit amet luctus venenatis lectus. Quisque egestas diam in arcu cursus euismod. Pharetra sit amet aliquam id diam maecenas ultricies mi eget. Lacinia quis vel eros donec ac odio. In aliquam sem fringilla ut morbi tincidunt augue interdum. Sed nisi lacus sed viverra tellus. Pellentesque adipiscing commodo elit at imperdiet dui accumsan sit. Arcu bibendum at varius vel pharetra vel turpis nunc eget. Vulputate odio ut enim blandit. Ut venenatis tellus in metus. Sed velit dignissim sodales ut. Orci sagittis eu volutpat odio facilisis mauris sit amet. Ultricies leo integer malesuada nunc vel risus.
-                        </div>
-                        <div className="answer-selection">
-                            <div>
-                                <div className="answer">
-                                    Correct Answer: <b>A</b>
-                                </div>
-                            </div>
-
-                            <div></div>
-
-                            <div>
-                                <div className="answer wrong-answer">
-                                    Your Answer: <b>A</b>
-                                </div>
-                            </div>
-
-                            <div></div>
-
-                            <div>
-                                <div className="answer view-correction" onClick={() => setSubmitAnswers(!submitAnswers)}>
-                                    View Correction
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                
-                    <div className="item">
-                        <div className="number">Question 7</div>
-                        <div className="question">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Commodo nulla facilisi nullam vehicula ipsum. Augue ut lectus arcu bibendum at varius vel pharetra. Aliquam purus sit amet luctus venenatis lectus magna fringilla urna. Ut aliquam purus sit amet luctus venenatis lectus. Quisque egestas diam in arcu cursus euismod. Pharetra sit amet aliquam id diam maecenas ultricies mi eget. Lacinia quis vel eros donec ac odio. In aliquam sem fringilla ut morbi tincidunt augue interdum. Sed nisi lacus sed viverra tellus. Pellentesque adipiscing commodo elit at imperdiet dui accumsan sit. Arcu bibendum at varius vel pharetra vel turpis nunc eget. Vulputate odio ut enim blandit. Ut venenatis tellus in metus. Sed velit dignissim sodales ut. Orci sagittis eu volutpat odio facilisis mauris sit amet. Ultricies leo integer malesuada nunc vel risus.
-                        </div>
-                        <div className="answer-selection">
-                            <div>
-                                <div className="answer">
-                                    Correct Answer: <b>A</b>
-                                </div>
-                            </div>
-
-                            <div></div>
-
-                            <div>
-                                <div className="answer wrong-answer">
-                                    Your Answer: <b>A</b>
-                                </div>
-                            </div>
-
-                            <div></div>
-
-                            <div>
-                                <div className="answer view-correction" onClick={() => setSubmitAnswers(!submitAnswers)}>
-                                    View Correction
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                
-                    <div className="item">
-                        <div className="number">Question 8</div>
-                        <div className="question">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Commodo nulla facilisi nullam vehicula ipsum. Augue ut lectus arcu bibendum at varius vel pharetra. Aliquam purus sit amet luctus venenatis lectus magna fringilla urna. Ut aliquam purus sit amet luctus venenatis lectus. Quisque egestas diam in arcu cursus euismod. Pharetra sit amet aliquam id diam maecenas ultricies mi eget. Lacinia quis vel eros donec ac odio. In aliquam sem fringilla ut morbi tincidunt augue interdum. Sed nisi lacus sed viverra tellus. Pellentesque adipiscing commodo elit at imperdiet dui accumsan sit. Arcu bibendum at varius vel pharetra vel turpis nunc eget. Vulputate odio ut enim blandit. Ut venenatis tellus in metus. Sed velit dignissim sodales ut. Orci sagittis eu volutpat odio facilisis mauris sit amet. Ultricies leo integer malesuada nunc vel risus.
-                        </div>
-                        <div className="answer-selection">
-                            <div>
-                                <div className="answer">
-                                    Correct Answer: <b>A</b>
-                                </div>
-                            </div>
-
-                            <div></div>
-
-                            <div>
-                                <div className="answer correct-answer">
-                                    Your Answer: <b>A</b>
-                                </div>
-                            </div>
-
-                            <div></div>
-
-                            <div>
-                                <div className="answer view-correction" onClick={() => setSubmitAnswers(!submitAnswers)}>
-                                    View Correction
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                
-                    <div className="item">
-                        <div className="number">Question 9</div>
-                        <div className="question">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Commodo nulla facilisi nullam vehicula ipsum. Augue ut lectus arcu bibendum at varius vel pharetra. Aliquam purus sit amet luctus venenatis lectus magna fringilla urna. Ut aliquam purus sit amet luctus venenatis lectus. Quisque egestas diam in arcu cursus euismod. Pharetra sit amet aliquam id diam maecenas ultricies mi eget. Lacinia quis vel eros donec ac odio. In aliquam sem fringilla ut morbi tincidunt augue interdum. Sed nisi lacus sed viverra tellus. Pellentesque adipiscing commodo elit at imperdiet dui accumsan sit. Arcu bibendum at varius vel pharetra vel turpis nunc eget. Vulputate odio ut enim blandit. Ut venenatis tellus in metus. Sed velit dignissim sodales ut. Orci sagittis eu volutpat odio facilisis mauris sit amet. Ultricies leo integer malesuada nunc vel risus.
-                        </div>
-                        <div className="answer-selection">
-                            <div>
-                                <div className="answer">
-                                    Correct Answer: <b>A</b>
-                                </div>
-                            </div>
-
-                            <div></div>
-
-                            <div>
-                                <div className="answer wrong-answer">
-                                    Your Answer: <b>A</b>
-                                </div>
-                            </div>
-
-                            <div></div>
-
-                            <div>
-                                <div className="answer view-correction" onClick={() => setSubmitAnswers(!submitAnswers)}>
-                                    View Correction
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                
-                    <div className="item">
-                        <div className="number">Question 10</div>
-                        <div className="question">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Commodo nulla facilisi nullam vehicula ipsum. Augue ut lectus arcu bibendum at varius vel pharetra. Aliquam purus sit amet luctus venenatis lectus magna fringilla urna. Ut aliquam purus sit amet luctus venenatis lectus. Quisque egestas diam in arcu cursus euismod. Pharetra sit amet aliquam id diam maecenas ultricies mi eget. Lacinia quis vel eros donec ac odio. In aliquam sem fringilla ut morbi tincidunt augue interdum. Sed nisi lacus sed viverra tellus. Pellentesque adipiscing commodo elit at imperdiet dui accumsan sit. Arcu bibendum at varius vel pharetra vel turpis nunc eget. Vulputate odio ut enim blandit. Ut venenatis tellus in metus. Sed velit dignissim sodales ut. Orci sagittis eu volutpat odio facilisis mauris sit amet. Ultricies leo integer malesuada nunc vel risus.
-                        </div>
-                        <div className="answer-selection">
-                            <div>
-                                <div className="answer">
-                                    Correct Answer: <b>A</b>
-                                </div>
-                            </div>
-
-                            <div></div>
-
-                            <div>
-                                <div className="answer correct-answer">
-                                    Your Answer: <b>A</b>
-                                </div>
-                            </div>
-
-                            <div></div>
-
-                            <div>
-                                <div className="answer view-correction" onClick={() => setSubmitAnswers(!submitAnswers)}>
-                                    View Correction
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                
-                </div>
-
                 <Footer />
             </div>
             

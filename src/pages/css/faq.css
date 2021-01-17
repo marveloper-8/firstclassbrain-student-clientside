@@ -55,11 +55,26 @@
     width:1.25vw;
     float:right;
     margin:0!important;
+    transition:.5s ease-in-out all;
+    cursor:pointer;
 }
 .faq .faq-container .tab .content{
     font-size:1vw;
-    padding:2.5vh 7.5vw 2.5vh 0;
+    padding:0 7.5vw 0 0;
     text-align:justify;
+    height:auto;
+    transition:.5s ease-in-out all;
+}
+.faq .faq-container .tab .content-inactive{
+    height:0;
+    overflow:hidden;
+    transition:.5s ease-in-out all;
+}
+
+
+.faq .faq-container .tab .nav img.arrow-inactive{
+    transform:rotate(180deg);
+    transition:.5s ease-in-out all;
 }
 
 /* breakkkk */

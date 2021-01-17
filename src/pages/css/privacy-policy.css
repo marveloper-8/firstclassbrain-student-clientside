@@ -1,0 +1,23 @@
+.privacy-policy{
+    font-size:14px;
+    padding:5vh 25vw;
+}
+
+/* breakkkk */
+/* breakkkk */
+/* breakkkk */
+/* breakkkk */
+/* breakkkk */
+/* breakkkk */
+/* breakkkk */
+/* breakkkk */
+/* breakkkk */
+/* breakkkk */
+
+/* mobile version */
+@media screen and (max-width:600px){
+    .privacy-policy{
+        font-size:14px;
+        padding:5vh 7.5vw;
+    }
+}

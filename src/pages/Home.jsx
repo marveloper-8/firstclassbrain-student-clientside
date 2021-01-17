@@ -107,10 +107,9 @@ const Home = () => {
                     <div className="background-overlay"></div>
 
                     <div className="title">
-                        COURSES ON ALL PRIMARY & SECONDARY SCHOOL LEVELS
+                        FCB up offers course an all school levels using electronic devices to asses educational curriculum outside traditional  classes at self comfort learning.
                     </div>
                     <div className="subhead">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
                     </div>
                     <button>
                         Enroll Now

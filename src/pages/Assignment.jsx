@@ -4,47 +4,20 @@ import {useTimer} from 'react-timer-hook'
 
 import Footer from './Footer'
 import Navigation from './Navigation'
+import QuestionItem from './QuestionItem'
+import Correction from './Correction'
 
 import './css/general.css'
 import './css/classroom.css'
 
-function Terms() {
+import wrong from '../illustrations/wrong.svg'
+import correct from '../illustrations/correct.svg'
+
+function Assignment() {
     const [submitAnswers, setSubmitAnswers] = useState(false)
-    const [testScore, setTestScore] = useState(0)
-    // const [answerSelected, setAnswerSelected] = useState("answerA")
-
-    const [state, setState] = useState({
-        answers:[{answerElected: "answerA"}]
-    })
-
-    const handleAnswerElected = (idx) => (evt) => {
-        const newAnswers = state.answers.map((shareholder, qidx) => {
-          if (idx !== qidx) return shareholder;
-          return { ...shareholder, answerElected: evt.target.value };
-        });
-        
-        setState({...state, answers: newAnswers });
-    }
-
-    const [testDetails, setTestDetails] = useState([])
-    const [data, setData] = useState([])
-
-    const testIncrease = () => {
-        setTestScore(testScore + 1)
-    }
-
-    const testHello = () => {
-        alert("Hello")
-    }
-
-    const submitAction = e => {
-        e.preventDefault()
-        setSubmitAnswers(!submitAnswers)
-    }
-
-
     const {postId} = useParams()
-
+    const [correction, setCorrection] = useState(false)
+    const [testDetails, setTestDetails] = useState([])
     useEffect(() => {
         fetch(`https://firstclassbrain-server.herokuapp.com/student/test-details/${postId}`, {
             headers: {
@@ -58,43 +31,92 @@ function Terms() {
             })
     }, [postId])
 
-    console.log({postId})
+    // questions
+    const [testQuestions, setTestQuestions] = useState([
+        {score: ""}
+    ])
 
-    const test_minutes = `${testDetails.test ? testDetails.test.minutes : "loading"}`
+    useEffect(() => {
+        fetch(`https://firstclassbrain-server.herokuapp.com/student/test-details/${postId}`, {
+            headers: {
+                "Authorization": "Bearer " + localStorage.getItem("jwt")
+            }
+        })
+            .then(res => res.json())
+            .then(result => {
+                console.log(result)
+                setTestQuestions(result.test.questions)
+            })
+    }, [postId])
 
-    const test_minutes_number = test_minutes
+    console.log(testQuestions)
 
-    console.log(test_minutes)
+    // percentage
+    const percent = testQuestions.length
+    const value = testQuestions.filter(i => i.score === "correct").length
+    const percentages = (value/percent) * 100
+    const percent_value = percentages.toFixed(0)
+    console.log(percent_value)
 
+    // submit action
+    const submitAction = e => {
+        e.preventDefault()
+        setSubmitAnswers(!submitAnswers)
+    }
 
-    const expiryTimestamp = new Date();
-    expiryTimestamp.setSeconds(expiryTimestamp.getSeconds() + 30);
-    expiryTimestamp.setMinutes(expiryTimestamp.getMinutes() + parseInt(test_minutes_number));
+    const [isRunning, setIsRunning] = useState(true)
 
-    const {
-      seconds,
-      minutes,
-      hours,
-      days,
-      isRunning,
-      start,
-      pause,
-      resume,
-      restart,
-    } = useTimer({ expiryTimestamp, autoStart:true, onExpire: () => console.warn('onExpire called') });
+    const correction_info = () => {
+        if(correction){
+            return [
+                <>
+                    <section>
+                        <div className="sub-title">
+                            <span className="main">{testDetails.test ? testDetails.test.title : "loading"}:</span> TEST SCORE AND CORRECTIONS ({testDetails.test ? testDetails.test.questions.length : "loading"} Questions)
+                        </div>
+                    </section>
 
-    
-    
-    
-    return (
-        <div className="course-details">
-            {isRunning ? "" : alert("Your time for this test is up. Click on the Submit Answers button to proceed.")}
-            <Navigation />
-            <div className="main-content test-container">
-                <div className="test-container-inner">
-                    <section style={{marginBottom:`5vh`}}>
-                        <div className="head sub-title">
-                            <span className="main">Assignment:</span> {testDetails.test ? testDetails.test.topic : "loading"} ({testDetails.test ? testDetails.test.questions.length : "loading"} Questions)
+                    <div className="score-projection">
+                        <div className="incline-decline">
+                            <img src={wrong} alt="incline" />
+                            <br />
+                            {percent - value} wrong answers
+                        </div>
+                        <div className="percentage">
+                            <div className="bold">{percent_value}%</div>
+                            answered correctly
+                        </div>
+                        <div className="incline-decline">
+                            <img src={correct} alt="decline" />
+                            <br />
+                            {value} correct answers
+                        </div>
+                    </div>
+                    
+                    <div className="test-questions">
+                        <ol>
+                            {
+                                testQuestions 
+                                ? 
+                                testQuestions.map(questions => {
+                                    return <li className="item" key={questions._id}>
+                                        <Correction questions={questions} />
+                                    </li>
+                                })
+                                : 
+                                "loading"
+                            }
+                        </ol>
+                    </div>
+
+                </>
+            ]
+        } else{
+            return[
+                <>
+                    <section>
+                        <div className="sub-title">
+                            <span className="main">Assignment:</span> {testDetails.test ? testDetails.test.title : "loading"} ({testDetails.test ? testDetails.test.questions.length : "loading"} Questions)
                         </div>
 
                         <div className="navigation">
@@ -107,174 +129,45 @@ function Terms() {
                         <div></div>
 
                         <div className="time">
-                            Time Limit: 0:{parseInt(`${test_minutes_number}`)} minutes
+                            Time Limit: 0:{parseInt(`${1}`)} minutes
                         </div>
 
                         <div className="time time-remaining">
-                            {minutes} : {seconds} minutes remaining
+                            {1} : {1} minutes remaining
                         </div>
                     </section>
-
-                    {testScore}
-                    <br />
-
                     <form className="test-questions">
                         <ol>
                             {
-                                testDetails.test 
+                                testQuestions 
                                 ? 
-                                testDetails.test.questions.map((questionsItem, idx) => {
-                                    console.log({questionsItem})
-                                    return(
-                                        <>
-                                        {state.answers.map((shareholder, tidx) => (
-                                            <div className="item" key={idx}>
-                                                {shareholder.answerElected}
-
-                                                <div className="number">Question<li className="digits">&nbsp;</li></div>
-                                                <div className="question">
-                                                    {questionsItem.question}
-                                                </div>
-                                                <div className="answer-options">
-                                                    <div className="tab">
-                                                        <div className="select" onClick={testHello}>
-                                                            <input 
-                                                                type="radio"
-                                                                name={tidx + 1}
-                                                                value="answerA"
-                                                                className="radio"
-                                                                onChange={handleAnswerElected(tidx)}
-                                                                disabled = {
-                                                                    isRunning
-                                                                    ?
-                                                                    false
-                                                                    :
-                                                                    true
-                                                                }
-                                                            />
-                                                            <span className={
-                                                                isRunning 
-                                                                ? 
-                                                                "checkmark" 
-                                                                : 
-                                                                "checkmark select-background-change"
-                                                            }></span>
-                                                            <span className="text">
-                                                                Option A
-                                                            </span>
-                                                        </div>
-                                                        <div></div>
-                                                        <div className="label">
-                                                            {questionsItem.answerA}
-                                                        </div>
-                                                    </div>
-                                                    <div className="tab">
-                                                        <div className="select">
-                                                            <input 
-                                                                type="radio"
-                                                                name={tidx + 1}
-                                                                value="answerB"
-                                                                className="radio"
-                                                                onChange={handleAnswerElected(tidx)}
-                                                                disabled = {
-                                                                    isRunning
-                                                                    ?
-                                                                    false
-                                                                    :
-                                                                    true
-                                                                }
-                                                            />
-                                                            <span className={
-                                                                isRunning 
-                                                                ? 
-                                                                "checkmark" 
-                                                                : 
-                                                                "checkmark select-background-change"
-                                                            }></span>
-                                                            <span className="text">
-                                                                Option B
-                                                            </span>
-                                                        </div>
-                                                        <div></div>
-                                                        <div className="label">
-                                                            {questionsItem.answerB}
-                                                        </div>
-                                                    </div>
-                                                    <div className="tab">
-                                                        <div className="select">
-                                                            <input 
-                                                                type="radio"
-                                                                name={tidx + 1}
-                                                                value="answerC"
-                                                                className="radio"
-                                                                onChange={handleAnswerElected(tidx)}
-                                                                disabled = {
-                                                                    isRunning
-                                                                    ?
-                                                                    false
-                                                                    :
-                                                                    true
-                                                                }
-                                                            />
-                                                            <span className={
-                                                                isRunning 
-                                                                ? 
-                                                                "checkmark" 
-                                                                : 
-                                                                "checkmark select-background-change"
-                                                            }></span>
-                                                            <span className="text">
-                                                                Option C
-                                                            </span>
-                                                        </div>
-                                                        <div></div>
-                                                        <div className="label">
-                                                            {questionsItem.answerC}
-                                                        </div>
-                                                    </div>
-                                                    <div className="tab">
-                                                        <div className="select">
-                                                            <input 
-                                                                type="radio"
-                                                                name={tidx + 1}
-                                                                value="answerD"
-                                                                className="radio"
-                                                                onChange={handleAnswerElected(tidx)}
-                                                                disabled = {
-                                                                    isRunning
-                                                                    ?
-                                                                    false
-                                                                    :
-                                                                    true
-                                                                }
-                                                            />
-                                                            <span className={
-                                                                isRunning 
-                                                                ? 
-                                                                "checkmark" 
-                                                                : 
-                                                                "checkmark select-background-change"
-                                                            }></span>
-                                                            <span className="text">
-                                                                Option D
-                                                            </span>
-                                                        </div>
-                                                        <div></div>
-                                                        <div className="label">
-                                                            {questionsItem.answerD}
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        ))}
-                                        </>
-                                    )
+                                testQuestions.map((questions, i) => {
+                                    return <li className="item" key={questions._id}>
+                                        <QuestionItem 
+                                            questions={questions} 
+                                            isRunning={isRunning}
+                                            value={questions.score}
+                                            handleChange={e => {
+                                                testQuestions[i].score = e.target.value;
+                                                setTestQuestions([...testQuestions])
+                                            }}
+                                        />
+                                    </li>
                                 })
                                 : 
                                 "loading"
                             }
                         </ol>
+
                         <button className="submit" onClick={submitAction}>SUBMIT ANSWERS</button>
+                        
+                        {/* {
+                            testDetails.test 
+                            ? 
+                            testDetails.test.questions.foreach({
+
+                            })
+                        } */}
                     </form>
 
                     <div className={submitAnswers ? "popup-toggle popup" : "popup"}>
@@ -287,13 +180,31 @@ function Terms() {
                             <div className="buttons">
                                 <button className="no" onClick={() => setSubmitAnswers(!submitAnswers)}>No</button>
 
-                                <Link className="link" to='/assignment-score'>
+                                {/* <Link className="link" to={`/assignment-score/${postId}/${percentages}`}>
                                     <button className="yes">Yes</button>
-                                </Link>
+                                </Link> */}
+                                <button className="yes" 
+                                    onClick={() => setCorrection(true)
+                                    // () => setSubmitAnswers(!submitAnswers)
+                                }>
+                                    Yes
+                                </button>
                             </div>
                         </div>
                     </div>
-                    
+                </>
+            ]
+        }
+        
+    }
+
+    return (
+        <div className="course-details">
+            {isRunning ? "" : alert("Your time for this test is up. Click on the Submit Answers button to proceed.")}
+            <Navigation />
+            <div className="main-content test-container">
+                <div className="test-container-inner">
+                    {correction_info()}
                 </div>
                 
                 <Footer />
@@ -302,4 +213,4 @@ function Terms() {
     )
 }
 
-export default Terms
+export default Assignment

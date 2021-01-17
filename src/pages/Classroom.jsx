@@ -952,21 +952,6 @@ function Classroom() {
         }
     }
 
-    const verifiedAccount = () => {
-        if(`${studentState ? studentState.isVerified: "loading"}` == "true"){
-            return(
-                subscribedAccount()
-            )
-        } else if(`${studentState ? studentState.isVerified: "loading"}` == "false"){
-            return(
-                <div className="verify-email">
-                    <img src={unverified_icon} alt="verify email" />
-                    Hello {studentState ? studentState.firstName: "loading"}, please verify your email to gain access to the First Class Brain classroom! To verify your account, please check your email for the verification link sent to you.
-                </div>
-            )
-        }
-    }
-
     return (
         <div className="classroom">
             <Navigation />
@@ -983,7 +968,7 @@ function Classroom() {
                     <Dashboard />
                 </div>
 
-                {verifiedAccount()}
+                {subscribedAccount()}
             </div>
             
             <Footer />
