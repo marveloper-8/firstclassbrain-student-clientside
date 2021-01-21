@@ -1,4 +1,4 @@
-import React, {useContext, useState} from 'react'
+import React, {useContext, useState, useEffect} from 'react'
 // import {ToastContainer} from "react-toastr"
 import {UserContext} from '../App'
 import {useHistory, Link} from 'react-router-dom'
@@ -17,10 +17,28 @@ const Dashboard = (props) => {
     const [openEmail, setOpenEmail] = useState(false)
     const [video, setVideo] = useState(false)
     const [text, setText] = useState(false)
+    const [instructors, setInstructors] = useState([])
     const [email, setEmail] = useState("")
     const studentState = JSON.parse(localStorage.getItem("student"))
     const history = useHistory()
     const {dispatch} = useContext(UserContext)
+
+    useEffect(() => {
+        fetch(`https://firstclassbrain-server.herokuapp.com/all-instructor`).then(res => res.json())
+          .then(data => {
+              if(data.error){
+                  alert(data.error)
+              }
+              else{
+                setInstructors(data.instructor)
+                console.log(data)
+              }
+          })
+          .catch(err => {
+              console.log(err)
+          })
+    }, [instructors])
+
     const classSelected = `${studentState ? studentState.classSelected: "loading"}`
     let compsClass = ""
     switch(classSelected){
@@ -188,104 +206,27 @@ const Dashboard = (props) => {
                         <div className="title">TEXT AN INSTRUCTOR</div>
                         <hr />
                         <div className="list">
-                            <div className="item">
-                                <Link to="/chat-text" className="link" target="_blank">
-                                    <div className="picture">
-                                        <div className="online"></div>
+                            {
+                                instructors.map((ins, id) => (
+                                    <div className="item" key={id}>
+                                        <Link to={`/chat-instructor?instrusctorId=${ins._id}`} className="link" target="_blank">
+                                            <div className="picture">
+                                                <div className="online"></div>
+                                            </div>
+                                        </Link>
+                                        <div className="name">
+                                            <Link to={`/chat-instructor?instrusctorId=${ins._id}`} className="link" target="_blank">
+                                                {ins.firstName} {ins.lastName}
+                                            </Link>
+                                        </div>
+                                        <div className="email">
+                                            <Link to={`/chat-instructor?instrusctorId=${ins._id}`} className="link" target="_blank">
+                                                {ins.email}
+                                            </Link>
+                                        </div>
                                     </div>
-                                </Link>
-                                <div className="name">
-                                    <Link to="/chat-text" className="link" target="_blank">
-                                            John Doe
-                                    </Link>
-                                </div>
-                                <div className="email">
-                                    <Link to="/chat-text" className="link" target="_blank">
-                                        john@email.com
-                                    </Link>
-                                </div>
-                                
-                            </div>
-                            
-                            <div className="item">
-                                <div className="picture">
-                                    <div className="online"></div>
-                                </div>
-                                <div className="name">John Doe</div>
-                                <div className="email">john@email.com</div>
-                            </div>
-                            
-                            <div className="item">
-                                <div className="picture">
-                                    <div className="online"></div>
-                                </div>
-                                <div className="name">John Doe</div>
-                                <div className="email">john@email.com</div>
-                            </div>
-                            
-                            <div className="item">
-                                <div className="picture">
-                                    <div className="online"></div>
-                                </div>
-                                <div className="name">John Doe</div>
-                                <div className="email">john@email.com</div>
-                            </div>
-                            
-                            <div className="item">
-                                <div className="picture">
-                                    <div className="online"></div>
-                                </div>
-                                <div className="name">John Doe</div>
-                                <div className="email">john@email.com</div>
-                            </div>
-                            
-                            <div className="item">
-                                <div className="picture">
-                                    <div className="online"></div>
-                                </div>
-                                <div className="name">John Doe</div>
-                                <div className="email">john@email.com</div>
-                            </div>
-                            
-                            <div className="item">
-                                <div className="picture">
-                                    <div className="online"></div>
-                                </div>
-                                <div className="name">John Doe</div>
-                                <div className="email">john@email.com</div>
-                            </div>
-                            
-                            <div className="item">
-                                <div className="picture">
-                                    <div className="online"></div>
-                                </div>
-                                <div className="name">John Doe</div>
-                                <div className="email">john@email.com</div>
-                            </div>
-                            
-                            <div className="item">
-                                <div className="picture">
-                                    <div className="online"></div>
-                                </div>
-                                <div className="name">John Doe</div>
-                                <div className="email">john@email.com</div>
-                            </div>
-                            
-                            <div className="item">
-                                <div className="picture">
-                                    <div className="online"></div>
-                                </div>
-                                <div className="name">John Doe</div>
-                                <div className="email">john@email.com</div>
-                            </div>
-                            
-                            <div className="item">
-                                <div className="picture">
-                                    <div className="online"></div>
-                                </div>
-                                <div className="name">John Doe</div>
-                                <div className="email">john@email.com</div>
-                            </div>
+                                ))
+                            }
                         </div>
                     </div>
 
