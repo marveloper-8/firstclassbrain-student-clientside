@@ -38,6 +38,7 @@ import WeeklyAssessmentScore from './pages/WeeklyAssessmentScore'
 import MidTermTest from './pages/MidTermTest'
 import MidTermTestScore from './pages/MidTermTestScore'
 import ChatText from './pages/ChatText'
+import ChatInstructor from './pages/ChatInstructor'
 import BadRequest from './pages/BadRequest'
 
 import {reducer, initialState} from './reducers/userReducer'
@@ -88,6 +89,7 @@ const Routing = () => {
       <Route exact path='/mid-term-test' component={MidTermTest} />
       <Route exact path='/mid-term-test-score' component={MidTermTestScore} />
       <Route exact path='/chat-text' component={ChatText} />
+      <Route exact path='/chat-instructor' component={ChatInstructor} />
       <Route component={BadRequest} />
     </Switch>
   )

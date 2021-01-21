@@ -1,0 +1,9 @@
+.chat-box {
+  background: #76c8d6;
+  height: 100vh;
+  padding-top: 3em;
+}
+
+iframe {
+  height: 60vh !important;
+}
